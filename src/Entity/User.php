@@ -41,6 +41,12 @@ class User extends BaseUser
      */
     private $siret;
 
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $type_user;
+
+
     public function __construct()
     {
         parent::__construct();
@@ -94,4 +100,17 @@ class User extends BaseUser
 
         return $this;
     }
+
+    public function getTypeUser(): ?bool
+    {
+        return $this->type_user;
+    }
+
+    public function setTypeUser(bool $type_user): self
+    {
+        $this->type_user = $type_user;
+
+        return $this;
+    }
+
 }

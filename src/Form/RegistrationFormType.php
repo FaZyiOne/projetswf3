@@ -16,52 +16,10 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class RegistrationFormType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('nom', TextType::class, array(
-                'label' => 'Nom'
-            ))
-            ->add('prenom', TextType::class, array(
-               'label' => 'Prénom' 
-            ))
-            ->add('telephone', TextType::class, array(
-                'label' => 'N° de Téléphone'
-            ))
-            ->add('siret', TextType::class, array(
-                'label' => 'N° Siret'
-            ))
-            ->add('email', TextType::class, array(
-                'label' => 'Adresse Email'
-            ))
-            ->add('username', TextType::class, array(
-                'label' => 'Pseudo'
-            ))
-            // ->add('agreeTerms', CheckboxType::class, [
-            //     'mapped' => false,
-            //     'constraints' => [
-            //         new IsTrue([
-            //             'message' => 'You should agree to our terms.',
-            //         ]),
-            //     ],
-            // ])
-            ->add('plainPassword', PasswordType::class, [
-                'mapped' => false,
-                'label' => 'Mot de passe',
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a password',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        'max' => 4096,
-                    ]),
-                ],
-            ])
-            
-        ;
-    }
+    // public function buildForm(FormBuilderInterface $builder, array $options)
+    // {
+        
+    // }
 
     public function getParent()
     {

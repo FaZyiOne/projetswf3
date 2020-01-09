@@ -9,6 +9,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+
 
 class RegistrationController extends AbstractController
 {
@@ -17,8 +25,59 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+        // $form->getForm();
+        //$form->handleRequest($request);
         $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $formBuiler = $this->createFormBuilder($user)
+
+            ->add('type_user', TextType::class, array(
+                'label' => 'Statut'
+            ))
+            ->add('nom', TextType::class, array(
+                'label' => 'Nom'
+            ))
+            ->add('prenom', TextType::class, array(
+                'label' => 'Prénom' 
+            ))
+            ->add('telephone', TextType::class, array(
+                'label' => 'N° de Téléphone'
+            ))
+            ->add('email', TextType::class, array(
+                'label' => 'Adresse Email'
+            ))
+            ->add('username', TextType::class, array(
+                'label' => 'Identifiant'
+            ))
+            ->add('plainPassword', PasswordType::class, [
+                'mapped' => false,
+                'label' => 'Mot de passe',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a password',
+                    ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'max' => 4096,
+                    ]),
+                ],
+            ])
+            // ->add('type_user', ChoiceType::class, array(
+            //     'label' => 'Votre Statut',
+            //     'choices' => [
+            //         'Particulier' => 'user',
+            //         'Professionnel' => 'user_pro',
+            //     ]
+            // ))
+        ;
+
+        if(isset($_GET['type_user']) && $_GET['type_user'] == 'user_pro'){
+            $formBuiler->add('siret', TextType::class, array(
+                    'label' => 'N° Siret',
+            ));
+        }
+
+        $form = $formBuiler->getForm();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
