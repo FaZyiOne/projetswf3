@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 
 
@@ -29,10 +30,8 @@ class RegistrationController extends AbstractController
         //$form->handleRequest($request);
         $user = new User();
         $formBuiler = $this->createFormBuilder($user)
-
-            ->add('type_user', TextType::class, array(
-                'label' => 'Statut'
-            ))
+            
+            
             ->add('nom', TextType::class, array(
                 'label' => 'Nom'
             ))
@@ -62,14 +61,14 @@ class RegistrationController extends AbstractController
                     ]),
                 ],
             ])
-            // ->add('type_user', ChoiceType::class, array(
-            //     'label' => 'Votre Statut',
-            //     'choices' => [
-            //         'Particulier' => 'user',
-            //         'Professionnel' => 'user_pro',
-            //     ]
-            // ))
+           
         ;
+        if(isset($_GET['type_user'])){
+            $formBuiler->add('type_user', HiddenType::class, array(
+                'label' => 'Statut',
+                'data' => $_GET['type_user'],
+            ));
+        }
 
         if(isset($_GET['type_user']) && $_GET['type_user'] == 'user_pro'){
             $formBuiler->add('siret', TextType::class, array(
