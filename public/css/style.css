@@ -39,6 +39,10 @@ header{
     ddisplay: flex;
 }
 /* ---------------------- Main --------------------------- */
+.typeEvent{
+    margin-left: 5%;
+    margin-right: 5%;
+}
 .caroussel2 figure, .typeEvent figure {
    width: 20%;
    position: relative;
@@ -89,8 +93,8 @@ footer{
     padding: 20px;
 }
 .hautF{
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
 }
 .hautF> img{
     align-items: center !important;
@@ -98,4 +102,27 @@ footer{
 .copyr{
     text-align: center;
     margin-top: 40px;
+}
+
+@media screen and (max-width:576px){
+    footer{
+        text-align: center;
+    }
+}
+@media (min-width: 576px) and (max-width:991.98px){
+    footer{
+        text-align: center;
+    }
+    .hautF{
+        display: flex;
+        flex-direction: column;
+    }
+  
+}
+@media screen and (min-width:992px){
+   
+    .hautF{
+        display: flex;
+        justify-content: space-around;
+    }
 }
