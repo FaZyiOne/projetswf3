@@ -4,9 +4,26 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css')}}" rel="stylesheet">
     </head>
     <body>
+        {% for flash in app.session.flashBag.get('danger') %}
+            <div class="alert alert-danger">
+                {{flash}}
+            </div>
+        {% endfor %}
+
+        {% for message in app.session.flashBag.get('success') %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+        
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-3.4.1.js')}}"></script>
+            <script src="{{ asset('js/main.js')}}"></script>
+        {% endblock %}
     </body>
 </html>
