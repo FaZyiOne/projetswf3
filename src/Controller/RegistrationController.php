@@ -29,6 +29,7 @@ class RegistrationController extends AbstractController
         // $form->getForm();
         //$form->handleRequest($request);
         $user = new User();
+        
         $formBuiler = $this->createFormBuilder($user)
             
             
@@ -76,7 +77,7 @@ class RegistrationController extends AbstractController
                     'label' => 'N° Siret',
             ));
         }
-
+       
         $form = $formBuiler->getForm();
         $form->handleRequest($request);
 
@@ -88,12 +89,21 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+
+            if($_GET['type_user'] == 'user_pro')
+            {
+                $user->setRoles( ['ROLE_USER_PRO']);
+            }
+
+            $user->setRoles(['ROLE_USER']);
             $user->setEnabled(true);
             $user->setSalt(md5(uniqid(null,true)));
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
+
+            
 
             // do anything else you need here, like send an email
 
