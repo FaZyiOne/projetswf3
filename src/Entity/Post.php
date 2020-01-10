@@ -26,10 +26,20 @@ class Post
      */
     private $date;
 
-    
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     */
     private $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Reservation")
+     */
     private $reservation;
+
+    public function __construct()
+    {
+        $this->date = new \Datetime;
+    }
 
     public function getId(): ?int
     {
@@ -60,12 +70,12 @@ class Post
         return $this;
     }
 
-    public function getUser(): ?string
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(string $user): self
+    public function setUser(User $user): self
     {
         $this->user = $user;
 
