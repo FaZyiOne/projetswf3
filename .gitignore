@@ -9,6 +9,7 @@
 /vendor/
 /config/bundles.php
 config/bundles.php
+bundles.php
 .env
 ###< symfony/framework-bundle ###
 
