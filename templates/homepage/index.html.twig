@@ -7,13 +7,13 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('img/aaa.jpg')}}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/sss.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{ asset('img/zzz.jpg')}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/zzz.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{ asset('img/eee.jpg')}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/eee.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -37,8 +37,10 @@
     {% block main %}
         <main>
             <section>
+                <div class="traitD"></div>
                 <h2 class="text-center m-3">A la une </h2>
                 <p class="text-center m-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.</p>
+                <div class="traitL"></div>
                 <div class="caroussel2 d-flex justify-content-around">
                     <figure>
                         <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="">
@@ -106,6 +108,20 @@
                     <figcaption>Formation</figcaption>
                 </figure>
             </div>
+            </section>
+            <section class="partenaires m-5">
+                <h2 class="text-center m-5">Nos partenaires</h2>
+                <div class="partenaire">
+                    <ul>
+                        <li><img class="img-thumbnail" src="{{ asset('img/qqq.jpg')}}" alt=""></li>
+                        <li><img class="img-thumbnail" src="{{ asset('img/zzz.jpg')}}" alt=""></li>
+                        <li><img class="img-thumbnail" src="{{ asset('img/uuu.jpg')}}" alt=""></li>
+                        <li><img class="img-thumbnail" src="{{ asset('img/eee.jpg')}}" alt=""></li>
+                        <li><img class="img-thumbnail" src="{{ asset('img/aaa.jpg')}}" alt=""></li>
+                        <li><img class="img-thumbnail" src="{{ asset('img/zzz.jpg')}}" alt=""></li>
+                    </ul>
+                    
+                </div>
             </section>
         </main>
     {% endblock %}
