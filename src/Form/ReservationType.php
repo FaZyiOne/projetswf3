@@ -6,7 +6,6 @@ use App\Entity\Reservation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
 
 class ReservationType extends AbstractType
