@@ -67,6 +67,7 @@ class RegistrationController extends AbstractController
             $formBuiler->add('type_user', HiddenType::class, array(
                 'label' => 'Statut',
                 'data' => $_GET['type_user'],
+                
             ));
         }
 

@@ -101,12 +101,17 @@ class User extends BaseUser
         return $this;
     }
 
-    public function getTypeUser(): ?bool
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getTypeUser(): ?string
     {
         return $this->type_user;
     }
 
-    public function setTypeUser(bool $type_user): self
+    public function setTypeUser(?string $type_user): self
     {
         $this->type_user = $type_user;
 
