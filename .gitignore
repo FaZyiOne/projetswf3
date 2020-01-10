@@ -8,6 +8,7 @@
 /var/
 /vendor/
 /config/bundles
+config/bundles
 .env
 ###< symfony/framework-bundle ###
 
