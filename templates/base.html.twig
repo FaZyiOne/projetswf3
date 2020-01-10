@@ -20,10 +20,8 @@
         {% endfor %}
         
         {% block body %}{% endblock %}
-
-        {% block javascripts %}
-            <script src="{{ asset('js/jquery-3.4.1.js')}}"></script>
-            <script src="{{ asset('js/main.js')}}"></script>
-        {% endblock %}
+        {% block javascripts %}{% endblock %}
+        <script src="{{asset('js/jquery3.4.1.js')}}"></script>
+        <script src="{{asset('js/back.js')}}"></script>
     </body>
 </html>

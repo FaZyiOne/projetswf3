@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+    <form action="">
+        <select name="type_user" id="">
+            <option value="user">Particulier</option>
+            <option value="user_pro">Professionnel</option>
+        </select>
+        <button class="btn_user" action="?=">Valider</button>
+    </form>
+
+    {{ form_start(registrationForm) }}
+    <DIV class="register_form">
+        {{ form_row(registrationForm) }}
+        
+    
+    </DIV>        
+
+        
+        
+        
+        
+
+        <button class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+
+
+{% endblock %}
