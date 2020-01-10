@@ -61,7 +61,7 @@ class ReservationRepository extends ServiceEntityRepository
     {
         return $this->getEntityManager()
                     ->createQuery(
-                        "SELECT e.id, e.lieu, e.created_at, e.adress, e.telephone, u.username FROM $entity e JOIN e.user u ORDER BY e.id DESC"
+                        "SELECT e.id, e.lieu, e.created_at, e.adresse, e.telephone, e.prix, e.description, e.capacite FROM $entity e JOIN e.user u ORDER BY e.id DESC"
                     )
                     ->setMaxResults($amount)
                     ->getResult();

@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(document).on('click', 'button.ajax', function(){
                 
                 $.ajax({  
-                url:        'api/post',  
+                url:        'api/reservation',  
                 type:       'GET',   
                 dataType:   'json',  
                 async:      true,  
@@ -14,9 +14,9 @@ $(document).ready(function() {
  
              for (var item in data) {
  
-               var e = $('<tr><th>Title</th><th>Summary</th><th>Created_at</th><th>Author</th><th>Image</th></tr>');  
-               $('#post').html('');  
-               $('#post').append(e);
+               var e = $('<tr><th>Lieu</th><th>Adresse</th><th>Telephone</th><th>Prix</th><th>Description</th><th>Capacite</th><th>Created_at</th></tr>');  
+               $('#reservation').html('');  
+               $('#reservation').append(e);
  
                for (i=0; i < data[item].length; i++){
                   var post = data[item][i];
@@ -24,24 +24,21 @@ $(document).ready(function() {
                   console.log(data[item][i]);
  
  
-               var e = $('<tr><td id = "title"></td><td id = "summary"></td><td id = "created_at"></td><td id = "author"></td><td id = "image"></td></tr>');
+               var e = $('<tr><td id = "lieu"></td><td id = "adresse"></td><td id = "telephone"></td><td id = "prix"></td><td id = "description"></td><td id = "capacite"></td><td id = "created_at"></td></tr>');
                  
-                 $('#title', e).html(post['title']);  
-                 $('#summary', e).html(post['summary']);
-                 $('#created_at', e).html(post['created_at']['date']);
-                 $('#author', e).html(post['username']);
+                 $('#lieu', e).html(reservation['lieu']);  
+                 $('#adresse', e).html(reservation['adresse']);
+                 $('#telephone', e).html(reservation['telephone']);
+                 $('#prix', e).html(reservation['prix']);
+                 $('#description', e).html(reservation['description']);
+                 $('#capacite', e).html(reservation['capacite']);
+                 $('#created_at', e).html(reservation['created_at']['date']);
+                 
  
-                  var monImg = document.createElement('img');
-                  monImg.src="/images/post/"+post['image'];
- 
-                  $('#image', e).html(monImg);
-                  $('#image img').css({"width":"75px","max-height":"75px"});
- 
-                 $('#post').append(e);
+                 $('#reservation').append(e);
                }
 
-                  $('#image', e).html(monImg);
-                  $('#image img').css({"width":"75px","max-height":"75px"});
+                  
              }
              },  
                 error : function(xhr, textStatus, errorThrown) {  

@@ -20,8 +20,10 @@ class ReservationController extends AbstractController
      */
     public function index(ReservationRepository $reservationRepository): Response
     {
+        $em = $this->getDoctrine()->getManager();
+        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 5);
         return $this->render('reservation/index.html.twig', [
-            'reservations' => $reservationRepository->findAll(),
+            'reservations' => $reservations,
         ]);
     }
 
@@ -93,5 +95,18 @@ class ReservationController extends AbstractController
         }
 
         return $this->redirectToRoute('reservation_index');
+    }
+
+    /**
+     * @Route("/api/reservation/", name="api_reservation_index", methods={"GET"})
+     */
+    public function apiIndex()
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 3);
+        return new JsonResponse(array(
+            'reservation' => $reservation
+        ));
     }
 }
