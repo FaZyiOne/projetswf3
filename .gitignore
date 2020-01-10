@@ -8,7 +8,7 @@
 /var/
 /vendor/
 .env
-/config/bundles.php
+/config/bundles
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
