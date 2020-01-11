@@ -1,67 +1,57 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container-fluide">
-        <header>
-            {% include 'nav.html.twig' %} 
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('img/sss.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('img/zzz.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('img/eee.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
+<div class="container-fluide">
+    <header>
+        {% include 'nav.html.twig' %}
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ asset('img/sss.jpg')}}" class="d-block w-100" alt="...">
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="carousel-item">
+                    <img src="{{ asset('img/zzz.jpg')}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('img/eee.jpg')}}" class="d-block w-100" alt="...">
+                </div>
             </div>
-            
-            <form method="" action="" class="form-filtre">
-                <h1 class="text-dark m-5">Trouver la salle Idéale</h1>
-                <div class="form-group">
-                    <div class="col-xs-12 col-md-3">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <input type="text" class="form-control pl-5 p-4" placeholder="Ville">
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                        <i class="fas fa-search"></i>
-                        <input type="text" class="form-control milieu pl-5 p-4" placeholder="Mariage,formation">
-                    </div>
-                    <button type="submit" class="btn col-xs-10 col-md-2">rechercher</button>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <form method="" action="" class="form-filtre">
+            <h1 class="text-dark m-5">Trouver la salle Idéale</h1>
+            <div class="form-group">
+                <div class="col-xs-12 col-md-3">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville">
                 </div>
-            </form>
-        </header>
+                <div class="col-xs-12 col-md-3">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="form-control milieu pl-5 p-4" placeholder="Mariage,formation">
+                </div>
+                <button type="submit" class="btn col-xs-10 col-md-2">rechercher</button>
+            </div>
+        </form>
+    </header>
     {% block main %}
-        <main>
-            <section>
-                <div class="traitD"></div>
-                <h2 class="text-center m-3">A la une </h2>
-                <p class="text-center m-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.</p>
-                <div class="traitL"></div>
-              <div class="caroussel2 d-flex justify-content-around multiple-items">  
-                  <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
+    <main>
+
+
+        <section class="bestOf">
+            <div class="traitD"></div>
+            <h2 class="text-center m-3">A la une </h2>
+            <p class="text-center m-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.</p>
+            <div class="traitL"></div>
+            <div class="bande">
+                <a href="">
                     <figure>
                         <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="">
                         <figcaption>
@@ -74,53 +64,118 @@
                                 <span>ville</span>
                             </div>
                         </figcaption>
-                    </figure> 
-                </div>
-            </section>
+                    </figure>
+                </a>
+                <a href="">
+                    <figure>
+                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="">
+                        <figcaption>
+                            <div class="descHaut">
+                                <span>Type</span>
+                                <span>nombre</span>
+                            </div>
+                            <div class="descBas">
+                                <span>Nom</span>
+                                <span>ville</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="">
+                    <figure>
+                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="">
+                        <figcaption>
+                            <div class="descHaut">
+                                <span>Type</span>
+                                <span>nombre</span>
+                            </div>
+                            <div class="descBas">
+                                <span>Nom</span>
+                                <span>ville</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="">
+                    <figure>
+                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="">
+                        <figcaption>
+                            <div class="descHaut">
+                                <span>Type</span>
+                                <span>nombre</span>
+                            </div>
+                            <div class="descBas">
+                                <span>Nom</span>
+                                <span>ville</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="">
+                    <figure>
+                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="">
+                        <figcaption>
+                            <div class="descHaut">
+                                <span>Type</span>
+                                <span>nombre</span>
+                            </div>
+                            <div class="descBas">
+                                <span>Nom</span>
+                                <span>ville</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </a>
 
-            <section class="typeEvent">
-                <h2 class="text-center mt-5">Type d'événement</h2>
-                <p class="text-center mt-3 mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.</p>
-                    <ul class="hover_block text-center col-sm-12">
-                        <li class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="#">
-                                <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Mariage</span>
-                            </a>
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="#">
-                                <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Mariage</span>
-                            </a>
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="#">
-                                <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Mariage</span>
-                            </a>
-                        </li>
-                        <li class="col-sm-12 col-md-6 col-lg-4">
-                            <a href="#">
-                                <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Mariage</span>
-                            </a>
-                        </li>
-                    </ul>
-            </section>
-            <section class="partenaires m-5">
-                <h2 class="text-center m-5">Nos partenaires</h2>
-                <div class="partenaire">
-                    <ul>
-                        <li><img class="img-thumbnail" src="{{ asset('img/qqq.jpg')}}" alt=""></li>
-                        <li><img class="img-thumbnail" src="{{ asset('img/zzz.jpg')}}" alt=""></li>
-                        <li><img class="img-thumbnail" src="{{ asset('img/uuu.jpg')}}" alt=""></li>
-                        <li><img class="img-thumbnail" src="{{ asset('img/eee.jpg')}}" alt=""></li>
-                        <li><img class="img-thumbnail" src="{{ asset('img/aaa.jpg')}}" alt=""></li>
-                        <li><img class="img-thumbnail" src="{{ asset('img/zzz.jpg')}}" alt=""></li>
-                    </ul>
-                    
-                </div>
-            </section>
-        </main>
+
+            </div>
+        </section>
+
+
+        <section class="typeEvent">
+            <h2 class="text-center mt-2">Type d'événement</h2>
+            <p class="text-center mt-2 mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.
+            </p>
+            <ul class="hover_block text-center col-sm-12">
+                <li class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="#">
+                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Anniversaire</span>
+                    </a>
+                </li>
+                <li class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="#">
+                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Fêtes</span>
+                    </a>
+                </li>
+                <li class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="#">
+                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Formation</span>
+                    </a>
+                </li>
+                <li class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="#">
+                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Réunion</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="partenaires mt-3">
+            <h2 class="text-center">Nos partenaires</h2>
+            <figure>
+                <a href=""><img src="https://picsum.photos/id/75/75" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/75/75?grayscale" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/75/75?grayscale" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+            </figure>
+        </section>
+    </main>
     {% endblock %}
-    {% include 'footer.html.twig' %} 
-    
-    </div>
+    {% include 'footer.html.twig' %}
+
+</div>
 {% endblock %}
