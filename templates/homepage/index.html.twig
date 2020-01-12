@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container-fluide">
+<div class="container-fluide" id="pAccueil">
     <header>
         {% include 'nav.html.twig' %}
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -37,7 +37,7 @@
                     <i class="fas fa-search"></i>
                     <input type="text" class="form-control milieu pl-5 p-4" placeholder="Mariage,formation">
                 </div>
-                <button type="submit" class="btn col-xs-10 col-md-2">rechercher</button>
+                <button type="submit" class="btn1 btn col-xs-10 col-md-2">rechercher</button>
             </div>
         </form>
     </header>
@@ -137,28 +137,38 @@
             <ul class="hover_block text-center col-sm-12">
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Anniversaire</span>
+                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt="">
+                        <h3>Mariage</h3>
                     </a>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Fêtes</span>
+                        <img class="categorie" src="{{ asset('img/uuu.jpg')}}" alt="">
+                        <h3>Anniversaire</h3>
                     </a>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Formation</span>
+                        <img class="categorie" src="{{ asset('img/eee.jpg')}}" alt="">
+                        <h3>Fêtes</h3>
                     </a>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/sss.jpg')}}" alt=""><span>Réunion</span>
+                        <img class="categorie" src="{{ asset('img/yyy.png')}}" alt="">
+                        <h3>Formation</h3>
+                    </a>
+                </li>
+                <li class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="#">
+                        <img class="categorie" src="{{ asset('img/reunion.jpg')}}" alt="">
+                        <h3>Réunion</h3>
                     </a>
                 </li>
             </ul>
         </section>
-        <section class="partenaires mt-5">
-            <h2 class="text-center">Nos partenaires</h2>
+        <section class="partenaires">
+            <h2 class="text-center  mt-5">Ils nous ont fais confiance</h2>
             <figure>
                 <a href=""><img src="https://picsum.photos/id/75/75" alt="logo"></a>
                 <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>

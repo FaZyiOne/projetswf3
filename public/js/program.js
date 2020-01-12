@@ -17,7 +17,7 @@ $(function () {
 
   $('ul.hover_block li').hover(function () {
     $(this).find('img').animate({
-      opacity: "0.7"
+      opacity: "0.2"
     }, {
       duration: 300
     });
@@ -30,3 +30,6 @@ $(function () {
   });
 
 });
+
+// caroussel manuel
+$('.carousel').carousel();
