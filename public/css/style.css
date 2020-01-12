@@ -1,3 +1,9 @@
+:root{
+    --button : #CA5010;
+}
+
+
+
 body {
     box-sizing: border-box;
     overflow-x: hidden !important;
@@ -17,31 +23,36 @@ nav a {
     font-size: 1rem;
 }
 
-h2,
-h3,
-h4 {
+h2,h3,h4 {
     font-family: 'Cormorant Garamond', serif;
 }
-
+ul{
+    padding-left: 0 !important;
+}
 li {
     list-style: none;
 }
-
+.btn{
+    background-color: var(--button);
+    color:white;
+}
 header form {
     text-align: center;
+  
 }
 
 .form-group>button.btn {
     color: white;
-    border-color: rgb(241, 71, 9) !important;
-    background-color: rgb(204, 75, 28) !important;
+    /* border-color: var(--button)!important; */
+    background-color: var(--button)!important;
     width: 50%;
 }
 
 .form-group>button.btn:hover {
-    color: white;
-    border-color: rgb(194, 141, 122) !important;
-    background-color: rgb(192, 134, 113) !important;
+    color: var(--button);
+    /* border-color: var(--button) !important; */
+    background-color: rgb(9, 61, 104) !important;
+   
 }
 
 .carousel img {
@@ -104,8 +115,8 @@ img.categorie {
 }
 
 img.petiteimg {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
 }
 
 .bestOf .bande {
@@ -119,7 +130,7 @@ img.petiteimg {
 
 .bestOf .bande a {
     display: block;
-    margin: 50px 10px;
+    margin: 20px 10px;
 }
 
 @keyframes best {
@@ -136,8 +147,8 @@ img.petiteimg {
 
 .bestOf figure {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
 }
 
 .bestOf figcaption {
@@ -266,9 +277,49 @@ footer {
     text-align: center;
     margin-top: 40px;
 }
+/*  
+███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
+██╔════╝██╔══██╗██║     ██║     ██╔════╝██╔════╝
+███████╗███████║██║     ██║     █████╗  ███████╗
+╚════██║██╔══██║██║     ██║     ██╔══╝  ╚════██║
+███████║██║  ██║███████╗███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚══════╝
+*/
+/* ****** formulaire ****** */
+.formFiltreSalle{
+}
+/* ****** card ******* */
+.card{
+    padding:0;
+}
+.card img{
+    width: 100%;
+}
+section{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.listeSalle li{
+    padding: 5px;
+}
 
+.btnDevis{
+    float: right;
+}
+
+
+
+
+
+
+
+/* *************************************************************************** */
+/* ************************************************************************** */
+/* **********************     SMARTPHONE      *****************************  */
+/* ***********************************************************************  */
+/* *********************************************************************** */
 @media screen and (max-width:576px) {
-    header form .milieu {
+  form .milieu {
         margin: 10px auto;
     }
 
@@ -278,19 +329,24 @@ footer {
     }
 }
 
+/* **************************************************************************** */
+/* *************************************************************************** */
+/* *************************************     TABLETTE     ******************* */
+/* ************************************************************************* */
+/* ************************************************************************ */
 @media (min-width: 576px) and (max-width:991.98px) {
 
     /* 
     figure img.logo{
         margin: 0 !important;
     } */
-    header form .form-group {
+    header form .form-group , .formFiltreSalle {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    header .btn {
+    /* header*/ .btn { 
         margin-right: 15px;
     }
 
@@ -304,8 +360,13 @@ footer {
     }
 }
 
+/*  ********************************************************************************* */
+/* ********************************************************************************* */
+/* *******************************       DESKTOP    ******************************* */
+/* ******************************************************************************* */
+/* ****************************************************************************** */
 @media screen and (min-width:992px) {
-    header form .form-group {
+    header form .form-group , .formFiltreSalle {
         display: flex;
         flex-direction: row;
         justify-content: center;
