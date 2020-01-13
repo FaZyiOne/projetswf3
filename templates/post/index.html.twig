@@ -12,7 +12,7 @@
                 <th>Commentaire</th>
                 <th>Date</th>
                 <th>User</th>
-                <th>Reservation</th>
+                {# <th>Reservation</th> #}
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,7 +23,7 @@
                 <td>{{ post.commentaire }}</td>
                 <td>{{ post.date ? post.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ post.user }}</td>
-                <td>{{ post.reservation }}</td>
+                {# <td>{{ post.reservation }}</td> #}
                 <td>
                     <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
                     <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
