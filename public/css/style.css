@@ -388,7 +388,9 @@ section{
   /* header*/ .btn { 
         Mmargin-right: 15px;
     }
-
+    ul.hover_block {
+        min-height: 600px;
+    }
     footer {
         text-align: center;
     }
