@@ -67,6 +67,21 @@ class Reservation
      */
     private $image;
 
+    /**
+     * @Vich\UploadableField(mapping ="reservation_image", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+    }
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
     public function __construct()
     {
         $this->created_at = new \Datetime;

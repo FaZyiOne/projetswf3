@@ -6,6 +6,7 @@ use App\Entity\Reservation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 
 class ReservationType extends AbstractType
@@ -14,6 +15,12 @@ class ReservationType extends AbstractType
     {
         $builder
             ->add('lieu')
+            ->add('imageFile', VichImageType::class, array(
+                'required' => true,
+                'allow_delete' => true,
+                'download_uri' => true,
+                'image_uri' => true,
+                'label' => 'Image *'))
             ->add('adresse')
             ->add('telephone')
             ->add('prix')
