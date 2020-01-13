@@ -106,7 +106,6 @@ class User extends BaseUser
         return $this->id;
     }
 
-
     public function getTypeUser(): ?string
     {
         return $this->type_user;

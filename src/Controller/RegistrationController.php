@@ -92,11 +92,13 @@ class RegistrationController extends AbstractController
 
             $user->setRoles(['ROLE_USER']);
             
+
             if($_GET['type_user'] == 'user_pro')
             {
                 $user->setRoles( ['ROLE_USER_PRO']);
             }
 
+            
             $user->setEnabled(true);
             $user->setSalt(md5(uniqid(null,true)));
 

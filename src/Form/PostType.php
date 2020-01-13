@@ -2,30 +2,27 @@
 
 namespace App\Form;
 
-use App\Entity\Reservation;
+use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-
-class ReservationType extends AbstractType
+class PostType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('lieu')
-            ->add('adresse')
-            ->add('telephone')
-            ->add('prix')
-            ->add('description')
-            ->add('capacite')
+            ->add('commentaire')
+            // ->add('date')
+            // ->add('user')
+            // ->add('reservation')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Reservation::class,
+            'data_class' => Post::class,
         ]);
     }
 }
