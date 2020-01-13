@@ -23,118 +23,27 @@
         </form>
         <section class="listeSalle m-5">
             <!-- boucle -->
-            <h2>Découvrer nos Salles</h2>
-            <ul class="row mt-4">
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-
-                            <!-- <a href=""> <span><i class="fas fa-star"></i></span></a>
-                                  <a href=""> <span><i class="fas fa-star"></i></span></a> <a href=""> <span><i class="fas fa-star"></i></span></a> <a href=""> <span><i class="fas fa-star"></i></span></a> <a href=""> <span><i class="fas fa-star"></i></span></a> -->
-
-
+            <h2>Découvrez nos Salles</h2>
+            <div class="row mt-4">
+                {% for reservation in reservations %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <a href="" target="_blank"><img src="{{ reservation.image}}" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                <p class="card-text">{{ reservation.adresse }}</p>
+                                <a href="#" class="btn btnDevis">{{ reservation.prix }}</a>
+                                <p>{{ post.commentaire }}</p>
+                                <a href="{{ path('cart_add',{'id': reservation.id } )}}" class="btn btn-success float-right">
+                                    <i class="fas fa-shopping-cart mr-1"></i>
+                                    Ajouter
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </li>
-
-                <!-- 2eme card -->
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="..."></a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-                        </div>
-                    </div>
-                </li>
-                <!-- 2eme card -->
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="..."></a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-                        </div>
-                    </div>
-                </li>
-                <!-- 2eme card -->
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="..."></a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-                        </div>
-                    </div>
-                </li>
-                <!-- 2eme card -->
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="..."></a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="..."></a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="..."></a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <a href="" target="_blank"><img src="{{ asset('img/sss.jpg')}}" alt="..."></a>
-                        <div class="card-body">
-                            <h5 class="card-title">Nom</h5>
-                            <p class="card-text">Adresse</p>
-                            <a href="#" class="btn btnDevis">Devis Gratuit</a>
-                            <p>Avis</p>
-
-                        </div>
-                    </div>
-                </li>
-            </ul>
-
-
+                {% endfor %}
+            </div>            
         </section>
     </main>
     {% endblock %}

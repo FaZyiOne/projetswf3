@@ -19,6 +19,7 @@ class ReservationType extends AbstractType
             ->add('prix')
             ->add('description')
             ->add('capacite')
+
         ;
     }
 
