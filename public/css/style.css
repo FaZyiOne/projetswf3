@@ -78,8 +78,8 @@ header {
     width: 100%;
 }
 
-i {
-    position: absolute;
+#pAccueil i {
+    position: absolute !important;
     top: 15px;
     left: 25px;
 }
@@ -315,19 +315,24 @@ footer {
 #pSalles .form{
     width: 100%;
 }
+#pSalles i {
+    position: absolute !important;
+    top: 15px;
+    left: 25px;
+}
 /* ****** card ******* */
-.card{
+#pSalles .card{
     padding:0;
     margin: 10px;
     border-radius:10px !important;
 }
-.card img{
+#pSalles .card img{
     border-top-left-radius:10px !important;
     border-top-right-radius:10px !important;
     width: 100%;
 }
 
-section{
+ section{
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -339,14 +344,71 @@ section{
     float: right;
 }
 
-.card i{
-   color: gold;
+
+
+
+/*
+██████╗ ███████╗████████╗ █████╗ ██╗██╗     
+██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██║     
+██║  ██║█████╗     ██║   ███████║██║██║     
+██║  ██║██╔══╝     ██║   ██╔══██║██║██║     
+██████╔╝███████╗   ██║   ██║  ██║██║███████╗
+╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝
+*/
+
+
+#pDetail header ul.nav{
+    position: fixed;
+    top : 90px !important;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background-color: white;
 }
+ 
+    #pDetail .carousel img {
+        width: 100%;
+        height: 70vh;
+        opacity: 0.7;
+    }
+    .logoAvis {
+        margin-top:10px
+    }
+    .logoAvis img{
+        width: 100px;
+    }
+    #pDetail .card{
+        margin:20px auto !important;
+    }
 
-
-
-
-
+    .map-responsive {
+        overflow:hidden;
+        padding-bottom:56.25%;
+        position:relative;
+        height:0;
+        max-width: 600px;
+        max-height:450px;
+        margin: 0 auto;
+        }
+        
+        .map-responsive iframe {
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+        }
+        #pDetail section span {
+            color:gray;
+        }
+        #pDetail section{
+            /* margin-top:20px;
+            margin-bottom:20px; */
+        }
+        #pDetail #presentation, #pDetail #capacite, #pDetail #avis, #pDetail #acces{
+            margin-top: 110px;
+            padding-top: 110px;
+        }
 /* *************************************************************************** */
 /* ************************************************************************** */
 /* **********************     SMARTPHONE      *****************************  */
@@ -363,6 +425,10 @@ section{
     footer {
         text-align: center;
         clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+    /* Détail */
+    .logoAvis {
+        margin-top:10px
     }
 }
 
@@ -416,6 +482,12 @@ section{
     .hautF {
         display: flex;
         justify-content: space-around;
+    }
+
+
+    #pDetail main{
+        max-width:1200px ;
+        margin: 10px auto !important;
     }
 }
 
