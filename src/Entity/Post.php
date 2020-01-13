@@ -82,12 +82,12 @@ class Post
         return $this;
     }
 
-    public function getReservation(): ?string
+    public function getReservation(): ?Reservation
     {
         return $this->reservation;
     }
 
-    public function setReservation(string $reservation): self
+    public function setReservation(Reservation $reservation): self
     {
         $this->reservation = $reservation;
 

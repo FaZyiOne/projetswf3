@@ -34,12 +34,12 @@ class PostController extends AbstractController
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
-        // if(!$this->getUser()) {
-        //     $this->addFlash('notice', 'You must be identified to access this section');
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'You must be identified to access this section');
 
-        //     return $this->redirectToRoute('post_index');
-        // }
-        
+            return $this->redirectToRoute('post_index');
+        }
+
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 

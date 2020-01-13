@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Post;
 use App\Entity\User;
 use App\Form\PostType;
@@ -24,7 +25,9 @@ class ReservationController extends AbstractController
     public function index(ReservationRepository $reservationRepository): Response
     {
         $em = $this->getDoctrine()->getManager();
+
         $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 5);
+        
         return $this->render('reservation/index.html.twig', [
             'reservations' => $reservations,
         ]);
@@ -38,6 +41,12 @@ class ReservationController extends AbstractController
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
+
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'You must be identified to access this section');
+
+            return $this->redirectToRoute('post_index');
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -57,49 +66,46 @@ class ReservationController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="reservation_show", methods={"GET"})
+     * @Route("/{id}", name="reservation_show", methods={"GET","POST"})
      */
 
     public function show(Reservation $reservation, Request $request): Response
     {
-    // public function show(Reservation $reservation): Response
-    // {
     //     return $this->render('reservation/show.html.twig', [
     //         'reservation' => $reservation,
     //     ]);
-    // }
 
-    $posts = new Post();
-    $form = $this->createForm(PostType::class, $reservation);
-    $form->handleRequest($request);
+    $rpost = new Post();
+        $form = $this->createForm(PostType::class, $rpost);
+        $form->handleRequest($request);
 
-    if(!$this->getUser()) {
-        $this->addFlash('notice', 'You must be identified to access this section');
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'You must be identified to access this section');
 
-        return $this->redirectToRoute('post_index');
-    }
+            return $this->redirectToRoute('post_index');
+        }
 
-    $entityManager = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        // $entityManager = $this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $entityManager = $this->getDoctrine()->getManager();
 
-        $reservation->setUser($this->getUser());
-        $reservation->setPost($reservation);
+            $rpost->setUser($this->getUser());
+            $rpost->setReservation($reservation);
 
-        $entityManager->persist($reservation);
-        $entityManager->flush();
+            $entityManager->persist($rpost);
+            $entityManager->flush();
 
-        return $this->redirectToRoute('reservation_index');
-    }
+            return $this->redirectToRoute('reservation_index');
+        }
 
-    $comments = $entityManager->getRepository('App:Reservations')->findByPost($reservation);
+        $rposts = $entityManager->getRepository('App:Post')->findByReservation($reservation);
 
-    return $this->render('reservation/show.html.twig', [
-        'post' => $posts,
-        'form' => $form->createView(),
-        'reservation' => $reservation
-    ]);
+        return $this->render('reservation/show.html.twig', [
+            'reservation' => $reservation,
+            'form' => $form->createView(),
+            'rposts' => $rposts
+        ]);
     }
 
     /**

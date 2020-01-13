@@ -54,5 +54,14 @@
 
     <hr>
 
+    <h1>Comments</h1>
+    {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" />
+        {{ form_end(form) }}
+        {% for rpost in rposts %}
+        <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p>
+            {{ rpost.commentaire }}
+        {% endfor %}
 
 {% endblock %}
