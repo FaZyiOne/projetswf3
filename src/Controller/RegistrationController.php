@@ -80,9 +80,9 @@ class RegistrationController extends AbstractController
                 'constraints' => [
                     new Length([
                         'min' => 4,
-                        'minMessage' => 'Votre ID doit contenir {{ limit }} caractères minimum',
+                        'minMessage' => 'Votre identifiant doit contenir {{ limit }} caractères minimum',
                         'max' => 18,
-                        'maxMessage' => 'Votre ID doit contenir {{ limit }} caractères maximum',
+                        'maxMessage' => 'Votre identifiant doit contenir {{ limit }} caractères maximum',
                     ])
                 ]
             ))
