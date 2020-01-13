@@ -1,0 +1,421 @@
+:root{
+    --button : #FF9C00;
+    --bleuClaire : #0086FF;
+    --bleuFoncé :#005EB3;
+    --orange: #FF9C00;
+    --orangeClaire:#FFA719;
+    --orangeMarron:#B36E00;
+}
+
+
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden !important;
+  font-family: 'Oswald', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: rgb(206, 91, 62);
+}
+
+nav a {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+h1{
+    word-spacing: 0.5rem;
+}
+h1,h2,h3,h4 {
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+ul{
+    padding-left: 0 !important;
+}
+li {
+    list-style: none;
+}
+ .btn{
+    background-color: var(--button);
+    color:white;
+} 
+#pAccueil form,#pSalles form {
+    text-align: center !important;
+  
+} 
+
+.form-group>button.btn {
+    color: white;
+    background-color: var(--button)!important;
+    width: 50%;
+    margin-right: 15px;
+} 
+
+ .form-group>button.btn:hover {
+    color: var(--button);
+    background-color: rgb(9, 61, 104) !important; 
+} 
+#pAccueil .carousel img {
+    width: 100%;
+    height: 100vh;
+    opacity: 0.7;
+}
+
+header {
+    position: relative;
+}
+
+.form-filtre {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+}
+
+i {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+}
+
+input {
+    padding-left: 50px !important;
+}
+.btn1{
+    border: none !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    color: #fff !important;
+    background-size: 200% !important;
+    transition: 0.6s !important;
+  }
+  .btn1{
+    background-image: linear-gradient(to left,orange,#EE5A24,orange) !important;
+  }
+  .btn1:hover{
+    background-position: right !important;
+  }
+  
+
+/* ---------------------- Main --------------------------- */
+main section .traitD {
+    height: 2px !important;
+    width: 15% !important;
+    margin: 2em 35% !important;
+    background-color: rgb(224, 135, 75) !important;
+    text-align: center;
+}
+
+main section .traitL {
+    height: 2px !important;
+    width: 15% !important;
+    margin: 2em 50% !important;
+    background-color: rgb(224, 135, 75) !important;
+    text-align: center;
+}
+
+.typeEvent {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.typeEvent figure {
+    width: 20%;
+    position: relative;
+
+}
+
+img.petiteimg,
+img.categorie {
+    width: 100%;
+}
+
+img.petiteimg {
+    width: 400px;
+    height: 400px;
+    border-radius:8px;
+}
+
+.bestOf .bande {
+    margin: 0;
+    padding: 0;
+    display: block;
+    animation: best 20s infinite linear;
+    display: flex;
+    overflow: hidden;
+}
+
+.bestOf .bande a {
+    display: block;
+    margin: 20px 10px;
+}
+
+@keyframes best {
+
+    0%,
+    100% {
+        margin-left: 100%;
+    }
+
+    99.99% {
+        margin-left: -500px;
+    }
+}
+
+.bestOf figure {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.bestOf figcaption {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.descHaut {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.descBas {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+ul.hover_block {
+    min-height: 400px;
+}
+
+ul.hover_block li {
+    list-style: none;
+    float: left;
+    padding: 10px;
+}
+
+ul.hover_block li a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+    padding: 16px;
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    ffont-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul.hover_block li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    height:200px;
+    
+}
+
+ul.hover_block h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+
+/* ------ section ----------*/
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
+}
+
+.partenaires {
+    margin-top: 100px;
+}
+
+.partenaires figure {
+    margin: 0;
+    padding: 0;
+    display: block;
+    animation: logo 20s infinite linear;
+    display: flex;
+    overflow: hidden;
+}
+
+/* on rinjecte 200px de contenu, les 4 premiere images pour boucler la boucle */
+/*  figure:after {content:  url(http://lorempixel.com/50/50/nature/1)url(http://lorempixel.com/50/50/food/1)url(http://lorempixel.com/50/50/sports/1) url(http://lorempixel.com/50/50/city/1) ;line-height:0;display:block;  } */
+.partenaires figure a {
+    display: block;
+}
+
+.partenaires img {
+    margin: 50px 10px;
+}
+
+@keyframes logo {
+
+    0%,
+    100% {
+        margin-left: 100%;
+    }
+
+    99.99% {
+        margin-left: -500px;
+    }
+
+    /* 10images */
+}
+
+
+/* ---------------------- footer ------------------------ */
+footer {
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 70px;
+    clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.hautF>img {
+    align-items: center !important;
+}
+
+.copyr {
+    text-align: center;
+    margin-top: 40px;
+}
+/*  
+███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
+██╔════╝██╔══██╗██║     ██║     ██╔════╝██╔════╝
+███████╗███████║██║     ██║     █████╗  ███████╗
+╚════██║██╔══██║██║     ██║     ██╔══╝  ╚════██║
+███████║██║  ██║███████╗███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚══════╝
+*/
+/* ****** formulaire ****** */
+#pSalles .form{
+    width: 100%;
+}
+/* ****** card ******* */
+.card{
+    padding:0;
+    margin: 10px;
+    border-radius:10px !important;
+}
+.card img{
+    border-top-left-radius:10px !important;
+    border-top-right-radius:10px !important;
+    width: 100%;
+}
+
+section{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.listeSalle li{
+    padding: 5px;
+}
+
+.btnDevis{
+    float: right;
+}
+
+.card i{
+   color: gold;
+}
+
+
+
+
+
+/* *************************************************************************** */
+/* ************************************************************************** */
+/* **********************     SMARTPHONE      *****************************  */
+/* ***********************************************************************  */
+/* *********************************************************************** */
+@media screen and (max-width:576px) {
+    nav.navbar{
+        text-align:center;
+    }
+    form .milieu {
+        margin: 10px auto;
+    }
+
+    footer {
+        text-align: center;
+        clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+}
+
+/* **************************************************************************** */
+/* *************************************************************************** */
+/* *************************************     TABLETTE     ******************* */
+/* ************************************************************************* */
+/* ************************************************************************ */
+@media (min-width: 576px) and (max-width:991.98px) {
+    nav.navbar{
+        text-align:center;
+    }
+    /* 
+    figure img.logo{
+        margin: 0 !important;
+    } */
+    header form .form-group , .formFiltreSalle .form-group{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+  /* header*/ .btn { 
+        Mmargin-right: 15px;
+    }
+    ul.hover_block {
+        min-height: 600px;
+    }
+    footer {
+        text-align: center;
+    }
+
+    .hautF {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*  ********************************************************************************* */
+/* ********************************************************************************* */
+/* *******************************       DESKTOP    ******************************* */
+/* ******************************************************************************* */
+/* ****************************************************************************** */
+@media screen and (min-width:992px) {
+    header form .form-group , .formFiltreSalle .form-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hautF {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
