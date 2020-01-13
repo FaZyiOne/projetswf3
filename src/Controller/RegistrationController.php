@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Type;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -34,26 +36,62 @@ class RegistrationController extends AbstractController
             
             
             ->add('nom', TextType::class, array(
-                'label' => 'Nom'
+                'label' => 'Nom',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez saisir votre nom',
+                    ])
+                ]
             ))
             ->add('prenom', TextType::class, array(
-                'label' => 'Prénom' 
+                'label' => 'Prénom',
+                 'constraints' => [
+                     new Length ([
+                        'max' => 50,
+                     ])
+                 ]
             ))
             ->add('telephone', TextType::class, array(
-                'label' => 'N° de Téléphone'
+                'label' => 'N° de Téléphone',
+                'constraints' => [
+                    new Length([
+                        'min' => 10,
+                        'max' => 10,
+                        'exactMessage' => 'Un numéro contient {{ limit }} numéros !',
+                    ]),
+                    new Type([
+                        'type' => 'numeric',
+                        'message' => 'Veuillez ne saisir que des numéro.',
+                    ])
+
+                ]
             ))
             ->add('email', TextType::class, array(
-                'label' => 'Adresse Email'
+                'label' => 'Adresse Email',
+                'constraints' => [
+                    new Email([
+                        'mode' => 'html5',
+                        'message' => 'Veuillez saisir un format d\'email valide.',
+                    ])
+                ]
             ))
             ->add('username', TextType::class, array(
-                'label' => 'Identifiant'
+                'label' => 'Identifiant',
+                'constraints' => [
+                    new Length([
+                        'min' => 4,
+                        'minMessage' => 'Votre ID doit contenir {{ limit }} caractères minimum',
+                        'max' => 18,
+                        'maxMessage' => 'Votre ID doit contenir {{ limit }} caractères maximum',
+                    ])
+                ]
             ))
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
                 'label' => 'Mot de passe',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez saisir un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
@@ -75,6 +113,13 @@ class RegistrationController extends AbstractController
         if(isset($_GET['type_user']) && $_GET['type_user'] == 'user_pro'){
             $formBuiler->add('siret', TextType::class, array(
                     'label' => 'N° Siret',
+                    'constraints' => [
+                        new Length([
+                            'min' => 14,
+                            'max' => 14,
+                            'exactMessage' => 'Un numéro SIRET contient {{ limit }} numéros.',
+                        ])
+                    ]
             ));
         }
        
