@@ -118,6 +118,10 @@ class RegistrationController extends AbstractController
                             'min' => 14,
                             'max' => 14,
                             'exactMessage' => 'Un numéro SIRET contient {{ limit }} numéros.',
+                        ]),
+                        new Type([
+                            'type' => 'numeric',
+                            'message' => 'Veuillez ne saisir que des numéro.',
                         ])
                     ]
             ));
