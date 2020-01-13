@@ -16,6 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 
@@ -62,7 +63,9 @@ class RegistrationController extends AbstractController
                     ]),
                 ],
             ])
-           
+            ->add('image', FileType::class, [
+                'label' => 'Avatar :',
+            ])
         ;
         if(isset($_GET['type_user'])){
             $formBuiler->add('type_user', HiddenType::class, array(
@@ -101,6 +104,11 @@ class RegistrationController extends AbstractController
             
             $user->setEnabled(true);
             $user->setSalt(md5(uniqid(null,true)));
+
+            $file = $user->getImage();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $user->setImage($fileName);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
