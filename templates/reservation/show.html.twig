@@ -16,6 +16,10 @@
                 <td>{{ reservation.lieu }}</td>
             </tr>
             <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"</td>
+            </tr>
+            <tr>
                 <th>Adresse</th>
                 <td>{{ reservation.adresse }}</td>
             </tr>
@@ -25,7 +29,7 @@
             </tr>
             <tr>
                 <th>Prix</th>
-                <td>{{ reservation.prix }}</td>
+                <td>{{ reservation.prix }} Euros</td>
             </tr>
             <tr>
                 <th>Description</th>
@@ -33,11 +37,11 @@
             </tr>
             <tr>
                 <th>Capacite</th>
-                <td>{{ reservation.capacite }}</td>
+                <td>{{ reservation.capacite }} pers.</td>
             </tr>
             <tr>
                 <th>Created_at</th>
-                <td>{{ reservation.createdAt ? reservation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ reservation.createdAt ? reservation.createdAt|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
             <tr>
                 <th>User</th>
@@ -54,7 +58,7 @@
 
     <hr>
 
-    <h1>Comments</h1>
+    <h1>Commentaires</h1>
     {{ form_start(form) }}
             {{ form_widget(form) }}
             <input type="submit" value="Create" />
