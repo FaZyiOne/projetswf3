@@ -42,11 +42,11 @@ class ReservationController extends AbstractController
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
 
-        if(!$this->getUser()) {
-            $this->addFlash('notice', 'You must be identified to access this section');
+        // if(!$this->getUser()) {
+        //     $this->addFlash('notice', 'You must be identified to access this section');
 
-            return $this->redirectToRoute('post_index');
-        }
+        //     return $this->redirectToRoute('post_index');
+        // }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -71,19 +71,16 @@ class ReservationController extends AbstractController
 
     public function show(Reservation $reservation, Request $request): Response
     {
-    //     return $this->render('reservation/show.html.twig', [
-    //         'reservation' => $reservation,
-    //     ]);
+       
+        // return $this->render('reservation/show.html.twig', [
+        //     'reservation' => $reservation,
+             
+        // ]);
 
     $rpost = new Post();
         $form = $this->createForm(PostType::class, $rpost);
         $form->handleRequest($request);
 
-        if(!$this->getUser()) {
-            $this->addFlash('notice', 'You must be identified to access this section');
-
-            return $this->redirectToRoute('post_index');
-        }
 
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -96,7 +93,7 @@ class ReservationController extends AbstractController
             $entityManager->persist($rpost);
             $entityManager->flush();
 
-            return $this->redirectToRoute('reservation_index');
+            return $this->redirectToRoute('salles');
         }
 
         $rposts = $entityManager->getRepository('App:Post')->findByReservation($reservation);

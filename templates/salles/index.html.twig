@@ -32,7 +32,7 @@
                 {% for reservation in reservations %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
-                            <a href="{{path('reservation_index')}}{{reservation.id}}" target="_blank" >
+                            <a href="{{path('reservation_index')}}{{reservation.id}}" target="" >
                                 <img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style=" max-height:100px;" alt="lieu à louer">
                             </a>
                             <div class="card-body">

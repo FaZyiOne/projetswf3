@@ -57,7 +57,7 @@
     {{ include('reservation/_delete_form.html.twig') }}
 
     <hr>
-
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <h1>Commentaires</h1>
     {{ form_start(form) }}
             {{ form_widget(form) }}
@@ -67,5 +67,5 @@
         <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p>
             {{ rpost.commentaire }}
         {% endfor %}
-
+    {% endif %}
 {% endblock %}
