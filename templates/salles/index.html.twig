@@ -33,7 +33,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ reservation.lieu }}</h5>
                                 <p class="card-text">{{ reservation.adresse }}</p>
-                                <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }}</a>
+                                <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
                                 <p>Commentaires</p>
                                 <a href="{{ path('cart_add',{'id': reservation.id } )}}" class="btn btn-success float-right">
                                     <i class="fas mr-1"></i>
