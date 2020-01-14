@@ -38,3 +38,4 @@ security:
         - { path: ^/profile, role: ROLE_USER }
         - { path: ^/reservation, role: ROLE_ADMIN }
         - { path: ^/panier, role: ROLE_USER }
+        - { path: ^/post, role: ROLE_ADMIN }
