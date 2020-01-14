@@ -5,7 +5,7 @@ security:
 
     role_hierarchy:
         ROLE_USER:       ROLE_USER
-        ROLE_USER_PRO:   ROLE_USER_PRO
+        ROLE_USER_PRO:   [RELE_USER, ROLE_USER_PRO]
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -33,3 +33,8 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/logout, role: ROLE_USER }
+        - { path: ^/contact, role: ROLE_USER }
+        - { path: ^/profile, role: ROLE_USER }
+        - { path: ^/reservation, role: ROLE_ADMIN }
+        - { path: ^/panier, role: ROLE_USER }
