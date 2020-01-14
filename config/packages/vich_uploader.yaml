@@ -1,0 +1,7 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        reservation_image:
+            uri_prefix: /images/reservation
+            upload_destination: '%kernel.project_dir%/public/images/reservation'

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}Welcome!
+            {% endblock %}
+        </title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">KOALA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('salles') }}">Lieux à louer
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('cart_index') }}">Réservations</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+<div class="container pt-5">
+{% block body %}
+    <div class="bg-light p-3">
+        <h1>Vos réservations</h1>
+    </div>
+
+    {% if items | length > 0 %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Lieu</th>
+                    <th>Adresse</th>
+                    <th>Prix/jour</th>
+                    <th>Nombre de journée(s)</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+               {% for item in items %}
+                    <tr>
+                        <td>{{ item.reservation.lieu }}</td>
+                        <td>{{ item.reservation.adresse }}</td>
+                        <td>{{ item.reservation.prix }} €</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.reservation.prix * item.quantity }} €</td>
+                        <td>
+                            <a href="{{ path('cart_remove', { 'id': item.reservation.id }) }}" class="btn btn-danger btn-sm">
+                                <button type="button" class="btn btn-labeled btn-danger">
+                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Supprimer</button></i>
+                            </a>
+                        </td>
+                    </tr>
+               {% endfor %} 
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="3" class="text-right">Prix Total : </td>
+                    <td>{{ total }} €</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    {% else %}
+        <p>vide</p>
+    {% endif %}
+
+{% endblock %}
+</div>
+ {% block javascripts %}{% endblock %}
+        
+</body>
+</html>

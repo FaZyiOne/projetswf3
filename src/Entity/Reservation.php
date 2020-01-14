@@ -62,6 +62,26 @@ class Reservation
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping ="reservation_image", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+    }
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
     public function __construct()
     {
         $this->created_at = new \Datetime;
@@ -164,6 +184,18 @@ class Reservation
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
