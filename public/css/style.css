@@ -1,10 +1,10 @@
-:root{
-    --button : #FF9C00;
-    --bleuClaire : #0086FF;
-    --bleuFoncé :#005EB3;
+:root {
+    --button: #FF9C00;
+    --bleuClaire: #0086FF;
+    --bleuFoncé: #005EB3;
     --orange: #FF9C00;
-    --orangeClaire:#FFA719;
-    --orangeMarron:#B36E00;
+    --orangeClaire: #FFA719;
+    --orangeMarron: #B36E00;
 }
 
 
@@ -12,7 +12,7 @@
 body {
     box-sizing: border-box;
     overflow-x: hidden !important;
-  font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 a {
@@ -21,47 +21,62 @@ a {
 }
 
 a:hover {
-    color: rgb(206, 91, 62);
+    color: var(--orangeMarron);
 }
 
 nav a {
     text-transform: uppercase;
     font-size: 1rem;
 }
-h1{
+
+h1 {
     word-spacing: 0.5rem;
 }
-h1,h2,h3,h4 {
+
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Merriweather', serif;
     text-transform: uppercase;
     text-align: center;
 }
-ul{
+
+h2 {
+    margin-top: 1.5rem;
+}
+
+ul {
     padding-left: 0 !important;
 }
+
 li {
     list-style: none;
 }
- .btn{
+
+.btn {
     background-color: var(--button);
-    color:white;
-} 
-#pAccueil form,#pSalles form {
+    color: white;
+}
+
+#pAccueil form,
+#pSalles form {
     text-align: center !important;
-  
-} 
+
+}
 
 .form-group>button.btn {
     color: white;
-    background-color: var(--button)!important;
+    background-color: var(--button) !important;
     width: 50%;
     margin-right: 15px;
-} 
+}
 
- .form-group>button.btn:hover {
+.form-group>button.btn:hover {
     color: var(--button);
-    background-color: rgb(9, 61, 104) !important; 
-} 
+    background-color: rgb(9, 61, 104) !important;
+}
+
 #pAccueil .carousel img {
     width: 100%;
     height: 100vh;
@@ -78,30 +93,31 @@ header {
     width: 100%;
 }
 
-i {
-    position: absolute;
+#pAccueil i {
+    position: absolute !important;
     top: 15px;
     left: 25px;
 }
 
-input {
+.form-filtre input {
     padding-left: 50px !important;
 }
-.btn1{
+
+.btn1 {
     border: none !important;
     text-transform: uppercase !important;
     cursor: pointer !important;
     color: #fff !important;
     background-size: 200% !important;
     transition: 0.6s !important;
-  }
-  .btn1{
-    background-image: linear-gradient(to left,orange,#EE5A24,orange) !important;
-  }
-  .btn1:hover{
+    background-image: linear-gradient(to left, orange, #EE5A24, orange) !important;
+}
+
+
+.btn1:hover {
     background-position: right !important;
-  }
-  
+}
+
 
 /* ---------------------- Main --------------------------- */
 main section .traitD {
@@ -139,7 +155,7 @@ img.categorie {
 img.petiteimg {
     width: 400px;
     height: 400px;
-    border-radius:8px;
+    border-radius: 8px;
 }
 
 .bestOf .bande {
@@ -217,7 +233,6 @@ ul.hover_block li a {
     padding: 16px;
     color: rgb(255, 255, 255);
     background: rgb(0, 0, 0);
-    ffont-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     border-radius: 5px;
@@ -228,8 +243,8 @@ ul.hover_block li img {
     top: 0;
     left: 0;
     border: 0;
-    height:200px;
-    
+    height: 200px;
+
 }
 
 ul.hover_block h3 {
@@ -239,7 +254,6 @@ ul.hover_block h3 {
     transform: translate(-50%, -50%);
     font-weight: bold;
 }
-
 
 /* ------ section ----------*/
 .img-thumbnail {
@@ -260,8 +274,6 @@ ul.hover_block h3 {
     overflow: hidden;
 }
 
-/* on rinjecte 200px de contenu, les 4 premiere images pour boucler la boucle */
-/*  figure:after {content:  url(http://lorempixel.com/50/50/nature/1)url(http://lorempixel.com/50/50/food/1)url(http://lorempixel.com/50/50/sports/1) url(http://lorempixel.com/50/50/city/1) ;line-height:0;display:block;  } */
 .partenaires figure a {
     display: block;
 }
@@ -281,9 +293,7 @@ ul.hover_block h3 {
         margin-left: -500px;
     }
 
-    /* 10images */
 }
-
 
 /* ---------------------- footer ------------------------ */
 footer {
@@ -303,6 +313,7 @@ footer {
     text-align: center;
     margin-top: 40px;
 }
+
 /*  
 ███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
 ██╔════╝██╔══██╗██║     ██║     ██╔════╝██╔════╝
@@ -312,40 +323,109 @@ footer {
 ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚══════╝
 */
 /* ****** formulaire ****** */
-#pSalles .form{
-    width: 100%;
-}
-/* ****** card ******* */
-.card{
-    padding:0;
-    margin: 10px;
-    border-radius:10px !important;
-}
-.card img{
-    border-top-left-radius:10px !important;
-    border-top-right-radius:10px !important;
+#pSalles .form {
     width: 100%;
 }
 
-section{
+#pSalles i {
+    position: absolute !important;
+    top: 15px;
+    left: 25px;
+}
+
+/* ****** card ******* */
+#pSalles .card {
+    padding: 0;
+    margin: 10px;
+    border-radius: 10px !important;
+}
+
+#pSalles .card img {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    width: 100%;
+}
+
+#pAccueil section, #pSalles section, #pDetail section {
     margin-left: 5%;
     margin-right: 5%;
 }
-.listeSalle li{
+
+.listeSalle li {
     padding: 5px;
 }
 
-.btnDevis{
+.btnDevis {
     float: right;
 }
 
-.card i{
-   color: gold;
+/*
+██████╗ ███████╗████████╗ █████╗ ██╗██╗     
+██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██║     
+██║  ██║█████╗     ██║   ███████║██║██║     
+██║  ██║██╔══╝     ██║   ██╔══██║██║██║     
+██████╔╝███████╗   ██║   ██║  ██║██║███████╗
+╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝
+*/
+#pDetail header ul.nav {
+    position: fixed;
+    top: 90px !important;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background-color: white;
 }
 
+#pDetail .carousel {
+    margin-top: 120px;
+}
 
+#pDetail .carousel img {
+    width: 100%;
+    height: 60vh;
+}
 
+.logoAvis {
+    margin-top: 10px
+}
 
+.logoAvis img {
+    width: 100px;
+}
+
+#pDetail .card {
+    margin: 20px auto !important;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    max-width: 600px;
+    max-height: 350px;
+    margin: 0 auto;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#pDetail section span {
+    color: gray;
+}
+
+#pDetail #presentation,
+#pDetail #capacite,
+#pDetail #avis,
+#pDetail #acces {
+    margin-top: -120px;
+    padding-top: 120px;
+}
 
 /* *************************************************************************** */
 /* ************************************************************************** */
@@ -353,9 +433,14 @@ section{
 /* ***********************************************************************  */
 /* *********************************************************************** */
 @media screen and (max-width:576px) {
-    nav.navbar{
-        text-align:center;
+    header nav.navbar {
+        text-align: center;
     }
+
+    header nav #navbarNavDropdown form .btn.btn1 {
+        margin: 0.5rem auto !important;
+    }
+
     form .milieu {
         margin: 10px auto;
     }
@@ -363,6 +448,11 @@ section{
     footer {
         text-align: center;
         clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+
+    /* Détail */
+    .logoAvis {
+        margin-top: 10px
     }
 }
 
@@ -372,25 +462,30 @@ section{
 /* ************************************************************************* */
 /* ************************************************************************ */
 @media (min-width: 576px) and (max-width:991.98px) {
-    nav.navbar{
-        text-align:center;
+    header nav.navbar {
+        text-align: center;
     }
+
+    header nav #navbarNavDropdown form {
+        width: 50%;
+        margin: auto !important;
+    }
+
     /* 
     figure img.logo{
         margin: 0 !important;
     } */
-    header form .form-group , .formFiltreSalle .form-group{
+    header form .form-group,
+    .formFiltreSalle .form-group {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-  /* header*/ .btn { 
-        Mmargin-right: 15px;
-    }
     ul.hover_block {
         min-height: 600px;
     }
+
     footer {
         text-align: center;
     }
@@ -407,7 +502,9 @@ section{
 /* ******************************************************************************* */
 /* ****************************************************************************** */
 @media screen and (min-width:992px) {
-    header form .form-group , .formFiltreSalle .form-group {
+
+    header form .form-group,
+    .formFiltreSalle .form-group {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -417,5 +514,10 @@ section{
         display: flex;
         justify-content: space-around;
     }
-}
 
+
+    #pDetail main {
+        max-width: 1200px;
+        margin: 10px auto !important;
+    }
+}
