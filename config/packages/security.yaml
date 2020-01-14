@@ -32,13 +32,14 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/logout, role: ROLE_USER }
         - { path: ^/contact, role: ROLE_USER }
         - { path: ^/profile, role: ROLE_USER }
         - { path: ^/panier, role: ROLE_USER }
         - { path: ^/post, role: ROLE_ADMIN }
+        - { path: ^/reservation/new, role: ROLE_ADMIN }
+
         
         
         

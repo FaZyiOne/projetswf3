@@ -39,22 +39,16 @@
                 <th>Capacite</th>
                 <td>{{ reservation.capacite }} pers.</td>
             </tr>
-            <tr>
-                <th>Created_at</th>
-                <td>{{ reservation.createdAt ? reservation.createdAt|date('d-m-Y H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>User</th>
-                <td>{{ reservation.user }}</td>
-            </tr>
+            
         </tbody>
     </table>
-
+    {% if is_granted('ROLE_ADMIN') %}
     <a href="{{ path('reservation_index') }}">back to list</a>
 
     <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">edit</a>
 
     {{ include('reservation/_delete_form.html.twig') }}
+    {% endif %}
 
     <hr>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
