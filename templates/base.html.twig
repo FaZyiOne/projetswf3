@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Koala site de location de salles pour tout événement : mariage, anniversaire, fêtes, réunion, formation. Trouvez enfin la salle qui vous convient." />
+    <meta name="author" content="group koala">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow"> 
+    <meta name="keywords" content="salle | salles | mariage | anniversaire | fêtes | réunion |formation | paris | location | événement">
+    <link rel="icon" href="{{ asset('img/icon.png') }}">
+
+    <meta property="og:site_name" content="Koala"/>
+    <meta property="og:title" content="Koala" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.fabid.fr/koala" /> 
+    <meta property="og:image" content="https://www.fabid.fr/koala/icon.png" />  
+    <meta property="og:description" content="Koala site de location de salles pour tout événement : mariage, anniversaire, fêtes, réunion, formation. Trouvez enfin la salle qui vous convient." />
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- google font -->
@@ -34,10 +48,11 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="{{ asset('js/program.js') }}"></script>
-    <script src="{{ asset('js/jquery.js') }}">
+    <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{asset('js/jquery3.4.1.js')}}"></script>
     <script src="{{asset('js/back.js')}}"></script>
-
+    <script src="http://www.fabid.fr/koala/cookiechoices.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.fabid.fr/koala/mentions-legales/');});</script>
     {% endblock %}
 </body>
 
