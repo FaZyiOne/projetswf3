@@ -223,7 +223,7 @@ ul.hover_block {
 ul.hover_block li {
     list-style: none;
     float: left;
-    padding: 10px;
+    padding: 20px;
 }
 
 ul.hover_block li a {
