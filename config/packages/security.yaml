@@ -5,7 +5,7 @@ security:
 
     role_hierarchy:
         ROLE_USER:       ROLE_USER
-        ROLE_USER_PRO:   [RELE_USER, ROLE_USER_PRO]
+        ROLE_USER_PRO:   [ROLE_USER, ROLE_USER_PRO]
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
