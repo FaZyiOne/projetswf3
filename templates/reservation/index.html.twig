@@ -13,7 +13,7 @@
                 <th>Lieu</th>
                 <th>Adresse</th>
                 <th>Telephone</th>
-                <th>Prix</th>
+                <th>Prix en €</th>
                 <th>Description</th>
                 <th>Capacite</th>
                 <th>Created_at</th>
@@ -29,9 +29,9 @@
                 <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style="width:75px; max-height:75px;"></td>
                 <td>{{ reservation.adresse }}</td>
                 <td>{{ reservation.telephone }}</td>
-                <td>{{ reservation.prix }}</td>
+                <td>{{ reservation.prix }} Euros</td>
                 <td>{{ reservation.description }}</td>
-                <td>{{ reservation.capacite }}</td>
+                <td>{{ reservation.capacite }} pers.</td>
                 <td>{{ reservation.createdAt ? reservation.createdAt|date('d-m-Y H:i:s') : '' }}</td>
                 <td>{{ reservation.user }}</td>
                 <td>

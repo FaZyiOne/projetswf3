@@ -16,7 +16,7 @@ class ReservationType extends AbstractType
         $builder
             ->add('lieu')
             ->add('imageFile', VichImageType::class, array(
-                'required' => true,
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => true,
                 'image_uri' => true,
