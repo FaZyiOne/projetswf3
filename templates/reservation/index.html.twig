@@ -25,8 +25,9 @@
         {% for reservation in reservations %}
             <tr>
                 <td>{{ reservation.id }}</td>
-                <td>{{ reservation.lieu }}</td>
+                
                 <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style="width:75px; max-height:75px;"></td>
+                <td>{{ reservation.lieu }}</td>
                 <td>{{ reservation.adresse }}</td>
                 <td>{{ reservation.telephone }}</td>
                 <td>{{ reservation.prix }} Euros</td>

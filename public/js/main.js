@@ -14,25 +14,27 @@ $(document).ready(function() {
  
              for (var item in data) {
  
-               var e = $('<tr><th>Lieu</th><th>Adresse</th><th>Telephone</th><th>Prix</th><th>Description</th><th>Capacite</th><th>Created_at</th></tr>');  
+               var e = $('<tr><th>Image</th><th>Lieu</th><th>Adresse</th><th>Prix</th></tr>');  
                $('#reservation').html('');  
                $('#reservation').append(e);
  
                for (i=0; i < data[item].length; i++){
-                  var post = data[item][i];
+                  var reservation = data[item][i];
                   console.log(data[item]);
                   console.log(data[item][i]);
  
  
-               var e = $('<tr><td id = "lieu"></td><td id = "adresse"></td><td id = "telephone"></td><td id = "prix"></td><td id = "description"></td><td id = "capacite"></td><td id = "created_at"></td></tr>');
+               var e = $('<tr><th id="image"></th><td id = "lieu"></td><td id = "adresse"></td><td id = "prix"></td></tr>');
                  
+                 var monImg = document.createElement('img');
+               monImg.src="/koala/public/images/reservation/"+reservation['image'];
+
+                 $('#image', e).html(monImg);
+                 $('#image img', e).css({"width":"75px","max-height":"75px"});
+
                  $('#lieu', e).html(reservation['lieu']);  
                  $('#adresse', e).html(reservation['adresse']);
-                 $('#telephone', e).html(reservation['telephone']);
                  $('#prix', e).html(reservation['prix']);
-                 $('#description', e).html(reservation['description']);
-                 $('#capacite', e).html(reservation['capacite']);
-                 $('#created_at', e).html(reservation['created_at']['date']);
                  
  
                  $('#reservation').append(e);

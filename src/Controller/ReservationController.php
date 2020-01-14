@@ -149,7 +149,7 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         
-        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 3);
+        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 100);
         return new JsonResponse(array(
             'reservation' => $reservation
         ));
