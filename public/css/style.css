@@ -426,6 +426,30 @@ footer {
     margin-top: -120px;
     padding-top: 120px;
 }
+/* ***************** Plan du site  ****************/
+
+#pPlan section{
+    margin-top: 130px;
+}
+#pPlan a{
+    display: block;
+    line-height: 3rem;
+}
+
+
+
+/* ***************** CGV  - ML  - PC  ****************/
+#pRgpd section{
+    width: 80%;
+    margin:50px auto;
+
+}
+#pRgpd h1, #pRgpd h2 {
+    text-align: left;
+}
+#pRgpd h2{
+    font-size:1.25rem;
+}
 
 /* *************************************************************************** */
 /* ************************************************************************** */
