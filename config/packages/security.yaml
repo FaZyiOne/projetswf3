@@ -39,4 +39,3 @@ security:
         - { path: ^/reservation, role: ROLE_ADMIN }
         - { path: ^/panier, role: ROLE_USER }
         - { path: ^/post, role: ROLE_ADMIN }
-        - { path: ^/reservation/{id}, role: ROLE_USER }
