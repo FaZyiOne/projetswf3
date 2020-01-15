@@ -6,19 +6,33 @@
         {% include 'nav.html.twig' %}
         <ul class="nav justify-content-center pt-2">
             <li class="nav-item">
-              <a class="nav-link active" href="#presentation">Présentation</a>
+                <a class="nav-link active" href="#presentation">Présentation</a>
             </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#capacite">Capacités</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#avis">Avis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#acces">Accès</a>
+                </li>
             <li class="nav-item">
-              <a class="nav-link" href="#capacite">Capacités</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#avis">Avis</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#acces">Accès</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="btn btnDevis mb-2">Devis Gratuit</a>
+                {# <a href="#" class="btn btnDevis mb-2">Devis Gratuit #}
+                
+                
+                 <!-- Button trigger modal -->
+              <button type="button" class="btn btn2 btnDevis mb-2" data-toggle="modal" data-target="#exampleModalCenter">
+               Devis Gratuit
+              </button>
+
+         
+                             
+                
+                
+                
+                
+                {# </a> #}
             </li>
           </ul>
     </header>
@@ -26,7 +40,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('img/sss.jpg')}}" class="d-block w-100" alt="photo_salle_koala">
+                <img src="{{ asset('img/mariage1-koala.jpg')}}" class="d-block w-100" alt="photo_salle_koala">
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('img/zzz.jpg')}}" class="d-block w-100" alt="photo_salle_koala">
@@ -152,6 +166,52 @@
                 <li><i class="fas fa-car"></i> Accès facile avec la D36</li>
             </ul>
         </section>
+             <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-center" id="exampleModalLongTitle">Devis gratuit</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    
+                    
+                <form>
+                    <div class="form-group col-10">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <label for="example-date-input" class="col-2 col-form-label">Date de l'évenement</label>
+                        </div>
+                        <div>
+                            <input class="form-control" type="date" id="example-date-input">
+                        </div>
+                    </div>
+                    <div class="form-group col-10">
+                        <div>
+                            <label for="example-number-input" class="col-2 col-form-label">Nombres de convives</label>
+                        </div>
+                        <div>
+                            <input class="form-control" type="number" id="example-number-input">
+                        </div>
+                    </div>
+                    <div class="form-group col-10">
+                        <div><label for="exampleTextarea"> Détails de mon évènement</label></div>
+                        <textarea class="form-control " id="exampleTextarea" rows="3"></textarea>
+                    </div>
+                    
+    
+                </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                      <button type="button" class="btn btn2">Envoyer la demande</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
         
     </main>
     {% endblock %}
