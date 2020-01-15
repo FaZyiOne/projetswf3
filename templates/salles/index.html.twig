@@ -7,7 +7,7 @@
     </header>
     {% block main %}
     <main class=" mt-5 pt-5">
-        <form methode="" action="" class="formFiltreSalle">
+        <form method="" action="" class="formFiltreSalle">
 
             <div class="form-group text-center">
                 <div class="col-xs-12 col-md-3">
@@ -32,7 +32,7 @@
                 {% for reservation in reservations %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
-                            <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style=" max-height:100px;" alt="lieu à louer">
+                            <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"  alt="lieu à louer">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">{{ reservation.lieu }}</h5>
