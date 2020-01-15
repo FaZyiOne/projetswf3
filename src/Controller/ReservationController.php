@@ -28,9 +28,16 @@ class ReservationController extends AbstractController
 
         $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 20);
         
+        if (isset($_POST['stripeToken'])) {
+        
+        } else {
+            $errors['token'] = 'The order cannot be processed. Please make sure you have JavaScript enabled and try again.';
+        }
+
         return $this->render('reservation/index.html.twig', [
             'reservations' => $reservations,
             'test' => $_POST,
+            'test2' => isset($_POST['ville']),
         ]);
 
         
