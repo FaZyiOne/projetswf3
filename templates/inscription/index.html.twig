@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- <h1>Inscription index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Code_postal</th>
+                <th>Ville</th>
+                <th>Date_naissance</th>
+                <th>Numero_telephone</th>
+                <th>Nom_salle</th>
+                <th>Email</th>
+                <th>Mot_de_passe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody> -->
+            {% include 'nav.html.twig' %}
+            <div class="container" id="pInscription">
+                <div class="photo">
+                    <img src="{{ asset('img/city.jpg')}}" alt="">
+                    <h1 class="inscription text-dark text-center">Inscription</h1>
+                    <h5 class="text-dark text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident quam cum excepturi rerum porro illum sed rem. Culpa facilis consequatur, cumque, qui accusantium aliquam sit corrupti sapiente fugit voluptatum odit?</h5>
+                </div>
+                <div class="row" id="blanc">
+                    <form method="POST">
+        
+                        <!-- Champ nom -->
+                        <div class="input-field col s6">
+                            <label for="nom">Nom*</label>
+                            <input class="validate" type="text" value="" name="nom" id="nom" placeholder="nom" required>
+                        </div>
+        
+                        <!-- Champ prénom -->
+                        <div class="input-field col s6">
+                            <label for="prenom">Prénom*</label>
+                            <input class="validate" type="text" value="" name="prenom" id="prenom" placeholder="prénom" required>
+                        </div>
+        
+                        <!-- Champ code postal -->
+                        <div class="input-field col s6">
+                            <label for="code_postal">Code postal*</label>
+                            <input class="validate" type="text" value="" name="code_postal" id="code_postal" placeholder="ex: 75001" minlength="5" maxlength="5" required>
+                        </div>
+        
+                        <!-- Champ ville -->
+                        <div class="input-field col s6">
+                            <label for="ville">Ville*</label>
+                            <input class="validate" type="text" value="" name="ville" id="ville" minlength="3" placeholder="ville" required>
+                        </div>
+        
+                        <!-- Champ date de naissance -->
+                        <div class="input-field col s6">
+                            <label for="naissance">Date de naissance*</label>
+                            <input class="validate" type="date" value="" name="naissance" id="naisssance" placeholder="jj/mm/aaaa" class="validate" required>
+                        </div>
+        
+                        <!-- Champ numero de téléphone -->
+                        <div class="input-field col s6">
+                            <label for="telephone">Numéro de téléphone*</label>
+                            <input class="validate" type="number" value="" name="numero" placeholder="numéro de téléphone" minlength="10" maxlength="10" required>
+                        </div>
+        
+                        <!-- Champ nom de la salle -->
+                        <div class="input-field col s12">
+                            <label for="salle">Nom de la salle</label>
+                            <input class="validate" type="text" value="" name="salle" id="salle" placeholder="nom de la salle">
+                        </div>
+        
+                        <!-- Champ email -->
+                        <div class="input-field col s12">
+                            <label for="email">Email*</label>
+                            <input class="validate" type="email" value="" name="email" id="email1" placeholder="votreMail@exemple.com" required>
+                            <input class="validate" type='email' placeholder="votreMail@exemple.com" onfocus="validateMail(document.getElementById('email1'), this);" oninput="validateMail(document.getElementById('email1'), this);" required>
+                        </div>
+        
+                        <!-- Champ mot de passe -->
+                        <div class="input-field col s12">
+                            <label for="password">Mot de passe*</label>
+                            <input autocomplete="off" class="validate" id="mdp" name="mdp" placeholder="Créer un mot de passe" type="password" autocapitalize="none" autocorrect="off" spellcheck="false" value="" aria-autocomplete="list" required>
+                        </div>
+        
+                        <!-- Bouton envoyer !-->
+                        <div class="input-field col s12">
+                            <button class="btn col-md-12" type="submit" name="valider" id="valider">Valider</button>
+                        </div>
+        
+                        <p class="connexion text-center">Vous avez déjà un compte chez nous ? <a href="...">Connexion</a></p>
+                    </form>
+                </div>
+        
+        {% for inscription in inscriptions %}
+            <tr>
+                <td>{{ inscription.id }}</td>
+                <td>{{ inscription.nom }}</td>
+                <td>{{ inscription.prenom }}</td>
+                <td>{{ inscription.codePostal }}</td>
+                <td>{{ inscription.ville }}</td>
+                <td>{{ inscription.dateNaissance }}</td>
+                <td>{{ inscription.numeroTelephone }}</td>
+                <td>{{ inscription.nomSalle }}</td>
+                <td>{{ inscription.email }}</td>
+                <td>{{ inscription.motDePasse }}</td>
+                <td>
+                    <a href="{{ path('inscription_show', {'id': inscription.id}) }}">show</a>
+                    <a href="{{ path('inscription_edit', {'id': inscription.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('inscription_new') }}">Create new</a>
+{% include 'footer.html.twig' %}
+{% endblock %}
+
