@@ -1,319 +1,317 @@
 :root {
-    --button: #FF9C00;
-    --bleuClaire: #0086FF;
-    --bleuFoncé: #005EB3;
-    --orange: #FF9C00;
-    --orangeClaire: #FFA719;
-    --orangeMarron: #B36E00;
+  --button: #ff9c00;
+  --bleuClaire: #0086ff;
+  --bleuFoncé: #005eb3;
+  --orange: #ff9c00;
+  --orangeClaire: #ffa719;
+  --orangeMarron: #b36e00;
 }
-
-
 
 body {
-    box-sizing: border-box;
-    overflow-x: hidden !important;
-    font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden !important;
+  font-family: "Oswald", sans-serif;
 }
-
+main {
+  min-height: 60vh;
+}
 a {
-    color: inherit;
-    text-decoration: none !important;
+  color: inherit;
+  text-decoration: none !important;
 }
 
 a:hover {
-    color: var(--orangeMarron);
+  color: var(--orangeMarron);
 }
 
 nav a {
-    text-transform: uppercase;
-    font-size: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 h1 {
-    word-spacing: 0.5rem;
+  word-spacing: 0.5rem;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Merriweather', serif;
-    text-transform: uppercase;
-    text-align: center;
+  font-family: "Merriweather", serif;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 h2 {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 ul {
-    padding-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
-.btn {
-    background-color: var(--button);
-    color: white;
+.btn2 {
+  background-color: var(--button);
+  color: white;
 }
+
 
 #pAccueil form,
 #pSalles form {
-    text-align: center !important;
-
+  text-align: center !important;
 }
 
-.form-group>button.btn {
-    color: white;
-    background-color: var(--button) !important;
-    width: 50%;
-    margin-right: 15px;
+.form-group > button.btn {
+  color: white;
+  background-color: var(--button) !important;
+  width: 50%;
+  margin-right: 15px;
 }
 
-.form-group>button.btn:hover {
-    color: var(--button);
-    background-color: rgb(9, 61, 104) !important;
+.form-group > button.btn:hover {
+  color: var(--button);
+  background-color: rgb(9, 61, 104) !important;
 }
 
 #pAccueil .carousel img {
-    width: 100%;
-    height: 100vh;
-    opacity: 0.7;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.7;
 }
 
 header {
-    position: relative;
+  position: relative;
 }
 
 .form-filtre {
-    position: absolute;
-    bottom: 20%;
-    width: 100%;
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
 }
 
 #pAccueil i {
-    position: absolute !important;
-    top: 15px;
-    left: 25px;
+  position: absolute !important;
+  top: 15px;
+  left: 25px;
 }
 
 .form-filtre input {
-    padding-left: 50px !important;
+  padding-left: 50px !important;
 }
 
 .btn1 {
-    border: none !important;
-    text-transform: uppercase !important;
-    cursor: pointer !important;
-    color: #fff !important;
-    background-size: 200% !important;
-    transition: 0.6s !important;
-    background-image: linear-gradient(to left, orange, #EE5A24, orange) !important;
+  border: none !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  color: #fff !important;
+  background-size: 200% !important;
+  transition: 0.6s !important;
+  background-image: linear-gradient(
+    to left,
+    orange,
+    #ee5a24,
+    orange
+  ) !important;
 }
-
 
 .btn1:hover {
-    background-position: right !important;
+  background-position: right !important;
 }
-
 
 /* ---------------------- Main --------------------------- */
 main section .traitD {
-    height: 2px !important;
-    width: 15% !important;
-    margin: 2em 35% !important;
-    background-color: rgb(224, 135, 75) !important;
-    text-align: center;
+  height: 2px !important;
+  width: 15% !important;
+  margin: 2em 35% !important;
+  background-color: rgb(224, 135, 75) !important;
+  text-align: center;
 }
 
 main section .traitL {
-    height: 2px !important;
-    width: 15% !important;
-    margin: 2em 50% !important;
-    background-color: rgb(224, 135, 75) !important;
-    text-align: center;
+  height: 2px !important;
+  width: 15% !important;
+  margin: 2em 50% !important;
+  background-color: rgb(224, 135, 75) !important;
+  text-align: center;
 }
 
 .typeEvent {
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .typeEvent figure {
-    width: 20%;
-    position: relative;
-
+  width: 20%;
+  position: relative;
 }
 
 img.petiteimg,
 img.categorie {
-    width: 100%;
+  width: 100%;
 }
 
 img.petiteimg {
-    width: 400px;
-    height: 400px;
-    border-radius: 8px;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
 }
 
 .bestOf .bande {
-    margin: 0;
-    padding: 0;
-    display: block;
-    animation: best 20s infinite linear;
-    display: flex;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: block;
+  animation: best 20s infinite linear;
+  display: flex;
+  overflow: hidden;
 }
 
 .bestOf .bande a {
-    display: block;
-    margin: 20px 10px;
+  display: block;
+  margin: 20px 10px;
 }
 
 @keyframes best {
+  0%,
+  100% {
+    margin-left: 100%;
+  }
 
-    0%,
-    100% {
-        margin-left: 100%;
-    }
-
-    99.99% {
-        margin-left: -500px;
-    }
+  99.99% {
+    margin-left: -500px;
+  }
 }
 
 .bestOf figure {
-    position: relative;
-    width: 400px;
-    height: 400px;
+  position: relative;
+  width: 400px;
+  height: 400px;
 }
 
 .bestOf figcaption {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
 }
 
 .descHaut {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .descBas {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 ul.hover_block {
-    min-height: 450px !important;
-    max-width: 1200px !important;
-    margin: 20px auto !important;
+  min-height: 450px !important;
+  max-width: 1200px !important;
+  margin: 20px auto !important;
 }
 
 ul.hover_block li {
-    list-style: none;
-    float: left;
-    padding: 20px;
+  list-style: none;
+  float: left;
+  padding: 20px;
 }
 
 ul.hover_block li a {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    height: 200px;
-    width: 100%;
-    padding: 16px;
-    color: rgb(255, 255, 255);
-    background: rgb(0, 0, 0);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-    border-radius: 5px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+  padding: 16px;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 ul.hover_block li img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 0;
-    height: 200px;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  height: 200px;
 }
 
 ul.hover_block h3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
 }
 
 /* ------ section ----------*/
 .img-thumbnail {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .partenaires {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .partenaires figure {
-    margin: 0;
-    padding: 0;
-    display: block;
-    animation: logo 20s infinite linear;
-    display: flex;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: block;
+  animation: logo 20s infinite linear;
+  display: flex;
+  overflow: hidden;
 }
 
 .partenaires figure a {
-    display: block;
+  display: block;
 }
 
 .partenaires img {
-    margin: 50px 10px;
+  margin: 50px 10px;
 }
 
 @keyframes logo {
+  0%,
+  100% {
+    margin-left: 100%;
+  }
 
-    0%,
-    100% {
-        margin-left: 100%;
-    }
-
-    99.99% {
-        margin-left: -500px;
-    }
-
+  99.99% {
+    margin-left: -500px;
+  }
 }
 
 /* ---------------------- footer ------------------------ */
 footer {
-    background-color: black;
-    color: white;
-    margin-top: 20px;
-    padding: 20px;
-    padding-top: 70px;
-    clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+  padding: 20px;
+  padding-top: 70px;
+  clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
-.hautF>img {
-    align-items: center !important;
+.hautF > img {
+  align-items: center !important;
 }
 
 .copyr {
-    text-align: center;
-    margin-top: 40px;
+  text-align: center;
+  margin-top: 40px;
 }
 
 /*  
@@ -326,39 +324,41 @@ footer {
 */
 /* ****** formulaire ****** */
 #pSalles .form {
-    width: 100%;
+  width: 100%;
 }
 
 #pSalles i {
-    position: absolute !important;
-    top: 15px;
-    left: 25px;
+  position: absolute !important;
+  top: 15px;
+  left: 25px;
 }
 
 /* ****** card ******* */
 #pSalles .card {
-    padding: 0;
-    margin: 10px;
-    border-radius: 10px !important;
+  padding: 0;
+  margin: 10px;
+  border-radius: 10px !important;
 }
 
 #pSalles .card img {
-    border-top-left-radius: 10px !important;
-    border-top-right-radius: 10px !important;
-    width: 100%;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  width: 100%;
 }
 
-#pAccueil section, #pSalles section, #pDetail section {
-    margin-left: 5%;
-    margin-right: 5%;
+#pAccueil section,
+#pSalles section,
+#pDetail section {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .listeSalle li {
-    padding: 5px;
+  padding: 5px;
 }
 
 .btnDevis {
-    float: right;
+  float: right;
 }
 
 /*
@@ -370,87 +370,107 @@ footer {
 ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝
 */
 #pDetail header ul.nav {
-    position: fixed;
-    top: 90px !important;
-    right: 0;
-    left: 0;
-    z-index: 99;
-    background-color: white;
+  position: fixed;
+  top: 90px !important;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  background-color: white;
 }
 
 #pDetail .carousel {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 #pDetail .carousel img {
-    width: 100%;
-    height: 60vh;
+  width: 100%;
+  height: 60vh;
 }
 
 .logoAvis {
-    margin-top: 10px
+  margin-top: 10px;
 }
 
 .logoAvis img {
-    width: 100px;
+  width: 100px;
 }
 
 #pDetail .card {
-    margin: 20px auto !important;
+  margin: 20px auto !important;
 }
 
 .map-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
-    max-width: 600px;
-    max-height: 350px;
-    margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  max-width: 600px;
+  max-height: 350px;
+  margin: 0 auto;
 }
 
 .map-responsive iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 #pDetail section span {
-    color: gray;
+  color: gray;
 }
 
 #pDetail #presentation,
 #pDetail #capacite,
 #pDetail #avis,
 #pDetail #acces {
-    margin-top: -120px;
-    padding-top: 120px;
-}
-/* ***************** Plan du site  ****************/
-
-#pPlan section{
-    margin-top: 130px;
-}
-#pPlan a{
-    display: block;
-    line-height: 3rem;
+  margin-top: -120px;
+  padding-top: 120px;
 }
 
-
-
-/* ***************** CGV  - ML  - PC  ****************/
-#pRgpd section{
-    width: 80%;
-    margin:50px auto;
-
+/* ****************** Profile ******************** */
+#pProfile main section {
+  text-align: center;
+  max-width: 500px;
+  margin:5rem auto !important;
+ 
 }
-#pRgpd h1, #pRgpd h2 {
-    text-align: left;
+#pProfile main section li{
+ background: var(--bleuFoncé);
+ color:white;
+ letter-spacing: 0.25rem;
 }
-#pRgpd h2{
-    font-size:1.25rem;
+
+/* ******************** Panier  ***************** */
+#pPanier main section{
+
+    max-width: 1000px;
+    margin:5rem auto !important;
+  
+}
+
+/* ***************** Plan du site  *************** */
+
+#pPlan section {
+  margin-top: 130px;
+}
+#pPlan a {
+  display: block;
+  line-height: 3rem;
+}
+
+/* ***************** CGV  - ML  - PC  *************** */
+#pRgpd section {
+  width: 80%;
+  margin: 50px auto;
+}
+#pRgpd h1,
+#pRgpd h2 {
+  text-align: left;
+}
+#pRgpd h2 {
+  font-size: 1.25rem;
 }
 
 /* *************************************************************************** */
@@ -458,28 +478,28 @@ footer {
 /* **********************     SMARTPHONE      *****************************  */
 /* ***********************************************************************  */
 /* *********************************************************************** */
-@media screen and (max-width:576px) {
-    header nav.navbar {
-        text-align: center;
-    }
+@media screen and (max-width: 576px) {
+  header nav.navbar {
+    text-align: center;
+  }
 
-    header nav #navbarNavDropdown form .btn.btn1 {
-        margin: 0.5rem auto !important;
-    }
+  header nav #navbarNavDropdown form .btn.btn1 {
+    margin: 0.5rem auto !important;
+  }
 
-    form .milieu {
-        margin: 10px auto;
-    }
+  form .milieu {
+    margin: 10px auto;
+  }
 
-    footer {
-        text-align: center;
-        clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
-    }
+  footer {
+    text-align: center;
+    clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
 
-    /* Détail */
-    .logoAvis {
-        margin-top: 10px
-    }
+  /* Détail */
+  .logoAvis {
+    margin-top: 10px;
+  }
 }
 
 /* **************************************************************************** */
@@ -487,39 +507,39 @@ footer {
 /* *************************************     TABLETTE     ******************* */
 /* ************************************************************************* */
 /* ************************************************************************ */
-@media (min-width: 576px) and (max-width:991.98px) {
-    header nav.navbar {
-        text-align: center;
-    }
+@media (min-width: 576px) and (max-width: 991.98px) {
+  header nav.navbar {
+    text-align: center;
+  }
 
-    header nav #navbarNavDropdown form {
-        width: 50%;
-        margin: auto !important;
-    }
+  header nav #navbarNavDropdown form {
+    width: 50%;
+    margin: auto !important;
+  }
 
-    /* 
+  /* 
     figure img.logo{
         margin: 0 !important;
     } */
-    header form .form-group,
-    .formFiltreSalle .form-group {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+  header form .form-group,
+  .formFiltreSalle .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 
-    ul.hover_block {
-        min-height: 600px;
-    }
+  ul.hover_block {
+    min-height: 600px;
+  }
 
-    footer {
-        text-align: center;
-    }
+  footer {
+    text-align: center;
+  }
 
-    .hautF {
-        display: flex;
-        flex-direction: column;
-    }
+  .hautF {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /*  ********************************************************************************* */
@@ -527,23 +547,21 @@ footer {
 /* *******************************       DESKTOP    ******************************* */
 /* ******************************************************************************* */
 /* ****************************************************************************** */
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
+  header form .form-group,
+  .formFiltreSalle .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 
-    header form .form-group,
-    .formFiltreSalle .form-group {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+  .hautF {
+    display: flex;
+    justify-content: space-around;
+  }
 
-    .hautF {
-        display: flex;
-        justify-content: space-around;
-    }
-
-
-    #pDetail main {
-        max-width: 1200px;
-        margin: 10px auto !important;
-    }
+  #pDetail main {
+    max-width: 1200px;
+    margin: 10px auto !important;
+  }
 }

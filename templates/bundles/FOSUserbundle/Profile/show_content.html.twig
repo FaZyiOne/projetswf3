@@ -1,6 +1,22 @@
-{% trans_default_domain 'FOSUserBundle' %}
 
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
+{% extends 'base.html.twig' %}
+    {% block body %}
+        <div class="container-fluide" id="pProfile">
+            <header>
+                {% include 'nav.html.twig' %}
+            </header>
+            {% block main %}
+            {% trans_default_domain 'FOSUserBundle' %}
+                <main class=" mt-5 pt-5">
+                    <section>
+                        <ul class="fos_user_user_show list-group ">
+                            <li class="list-group-item">{{ 'Pseudo'|trans }} : {{ user.username }}</li>
+                            <li class="list-group-item">{{ 'profile.show.email'|trans }} : {{ user.email }}</li>
+                        </ul>
+                    </section>
+
+                </main>
+            {% endblock %}
+             {% include 'footer.html.twig' %}
+        </div>
+    {% endblock %}
