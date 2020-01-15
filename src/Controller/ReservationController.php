@@ -26,7 +26,7 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 10);
+        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 20);
         
         return $this->render('reservation/index.html.twig', [
             'reservations' => $reservations,
@@ -152,7 +152,7 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         
-        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 100);
+        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 2);
         return new JsonResponse(array(
             'reservation' => $reservation
         ));

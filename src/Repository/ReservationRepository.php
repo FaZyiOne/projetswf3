@@ -61,9 +61,7 @@ class ReservationRepository extends ServiceEntityRepository
     {
         return $this->getEntityManager()
                     ->createQuery(
-                        "SELECT e.id, e.image, e.lieu, e.created_at, e.adresse, e.telephone, e.prix, e.description, e.capacite FROM $entity e JOIN e.user u ORDER BY e.id DESC"
-                        // "SELECT * FROM $entity e WHERE ville='$_POST[ville]' AND capacite<='$_POST[capacite]'"
-                        // "SELECT e.id, e.lieu, e.image, e.adresse, e.prix, e.capacite FROM $entity e"
+                        "SELECT e.id, e.image, e.lieu, e.created_at, e.adresse, e.telephone, e.prix, e.description, e.capacite FROM $entity e JOIN e.user ORDER BY e.id"
                     )
                     ->setMaxResults($amount)
                     ->getResult();
