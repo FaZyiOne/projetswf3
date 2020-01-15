@@ -21,11 +21,12 @@ class PaymentController extends AbstractController
         
         // Token is created using Stripe Checkout or Elements!
         // Get the payment token ID submitted by the form:
-        
+        $total = $_GET['total'];
+
         if (isset($_POST['stripeToken'])) {
             $token = $_POST['stripeToken'];
             $charge = \Stripe\Charge::create([
-                'amount' => 999,
+                'amount' => ($total * 100),
                 'currency' => 'eur',
                 'description' => 'Example charge',
                 'source' => $token,

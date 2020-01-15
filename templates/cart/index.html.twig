@@ -71,7 +71,7 @@
                     <td></td>
                     <td colspan="3" class="text-right"><strong>Prix Total : </strong></td>
                     <td><strong>{{ total }} €</strong></td>
-                    <td><a href="{{ path('payment') }}" class="btn btn-success btn-sm">
+                    <td><a href="{{ path('payment') }}?total={{total}}" class="btn btn-success btn-sm">
                                 <button type="button" class="btn btn-labeled btn-success">
                 <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Payer par CB</button></i>
                             </a></td>
