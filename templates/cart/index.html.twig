@@ -44,7 +44,7 @@
                     <th>Lieu</th>
                     <th>Adresse</th>
                     <th>Prix/jour</th>
-                    <th>Nombre de journée(s)</th>
+                    <th>Nombre de jour(s)</th>
                     <th>Total</th>
                     <th></th>
                 </tr>
@@ -69,9 +69,12 @@
             <tfoot>
                 <tr>
                     <td></td>
-                    <td colspan="3" class="text-right">Prix Total : </td>
-                    <td>{{ total }} €</td>
-                    <td></td>
+                    <td colspan="3" class="text-right"><strong>Prix Total : </strong></td>
+                    <td><strong>{{ total }} €</strong></td>
+                    <td><a href="{{ path('payment') }}" class="btn btn-success btn-sm">
+                                <button type="button" class="btn btn-labeled btn-success">
+                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Payer par CB</button></i>
+                            </a></td>
                 </tr>
             </tfoot>
         </table>
