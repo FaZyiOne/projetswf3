@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Controller;
-
 use App\Entity\Inscription;
 use App\Form\InscriptionType;
 use App\Repository\InscriptionRepository;
@@ -9,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 /**
  * @Route("/inscription")
  */
@@ -24,7 +21,6 @@ class InscriptionController extends AbstractController
             'inscriptions' => $inscriptionRepository->findAll(),
         ]);
     }
-
     /**
      * @Route("/new", name="inscription_new", methods={"GET","POST"})
      */
@@ -33,21 +29,17 @@ class InscriptionController extends AbstractController
         $inscription = new Inscription();
         $form = $this->createForm(InscriptionType::class, $inscription);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($inscription);
             $entityManager->flush();
-
             return $this->redirectToRoute('inscription_index');
         }
-
         return $this->render('inscription/new.html.twig', [
             'inscription' => $inscription,
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * @Route("/{id}", name="inscription_show", methods={"GET"})
      */
@@ -57,7 +49,6 @@ class InscriptionController extends AbstractController
             'inscription' => $inscription,
         ]);
     }
-
     /**
      * @Route("/{id}/edit", name="inscription_edit", methods={"GET","POST"})
      */
@@ -65,19 +56,15 @@ class InscriptionController extends AbstractController
     {
         $form = $this->createForm(InscriptionType::class, $inscription);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('inscription_index');
         }
-
         return $this->render('inscription/edit.html.twig', [
             'inscription' => $inscription,
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * @Route("/{id}", name="inscription_delete", methods={"DELETE"})
      */
@@ -88,7 +75,6 @@ class InscriptionController extends AbstractController
             $entityManager->remove($inscription);
             $entityManager->flush();
         }
-
         return $this->redirectToRoute('inscription_index');
     }
 }

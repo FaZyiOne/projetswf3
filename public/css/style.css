@@ -99,18 +99,11 @@ header {
     left: 25px;
 }
 
-<<<<<<< HEAD
 .form-filtre input {
     padding-left: 50px !important;
 }
 
 .btn1 {
-=======
-/* input {
-    padding-left: 50px !important;
-} */
-.btn1{
->>>>>>> Malik
     border: none !important;
     text-transform: uppercase !important;
     cursor: pointer !important;
@@ -445,47 +438,8 @@ footer {
     line-height: 3rem;
 }
 
-/*
-██╗███╗   ██╗███████╗ ██████╗██████╗ ██╗██████╗ ████████╗██╗ ██████╗ ███╗   ██╗
-██║████╗  ██║██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
-██║██╔██╗ ██║███████╗██║     ██████╔╝██║██████╔╝   ██║   ██║██║   ██║██╔██╗ ██║
-██║██║╚██╗██║╚════██║██║     ██╔══██╗██║██╔═══╝    ██║   ██║██║   ██║██║╚██╗██║
-██║██║ ╚████║███████║╚██████╗██║  ██║██║██║        ██║   ██║╚██████╔╝██║ ╚████║
-╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-*/
 
 
-#pInscription html{
-  min-height: 100%;
-}
-
-#pInscription .btn{
-  background-color: #14b0f3;
-}
-#pInscription .btn:hover{
-  background-color: #0093d2;
-}
-
-#pInscription header{
-  padding: 7em 5em 4em 5em;
-}
-
-#pInscription h1{
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-
-#pInscription #blanc{
-  border: solid 1px;
-  background-color: white;
-  padding: 2em 2em 2em 2em;
-  -webkit-box-shadow: 3px 4px 4px -2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 3px 4px 4px -2px rgba(0,0,0,0.75);
-  box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.75);
-  max-width: 100%;
-  min-width: 50%;
-}
-
-<<<<<<< HEAD
 /* ***************** CGV  - ML  - PC  ****************/
 #pRgpd section{
     width: 80%;
@@ -497,18 +451,6 @@ footer {
 }
 #pRgpd h2{
     font-size:1.25rem;
-=======
-#pInscription .photo{
-  width: 100%;
-  height: 300px;
-  margin: 0;
-  box-shadow: 3px 2px 5px 1px rgba(0,0,0,0.75);
-  border: 1px solid;
-}
-
-#pInscription .row{
-    margin: 0;
->>>>>>> Malik
 }
 
 /* *************************************************************************** */

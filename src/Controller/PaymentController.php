@@ -28,14 +28,15 @@ class PaymentController extends AbstractController
             $charge = \Stripe\Charge::create([
                 'amount' => ($total * 100),
                 'currency' => 'eur',
-                'description' => 'Example charge',
+                'description' => '$MONEY$MONEY$MONEY$',
                 'source' => $token,
               ]);
+
+            return $this->render('facture/index.html.twig');
+
         } else {
             $errors['token'] = 'The order cannot be processed. Please make sure you have JavaScript enabled and try again.';
         }
-
-           
 
         return $this->render('payment/index.html.twig');
         

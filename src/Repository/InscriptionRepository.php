@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Repository;
-
 use App\Entity\Inscription;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
-
 /**
  * @method Inscription|null find($id, $lockMode = null, $lockVersion = null)
  * @method Inscription|null findOneBy(array $criteria, array $orderBy = null)
@@ -18,7 +15,6 @@ class InscriptionRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Inscription::class);
     }
-
     // /**
     //  * @return Inscription[] Returns an array of Inscription objects
     //  */
@@ -35,7 +31,6 @@ class InscriptionRepository extends ServiceEntityRepository
         ;
     }
     */
-
     /*
     public function findOneBySomeField($value): ?Inscription
     {
