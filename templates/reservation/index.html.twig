@@ -84,7 +84,7 @@
             <h2>Découvrez nos Salles</h2>
             <div class="row mt-4">
                 {% for reservation in reservations %}
-                {{dump(reservations)}}
+                {# {{dump(reservations)}} #}
                 {% if reservation.ville == test.ville %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
