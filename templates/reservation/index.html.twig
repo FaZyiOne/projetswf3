@@ -104,6 +104,24 @@
                         </div>
                     </div>
                 {% endif %}
+                {# Si beug affichage supprimer le else #}
+                {% else %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style=" max-height:100px;" alt="lieu à louer">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                <p class="card-text">{{ reservation.adresse }}</p>
+                                <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                                <p>Commentaires</p>
+                                <a href="{{ path('cart_add',{'id': reservation.id } )}}" class="btn btn-success float-right">
+                                    <i class="fas mr-1"></i>
+                                    Réserver
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 {% endif %}
                 {% endfor %}
                 <div id="reservation"></div>
