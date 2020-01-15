@@ -20,7 +20,7 @@ use App\Form\PostType;
 class ReservationController extends AbstractController
 {
     /**
-     * @Route("/", name="reservation_index", methods={"GET"})
+     * @Route("/", name="reservation_index", methods={"GET","POST"})
      */
     public function index(ReservationRepository $reservationRepository): Response
     {
@@ -30,7 +30,10 @@ class ReservationController extends AbstractController
         
         return $this->render('reservation/index.html.twig', [
             'reservations' => $reservations,
+            'test' => $_POST,
         ]);
+
+        
     }
 
     /**

@@ -30,6 +30,7 @@
             <h2>Découvrez nos Salles</h2>
             <div class="row mt-4">
                 {% for reservation in reservations %}
+                {# {% if reservation.ville == post.ville %} #}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
                             <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style=" max-height:100px;" alt="lieu à louer">
@@ -46,7 +47,9 @@
                             </div>
                         </div>
                     </div>
+                {# {% endif %} #}
                 {% endfor %}
+                <div id="reservation"></div>
             </div>            
         </section>
     </main>
