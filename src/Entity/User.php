@@ -46,6 +46,16 @@ class User extends BaseUser
      */
     private $type_user;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $societe;
+
 
     public function __construct()
     {
@@ -114,6 +124,30 @@ class User extends BaseUser
     public function setTypeUser(?string $type_user): self
     {
         $this->type_user = $type_user;
+
+        return $this;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getSociete(): ?string
+    {
+        return $this->societe;
+    }
+
+    public function setSociete(?string $societe): self
+    {
+        $this->societe = $societe;
 
         return $this;
     }

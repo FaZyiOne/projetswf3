@@ -18,6 +18,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 
@@ -32,7 +33,7 @@ class RegistrationController extends AbstractController
         //$form->handleRequest($request);
         $user = new User();
         
-        $formBuiler = $this->createFormBuilder($user)
+        $formBuilder = $this->createFormBuilder($user)
             
             
             ->add('nom', TextType::class, array(
@@ -100,10 +101,12 @@ class RegistrationController extends AbstractController
                     ]),
                 ],
             ])
-           
+            ->add('image', FileType::class, [
+                'label' => 'Avatar :',
+            ])
         ;
         if(isset($_GET['type_user'])){
-            $formBuiler->add('type_user', HiddenType::class, array(
+            $formBuilder->add('type_user', HiddenType::class, array(
                 'label' => 'Statut',
                 'data' => $_GET['type_user'],
                 
@@ -111,7 +114,7 @@ class RegistrationController extends AbstractController
         }
 
         if(isset($_GET['type_user']) && $_GET['type_user'] == 'user_pro'){
-            $formBuiler->add('siret', TextType::class, array(
+            $formBuilder->add('siret', TextType::class, array(
                     'label' => 'N° Siret',
                     'constraints' => [
                         new Length([
@@ -125,9 +128,12 @@ class RegistrationController extends AbstractController
                         ])
                     ]
             ));
+            $formBuilder->add('societe', TextType::class, array(
+                            'label' => 'Nom Societe',
+                        ));
         }
        
-        $form = $formBuiler->getForm();
+        $form = $formBuilder->getForm();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -150,6 +156,11 @@ class RegistrationController extends AbstractController
             
             $user->setEnabled(true);
             $user->setSalt(md5(uniqid(null,true)));
+
+            $file = $user->getImage();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $user->setImage($fileName);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
