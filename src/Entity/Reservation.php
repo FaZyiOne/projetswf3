@@ -121,12 +121,12 @@ class Reservation
         return $this;
     }
 
-    public function getTelephone(): ?int
+    public function getTelephone(): ?string
     {
         return $this->telephone;
     }
 
-    public function setTelephone(?int $telephone): self
+    public function setTelephone(?string $telephone): self
     {
         $this->telephone = $telephone;
 
@@ -212,7 +212,7 @@ class Reservation
 
     public function setVille(string $ville): self
     {
-        $this->ville = $ville;
+        $this->ville = strtolower($ville);
 
         return $this;
     }

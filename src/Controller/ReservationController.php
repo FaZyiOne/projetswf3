@@ -72,6 +72,7 @@ class ReservationController extends AbstractController
         return $this->render('reservation/new.html.twig', [
             'reservation' => $reservation,
             'form' => $form->createView(),
+            'test' => $_POST,
         ]);
     }
 
