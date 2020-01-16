@@ -3,7 +3,7 @@
 {% block title %}Reservation index{% endblock %}
 
 {% block body %}
-    {# { <h1>Reservation index</h1>
+    { <h1>Reservation index</h1>
 
     <table class="table">
         <thead>
@@ -48,7 +48,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('reservation_new') }}">Create new</a>
+    {# <a href="{{ path('reservation_new') }}">Create new</a>
 
     <h1>Ajax</h1>
     <button class="ajax">click me</button>
@@ -58,8 +58,13 @@
     </table> #}
 
     {# -------------------------------------------------------------------------------------------------------------------- #}
-    <hr>
+    {# <hr> #}
     {# -------------------------------------------------------------------------------------------------------------------- #}
+    {# <div class="container-fluide" id="pSalles">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
     <main class=" mt-5 pt-5">
         <form method="post" action="" class="formFiltreSalle">
 
@@ -83,9 +88,9 @@
             <!-- boucle -->
             <h2>Découvrez nos Salles</h2>
             <div class="row mt-4">
-                {% for reservation in reservations %}
+                {% for reservation in reservations %} #}
                 {# {{dump(reservations)}} #}
-                {% if test2 %}
+                {# {% if test2 %}
                 {% if reservation.ville == test.ville %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
@@ -103,9 +108,9 @@
                             </div>
                         </div>
                     </div>
-                {% endif %}
+                {% endif %} #}
                 {# Si beug affichage supprimer le else #}
-                {% else %}
+                {# {% else %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
                             <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style=" max-height:100px;" alt="lieu à louer">
@@ -128,4 +133,8 @@
             </div>            
         </section>
     </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+
+</div> #}
 {% endblock %}

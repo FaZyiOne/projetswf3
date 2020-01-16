@@ -9,12 +9,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class SallesController extends AbstractController
 {
     /**
-     * @Route("/salles", name="salles")
+     * @Route("/salles", name="salles", methods={"GET","POST"})
      */
     public function index(ReservationRepository $reservationRepository)
     {
         return $this->render('salles/index.html.twig', [
-            'reservations' => $reservationRepository->findAll()
+            'reservations' => $reservationRepository->findAll(),
+            'test' => $_POST,
+            'test2' => isset($_POST['ville']),
         ]);
     }
 }
