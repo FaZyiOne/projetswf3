@@ -38,6 +38,7 @@
         </ul>
     </header>
     {% block main %}
+    {% for reservation in reservations %}
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -63,22 +64,8 @@
         <section id="presentation">
             <h2>Présentation</h2>
             <h3>{{reservation.lieu}}</h3>
-            <h4>Adresse</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ipsam consequatur dolor iure distinctio
-                pariatur
-                ea magnam voluptate est quia nam corrupti accusantium aut perferendis rerum placeat voluptatum nisi
-                ullam
-                quisquam aliquid blanditiis delectus ipsum maiores. Atque dolore molestias neque. Rerum nemo nulla
-                quaerat
-                incidunt architecto cumque reiciendis, fuga sapiente inventore consequatur hic minima velit
-                exercitationem
-                molestiae distinctio enim modi consectetur ullam. Quam recusandae, asperiores commodi maxime assumenda,
-                sequi
-                itaque deserunt praesentium voluptatum unde quaerat provident earum? Nemo ratione laborum incidunt
-                pariatur cum
-                in dolore dicta blanditiis a tempora debitis, voluptate qui fugit totam, aliquam similique molestiae
-                esse
-                itaque. Molestias?</p>
+            <h4>{{reservation.adresse}}</h4>
+            <p>{{reservation.description}}</p>
         </section>
         <section id="capacite">
             <h2>Capacités</h2>
@@ -97,10 +84,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Nom de la salle</th>
+                            <th scope="row">{{reservation.lieu}}</th>
                             <td>5</td>
-                            <td>12</td>
-                            <td>5</td>
+                            <td>{{reservation.capacite}}</td>
+                            <td>{{reservation.capacite}}</td>
                             <td>24h</td>
                             <td><i class="fas fa-times"></i></td>
                             <td><i class="fas fa-check"></i></td>
@@ -239,6 +226,7 @@
 
 
     </main>
+    {% endfor %}
     {% endblock %}
     {% include 'footer.html.twig' %}
 

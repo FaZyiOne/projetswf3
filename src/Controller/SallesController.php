@@ -22,18 +22,4 @@ class SallesController extends AbstractController
             'test2' => isset($_POST['ville']),
         ]);
     }
-
-    /**
-     * @Route("/salles/show", name="salles_show", methods={"GET","POST"})
-     */
-    public function show(ReservationRepository $reservationRepository): Response
-    {
-                    $entityManager = $this->getDoctrine()->getManager();
-
-        return $this->render('salles/show.html.twig', [
-            // 'reservation' => $reservation,
-            'reservations' => $reservationRepository->findAll(),
-            
-        ]);
-    }
 }
