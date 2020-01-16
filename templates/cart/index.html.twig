@@ -1,92 +1,3 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-<div class="container-fluide" id="pPanier">
-    <header>
-        {% include 'nav.html.twig' %}
-
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ path('salles') }}">Lieux à louer
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('cart_index') }}">Réservations</a>
-            </li>
-        </ul>
-    </header>
-    {% block main %}
-        <main class=" mt-5 pt-5">
-            <section>
-                <div class="bg-light p-3">
-                    <h1>Vos réservations</h1>
-                </div>
-
-                {% if items | length > 0 %}
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Lieu</th>
-                                <th>Adresse</th>
-                                <th>Prix/jour</th>
-                                <th>Nombre de jour(s)</th>
-                                <th>Total</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {% for item in items %}
-                                <tr>
-                                    <td>{{ item.reservation.lieu }}</td>
-                                    <td>{{ item.reservation.adresse }}</td>
-                                    <td>{{ item.reservation.prix }} €</td>
-                                    <td>{{ item.quantity }}</td>
-                                    <td>{{ item.reservation.prix * item.quantity }} €</td>
-                                    <td>
-                                        <a href="{{ path('cart_remove', { 'id': item.reservation.id }) }}" class="btn btn-danger btn-sm">
-                                          
-                            <span class="btn-label"><i class="fas fa-trash-alt" alt="Supprimer"></i></span>
-                                        </a>
-                                    </td>
-                                </tr>
-                        {% endfor %} 
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td></td>
-                                <td colspan="3" class="text-right"><strong>Prix Total : </strong></td>
-                                <td><strong>{{ total }} €</strong></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <form action="" class="p-3"> 
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1" required> En cochant cette case, j’accepte et je reconnais avoir pris connaissance des <a href="{{ path('cgv') }}" target="_blank">CGV</a></label>
-                          </div>
-                          <a href="{{ path('payment') }}?total={{total}}" class="btn btn-success btn-sm p-3">
-                        
-                        <span class="btn-label"><i class="fas fa-lock"></i></span>
-                            Payer par CB
-                       
-                    </a>
-                    </form>  
-                   
-                {% else %}
-                    <p>vide</p>
-                {% endif %}
-            </section>
-        </main>
-    {% endblock %}
-    {% include 'footer.html.twig' %}
-
-</div>
-{% endblock %}
-
-
-{# 
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -171,4 +82,5 @@
  {% block javascripts %}{% endblock %}
         
 </body>
-</html> #}
+</html>
+
