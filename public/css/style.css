@@ -1,16 +1,18 @@
 :root {
   --button: #ff9c00;
-  --bleuClaire: #0086ff;
+  --bleu: #1F6699;
   --bleuFoncé: #005eb3;
   --orange: #ff9c00;
   --orangeClaire: #ffa719;
   --orangeMarron: #b36e00;
+  --orangeButton : #ee5a24;
 }
 
 body {
   box-sizing: border-box;
   overflow-x: hidden !important;
   font-family: "Oswald", sans-serif;
+  background-color: #efefef;
 }
 
 main {
@@ -61,7 +63,6 @@ li {
   color: white;
 }
 
-
 #pAccueil form,
 #pSalles form {
   text-align: center !important;
@@ -72,11 +73,6 @@ li {
   background-color: var(--button) !important;
   width: 50%;
   margin-right: 15px;
-}
-
-.form-group>button.btn:hover {
-  color: var(--button);
-  background-color: rgb(9, 61, 104) !important;
 }
 
 #pAccueil .carousel img {
@@ -444,7 +440,7 @@ footer {
 }
 
 #pProfile main section li {
-  background: var(--bleuFoncé);
+  background: var(--bleu);
   color: white;
   letter-spacing: 0.25rem;
 }
@@ -505,7 +501,14 @@ footer {
     text-align: center;
     clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
-
+  /* ******* Salles ************* */
+  #pSalles .card h5{
+    font-size: 1rem;
+  }
+  #pSalles section{
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+  }
   /* ******* Détail ************* */
   .logoAvis {
     margin-top: 10px;
