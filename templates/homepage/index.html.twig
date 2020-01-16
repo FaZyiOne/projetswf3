@@ -15,8 +15,8 @@
                 <div class="carousel-item">
                     <img src="{{ asset('img/mariage2-koala.jpg')}}" class="d-block w-100" alt="salle">
                 </div>
-                
-                
+
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -51,87 +51,27 @@
             <p class="text-center m-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.</p>
             <div class="traitL"></div>
             <div class="bande">
+                {% for reservation in reservations %}
                 <a href="#">
                     <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
+                        <img class="petiteimg" src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                            alt="meuilleure_salle">
                         <figcaption>
                             <div class="descHaut">
                                 <span>Type</span>
                                 <span>nombre</span>
                             </div>
                             <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
+                                <span>{{ reservation.lieu }}</span>
+                                <span>{{ reservation.adresse }}</span>
                             </div>
                         </figcaption>
                     </figure>
                 </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-
+                {% endfor %}
 
             </div>
         </section>
-
-
         <section class="typeEvent">
             <h2 class="text-center mt-2">Type d'événement</h2>
             <p class="text-center mt-2 mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.
@@ -145,7 +85,8 @@
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/anniversaire2-koala.jpg')}}" alt="anniversaire" title="Anniversaire">
+                        <img class="categorie" src="{{ asset('img/anniversaire2-koala.jpg')}}" alt="anniversaire"
+                            title="Anniversaire">
                         <h3>Anniversaire</h3>
                     </a>
                 </li>
@@ -157,7 +98,8 @@
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/formation1-koala.jpg')}}" alt="formation" title="Formation">
+                        <img class="categorie" src="{{ asset('img/formation1-koala.jpg')}}" alt="formation"
+                            title="Formation">
                         <h3>Formation</h3>
                     </a>
                 </li>

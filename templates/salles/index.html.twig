@@ -30,25 +30,25 @@
             <h2>Découvrez nos Salles</h2>
             <div class="row mt-4">
                 {% for reservation in reservations %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"  alt="lieu à louer">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card card-hover">
+                        <a href="#" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                                alt="lieu à louer">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ reservation.lieu }}</h5>
+                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <p>Commentaires</p>
+                            <a href="{{ path('cart_add',{'id': reservation.id } )}}" class="btn btn2 float-right">
+                                <i class="fas mr-1"></i>
+                                Réserver
                             </a>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ reservation.lieu }}</h5>
-                                <p class="card-text">{{ reservation.adresse }}</p>
-                                <a class="breadcrumb float-left">A partir de {{ reservation.prix }} €</a>
-                                
-                                <a href="{{ path('cart_add',{'id': reservation.id } )}}" class="btn btn-success float-right">
-                                    <i class="fas mr-1"></i>
-                                    Obtenir un devis
-                                </a>
-                               
-                            </div>
                         </div>
                     </div>
+                </div>
                 {% endfor %}
-            </div>            
+            </div>
         </section>
     </main>
     {% endblock %}
