@@ -1,14 +1,30 @@
+{% extends 'base.html.twig' %}
 
-logo koala
-
-
-Récap de la réservation + prix
-
-Mme, M. X
-
-"Votre facture vous a été envoyée à votre adresse email."
-
-"Nous vous remercions pour votre confiance."
+{% block body %}
+<div class="container-fluide" id="pAccueil">
+    <header>
+        {% include 'nav.html.twig' %}
+  </header>
+{% block main %}
 
 
-"blablabla la Team Koala (Z.M.C.R.A.)
+<h1>Transaction validée</h1>
+
+<p>Récap de la réservation + prix</p>
+
+<hr>
+
+<p>Mme, M. {{ app.user }} </p>
+
+
+<p>Votre facture vous a été envoyée à votre adresse email: {{ app.user.email }}</p>
+
+<p>Nous vous remercions pour votre confiance.</p>
+
+
+<p>blablabla la Team Koala (Z.M.C.R.A.)</p>
+
+{% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
+{% endblock %}
