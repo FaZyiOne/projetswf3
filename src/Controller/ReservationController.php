@@ -20,17 +20,27 @@ use App\Form\PostType;
 class ReservationController extends AbstractController
 {
     /**
-     * @Route("/", name="reservation_index", methods={"GET"})
+     * @Route("/", name="reservation_index", methods={"GET","POST"})
      */
     public function index(ReservationRepository $reservationRepository): Response
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 10);
+        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 20);
         
+        if (isset($_POST['stripeToken'])) {
+        
+        } else {
+            $errors['token'] = 'The order cannot be processed. Please make sure you have JavaScript enabled and try again.';
+        }
+
         return $this->render('reservation/index.html.twig', [
             'reservations' => $reservations,
+            'test' => $_POST,
+            'test2' => isset($_POST['ville']),
         ]);
+
+        
     }
 
     /**
@@ -62,6 +72,7 @@ class ReservationController extends AbstractController
         return $this->render('reservation/new.html.twig', [
             'reservation' => $reservation,
             'form' => $form->createView(),
+            'test' => $_POST,
         ]);
     }
 
@@ -146,7 +157,7 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         
-        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 3);
+        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 2);
         return new JsonResponse(array(
             'reservation' => $reservation
         ));

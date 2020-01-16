@@ -73,6 +73,11 @@ class Reservation
      */
     private $imageFile;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ville;
+
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
@@ -116,12 +121,12 @@ class Reservation
         return $this;
     }
 
-    public function getTelephone(): ?int
+    public function getTelephone(): ?string
     {
         return $this->telephone;
     }
 
-    public function setTelephone(?int $telephone): self
+    public function setTelephone(?string $telephone): self
     {
         $this->telephone = $telephone;
 
@@ -196,6 +201,18 @@ class Reservation
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): self
+    {
+        $this->ville = strtolower($ville);
 
         return $this;
     }
