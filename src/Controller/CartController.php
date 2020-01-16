@@ -7,6 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ReservationRepository;
+use App\Repository\FormuleRepository;
+use App\Entity\Formule;
+
+
 
 class CartController extends AbstractController
 
@@ -14,7 +18,7 @@ class CartController extends AbstractController
     /**
      * @Route("/panier", name="cart_index")
      */
-    public function index(SessionInterface $session, ReservationRepository $reservationRepository)
+    public function index(SessionInterface $session, FormuleRepository $formuleRepository)
     {
         $panier = $session->get('panier', []);
 
@@ -22,7 +26,7 @@ class CartController extends AbstractController
 
         foreach($panier as $id =>$quantity) {
             $panierWithData[] = [
-                'reservation' => $reservationRepository->find($id),  
+                'formule' => $formuleRepository->find($id),  
                 'quantity' => $quantity
 
             ];
@@ -31,7 +35,7 @@ class CartController extends AbstractController
         $total = 0;
 
         foreach($panierWithData as $item)  {
-            $totalItem = $item['reservation']->getPrix() * $item['quantity'];
+            $totalItem = $item['formule']->getPrix() * $item['quantity'];
             $total += $totalItem;
         }
 
@@ -42,12 +46,12 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/panier/add/{id}", name="cart_add")
+     * @Route("/panier/add/{id}", name="cart_add" , methods={"GET"})
      */
-    public function add($id, SessionInterface $session) 
+    public function add($id, SessionInterface $session, FormuleRepository $formuleRepository)
     {
         $panier = $session->get('panier', []);
-
+        $formule = $formuleRepository->find($id);
         if(!empty($panier[$id])) {
             $panier[$id]++;
         } else {
@@ -56,7 +60,7 @@ class CartController extends AbstractController
         }
 
         $session->set('panier', $panier);
-
+          
         return $this->redirectToRoute("cart_index");
 
     }

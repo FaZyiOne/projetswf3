@@ -114,7 +114,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('cart_index') }}">Réservations</a>
+                        <a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
                     </li>
                 </ul>
             </div>
@@ -123,31 +123,26 @@
 <div class="container pt-5">
 {% block body %}
     <div class="bg-light p-3">
-        <h1>Vos réservations</h1>
+        <h1>Votre Panier</h1>
     </div>
 
     {% if items | length > 0 %}
         <table class="table">
             <thead>
                 <tr>
-                    <th>Lieu</th>
-                    <th>Adresse</th>
-                    <th>Prix/jour</th>
-                    <th>Nombre de jour(s)</th>
-                    <th>Total</th>
-                    <th></th>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Prix</th>
                 </tr>
             </thead>
             <tbody>
                {% for item in items %}
                     <tr>
-                        <td>{{ item.reservation.lieu }}</td>
-                        <td>{{ item.reservation.adresse }}</td>
-                        <td>{{ item.reservation.prix }} €</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>{{ item.reservation.prix * item.quantity }} €</td>
+                        <td>{{ item.formule.titre }}</td>
+                        <td>{{ item.formule.description }}</td>
+                        <td>{{ item.formule.prix }} €/mois</td>
                         <td>
-                            <a href="{{ path('cart_remove', { 'id': item.reservation.id }) }}" class="btn btn-danger btn-sm">
+                            <a href="{{ path('cart_remove', { 'id': item.formule.id }) }}" class="btn btn-danger btn-sm">
                                 <button type="button" class="btn btn-labeled btn-danger">
                 <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Supprimer</button></i>
                             </a>

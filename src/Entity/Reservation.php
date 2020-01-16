@@ -33,12 +33,12 @@ class Reservation
     private $adresse;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="integer", columnDefinition="INT(10) UNSIGNED ZEROFILL")
      */
     private $telephone;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $prix;
 
