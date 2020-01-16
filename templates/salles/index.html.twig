@@ -12,12 +12,12 @@
             <div class="form-group text-center">
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-map-marker-alt"></i>
-                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville" name="ville" id="ville">
+                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville" name="ville" id="ville" onchange="this.value = this.value.toLowerCase()">
                 </div>
-                <div class="col-xs-12 col-md-3">
+                {# <div class="col-xs-12 col-md-3">
                     <i class="fas fa-search"></i>
                     <input type="text" class="form-control milieu pl-5 p-4" placeholder="Mariage,formation">
-                </div>
+                </div> #}
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-users"></i>
                     <input type="text" class="form-control milieu pl-5 p-4" placeholder="nombre de personnes" name="capacite" id="capacite">
@@ -29,7 +29,7 @@
             <!-- boucle -->
             <h2>Découvrez nos Salles</h2>
             <div class="row mt-4">
-            {{dump(test)}}
+            {# {{dump(test)}} #}
                 {% for reservation in reservations %}
                 {# {{dump(reservations)}} #}
                     {% if test2 %}
@@ -70,6 +70,24 @@
                             </div>
                         {% endif %}
                         {% if test.capacite == "" and reservation.ville == test.ville %}
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="card">
+                                    <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style=" max-height:100px;" alt="lieu à louer">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                        <p class="card-text">{{ reservation.adresse }}</p>
+                                        <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                                        <p>Commentaires</p>
+                                        <a href="{{ path('cart_add',{'id': reservation.id } )}}" class="btn btn-success float-right">
+                                            <i class="fas mr-1"></i>
+                                            Réserver
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if test.capacite == "" and  test.ville == "" %}
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="card">
                                     <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style=" max-height:100px;" alt="lieu à louer">
