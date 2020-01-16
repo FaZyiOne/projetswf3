@@ -30,6 +30,3 @@ $(function () {
   });
 
 });
-
-// caroussel manuel
-$('.carousel').carousel();

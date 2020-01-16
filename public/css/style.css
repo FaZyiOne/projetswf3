@@ -215,13 +215,15 @@ img.petiteimg {
 }
 
 ul.hover_block {
-    min-height: 400px;
+    min-height: 450px !important;
+    max-width: 1200px !important;
+    margin: 20px auto !important;
 }
 
 ul.hover_block li {
     list-style: none;
     float: left;
-    padding: 10px;
+    padding: 20px;
 }
 
 ul.hover_block li a {
