@@ -11,7 +11,7 @@ use App\Entity\Reservation;
 class DetailSalleController extends AbstractController
 {
     /**
-     * @Route("/detail/salle", name="detail_salle")
+     * @Route("/detail/salle", name="detail_salle", methods={"GET"})
      */
     public function index(ReservationRepository $reservationRepository)
     {
@@ -25,6 +25,7 @@ class DetailSalleController extends AbstractController
         return $this->render('detail_salle/index.html.twig', [
             'reservations' => $reservationRepository->findAll(),
             'reservation' => $reservation,
+            'salle' => $_GET,
             'controller_name' => 'DetailSalleController',
         ]);
     }
