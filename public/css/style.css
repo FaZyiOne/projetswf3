@@ -364,7 +364,29 @@ footer {
   justify-content: space-around;
   width: 50%;
   margin: 0 auto;
-}                  
+  border-bottom: 1px solid #c0c0c03d;
+  font-size: 2em;
+}   
+#pCcm .gratuit{
+  padding: 1em;
+  border-right: 1px solid #ddd;
+  margin: 1em;
+}     
+#pCcm .facile{
+  padding: 2em;
+}          
+#pCcm .rapide{
+  padding: 1em;
+  border-left: 1px solid #ddd;
+  margin: 1em;
+}
+#pCcm button{
+  text-decoration: none;
+  color: black;
+}
+#pCcm #accordionExample{
+  margin-bottom: 5vh;
+}
 /*  
 ███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
 ██╔════╝██╔══██╗██║     ██║     ██╔════╝██╔════╝
