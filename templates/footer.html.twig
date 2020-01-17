@@ -1,25 +1,46 @@
- <footer>
-    <div class="hautF">
-        <a href="#"><img src="https://picsum.photos/seed/picsum/75/75" alt=""></a>
-        <div class="apropos mb-4">
-            <h4>A propos</h4>
-                <div><a href="{{path('salles')}}">Qui sommes nous?</a></div>
-                <div><a href="{{path('salles')}}">Comment ça marche</a></div>
-        </div>
-        <div class="information mb-4">
-            <h4>Information</h4>
-            <div><a href="{{path('cgv')}}" target="_blank">Conditions Générales d'utilisation</a></div>
-            <div><a href="{{path('politique_confidentialite')}}"target="_blank">Politique des Confidentialité</a></div>
-            <div><a href="{{path('mentions_legales')}}" target="_blank">Mentions Légales</a></div>
-            <div><a href="{{path('plan')}}">Plan de Site</a></div>
-        </div>
-        <div class="contact mb-4">
-            <h4>Contact</h4>
-                <div><a href="mailto:test@gmail.com">test@gmail.com</a></div>
-                <div><a href="tel:01 11 11 11 11">01 11 11 11 11</a></div>
-        </div>
-        
-    </div>
-    <p class="copyr">&copy;2020 tous droits réservés</p>
+{% include 'base.html.twig' %}
+
+<footer>
+	<div class="hautF">
+		<a href="#"><img src="https://picsum.photos/seed/picsum/75/75" alt=""></a>
+		<div class="apropos mb-4">
+			<h4>A propos</h4>
+			<div>
+				<a href="{{path('salles')}}">Qui sommes nous?</a>
+			</div>
+			<div>
+				<a href="{{path('salles')}}">Comment ça marche</a>
+			</div>
+		</div>
+		<div class="information mb-4">
+			<h4>Information</h4>
+			<div>
+				<a href="{{path('cgv')}}" target="_blank">Conditions générales d'utilisation</a>
+			</div>
+			<div>
+				<a href="{{path('politique_confidentialite')}}" target="_blank">Politique de confidentialité</a>
+			</div>
+			<div>
+				<a href="{{path('mentions_legales')}}" target="_blank">Mentions légales</a>
+			</div>
+			<div>
+				<a href="{{path('plan')}}">Plan de Site</a>
+			</div>
+		</div>
+		<div class="contact mb-4">
+			<h4>Contact</h4>
+			<div>
+				<a class="fa fa-envelope" aria-hidden="true"></a>
+				<a href="mailto:koala@gmail.com">koala@gmail.com</a>
+			</div>
+			<div>
+				<a class="fa fa-phone" aria-hidden="true"></a>
+				<a href="tel:01 11 11 11 11">01 11 11 11 11</a>
+			</div>
+			<div>
+				<a>reseaux sociaux</a>
+			</div>
+		</div>
+	</div>
+	<p class="copyr">&copy;2020 Tous droits réservés</p>
 </footer>
-            
