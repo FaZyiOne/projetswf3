@@ -6,7 +6,7 @@ security:
     role_hierarchy:
         ROLE_USER:       ROLE_USER
         ROLE_USER_PRO:   [ROLE_USER, ROLE_USER_PRO]
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_USER_PRO]
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -41,7 +41,8 @@ security:
         - { path: ^/reservation, role: ROLE_ADMIN }
         - { path: ^/reservation/new, role: ROLE_ADMIN }
         - { path: ^/formule/new, role: ROLE_ADMIN }
-        - { path: ^/formule, role: ROLE_USER_PRO }
+        - { path: ^/formule, role: ROLE_USER_PRO}
+        
         
         
         

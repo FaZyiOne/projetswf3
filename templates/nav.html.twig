@@ -5,6 +5,17 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
+        {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{path('reservation_new')}}">Ajouter une salle</a>
+                    <a class="dropdown-item" href="{{path('post_index')}}">Index des Commentaires</a>
+                    <a class="dropdown-item" href="{{path('formule_new')}}">Ajout Formule</a>           
+                    {# <a class="dropdown-item" href="{{path('')}}">Liste des utilisateurs</a> #}
+                </div>
+        </li> 
+        {% endif %}
             {% if is_granted('ROLE_USER_PRO') %}
             <li class="nav-item">
                 <a class="nav-link text-warning" href="{{path('formule_index')}}">PREMIUM</a>

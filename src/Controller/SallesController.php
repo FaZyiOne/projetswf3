@@ -5,6 +5,9 @@ namespace App\Controller;
 use App\Repository\ReservationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Reservation;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class SallesController extends AbstractController
 {

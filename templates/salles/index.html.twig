@@ -12,7 +12,8 @@
             <div class="form-group text-center">
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-map-marker-alt"></i>
-                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville" name="ville" id="ville" onchange="this.value = this.value.toLowerCase()">
+                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville" name="ville" id="ville"
+                        onchange="this.value = this.value.toLowerCase()">
                 </div>
                 {# <div class="col-xs-12 col-md-3">
                     <i class="fas fa-search"></i>
@@ -20,7 +21,8 @@
                 </div> #}
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-users"></i>
-                    <input type="text" class="form-control milieu pl-5 p-4" placeholder="nombre de personnes" name="capacite" id="capacite">
+                    <input type="text" class="form-control milieu pl-5 p-4" placeholder="nombre de personnes"
+                        name="capacite" id="capacite">
                 </div>
                 <button type="submit" class="btn btn1 col-xs-10 col-md-2">rechercher</button>
             </div>
@@ -29,104 +31,109 @@
             <!-- boucle -->
             <h2>Découvrez nos Salles</h2>
             <div class="row mt-4">
-            {# {{dump(test)}} #}
+                {# {{dump(test)}} #}
                 {% for reservation in reservations %}
                 {# {{dump(reservations)}} #}
-                    {% if test2 %}
-                        {% if reservation.ville == test.ville and reservation.capacite <= test.capacite %}
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="card card-hover">
-                                    <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"  alt="lieu à louer">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ reservation.lieu }}</h5>
-                                        <p class="card-text">{{ reservation.adresse }}</p>
-                                        <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
-                                        <p>Commentaires</p>
-                                        <a href="#" class="btn btn2 float-right">
-                                            <i class="fas mr-1"></i>
-                                            Obtenir un devis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
-                        {% if test.ville == ""  and reservation.capacite <= test.capacite %}
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="card">
-                                    <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ reservation.lieu }}</h5>
-                                        <p class="card-text">{{ reservation.adresse }}</p>
-                                        <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
-                                        <p>Commentaires</p>
-                                        <a href="#" class="btn btn-success float-right">
-                                            <i class="fas mr-1"></i>
-                                            Obtenir un devis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
-                        {% if test.capacite == "" and reservation.ville == test.ville %}
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="card">
-                                    <a href="#" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ reservation.lieu }}</h5>
-                                        <p class="card-text">{{ reservation.adresse }}</p>
-                                        <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
-                                        <p>Commentaires</p>
-                                        <a href="#" class="btn btn-success float-right">
-                                            <i class="fas mr-1"></i>
-                                            Obtenir un devis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
-                        {% if test.capacite == "" and  test.ville == "" %}
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="card">
-                                    <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ reservation.lieu }}</h5>
-                                        <p class="card-text">{{ reservation.adresse }}</p>
-                                        <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
-                                        <p>Commentaires</p>
-                                        <a href="#" class="btn btn-success float-right">
-                                            <i class="fas mr-1"></i>
-                                            Obtenir un devis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {# Si beug affichage supprimer le else #}
-                    {% else %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ reservation.lieu }}</h5>
-                                    <p class="card-text">{{ reservation.adresse }}</p>
-                                    <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
-                                    <p>Commentaires</p>
-                                    <a href="#" class="btn btn-success float-right">
-                                        <i class="fas mr-1"></i>
-                                        Obtenir un devis
-                                    </a>
-                                </div>
-                            </div>
+                {% if test2 %}
+                {% if reservation.ville == test.ville and reservation.capacite <= test.capacite %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card card-hover">
+                        <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                                alt="lieu à louer">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ reservation.lieu }}</h5>
+                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <p>Commentaires</p>
+                            <a href="#" class="btn btn2 float-right">
+                                <i class="fas mr-1"></i>
+                                Obtenir un devis
+                            </a>
                         </div>
-                    {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+                {% if test.ville == ""  and reservation.capacite <= test.capacite %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                                alt="lieu à louer">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ reservation.lieu }}</h5>
+                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <p>Commentaires</p>
+                            <a href="#" class="btn btn-success float-right">
+                                <i class="fas mr-1"></i>
+                                Obtenir un devis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if test.capacite == "" and reservation.ville == test.ville %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="#" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                                alt="lieu à louer">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ reservation.lieu }}</h5>
+                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <p>Commentaires</p>
+                            <a href="#" class="btn btn-success float-right">
+                                <i class="fas mr-1"></i>
+                                Obtenir un devis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if test.capacite == "" and  test.ville == "" %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="" target="_blank"><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                                alt="lieu à louer">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ reservation.lieu }}</h5>
+                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <p>Commentaires</p>
+                            <a href="#" class="btn btn-success float-right">
+                                <i class="fas mr-1"></i>
+                                Obtenir un devis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {# Si beug affichage supprimer le else #}
+                {% else %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <a href="{{path('detail_salle',{'id':reservation.id})}}" target=""><img
+                                src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ reservation.lieu }}</h5>
+                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <a href="#" class="btn btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <p>Commentaires</p>
+                            <a href="#" class="btn btn-success float-right">
+                                <i class="fas mr-1"></i>
+                                Obtenir un devis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
                 {% endfor %}
                 <div id="reservation"></div>
-            </div>            
+            </div>
         </section>
     </main>
     {% endblock %}
