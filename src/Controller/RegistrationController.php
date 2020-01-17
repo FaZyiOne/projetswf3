@@ -96,7 +96,7 @@ class RegistrationController extends AbstractController
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Votre mot de passe doit contenir {{ limit }} characters',
                         'max' => 4096,
                     ]),
                 ],

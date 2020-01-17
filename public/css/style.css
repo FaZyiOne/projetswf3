@@ -1,6 +1,6 @@
 :root {
   --button: #ff9c00;
-  --bleu: #1F6699;
+  --bleu: #1f6699;
   --bleuFoncé: #005eb3;
   --orange: #ff9c00;
   --orangeClaire: #ffa719;
@@ -28,11 +28,14 @@ a:hover {
   color: var(--orangeMarron);
 }
 
-nav a {
+nav a,
+nav .insc {
   text-transform: uppercase;
   font-size: 1rem;
 }
-
+nav .insc {
+  cursor: pointer;
+}
 h1 {
   word-spacing: 0.5rem;
 }
@@ -40,12 +43,16 @@ h1 {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: "Merriweather", serif;
   text-transform: uppercase;
   text-align: center;
 }
-
+.modal.card h5 {
+  font-size: 1rem;
+  width: 90% !important;
+}
 h2 {
   margin-top: 1.5rem;
 }
@@ -68,7 +75,7 @@ li {
   text-align: center !important;
 }
 
-.form-group>button.btn {
+.form-group > button.btn {
   color: white;
   background-color: var(--button) !important;
   width: 50%;
@@ -108,10 +115,12 @@ header {
   color: #fff !important;
   background-size: 200% !important;
   transition: 0.6s !important;
-  background-image: linear-gradient(to left,
-      orange,
-      #ee5a24,
-      orange) !important;
+  background-image: linear-gradient(
+    to left,
+    orange,
+    #ee5a24,
+    orange
+  ) !important;
 }
 
 .btn1:hover {
@@ -171,7 +180,6 @@ img.petiteimg {
 }
 
 @keyframes best {
-
   0%,
   100% {
     margin-left: 100%;
@@ -282,7 +290,6 @@ ul.hover_block h3 {
 }
 
 @keyframes logo {
-
   0%,
   100% {
     margin-left: 100%;
@@ -303,7 +310,7 @@ footer {
   clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
-.hautF>img {
+.hautF > img {
   align-items: center !important;
 }
 
@@ -428,10 +435,10 @@ footer {
 }
 
 /* ****************** Connexion ******************** */
-#pConnexion main {
-  max-width: 550px;
 
-  margin: 20px auto;
+#pConnexion section {
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 /* #pConnexion main input[type=text],
@@ -443,13 +450,41 @@ footer {
   margin: 10px;
 }
 */
-#pConnexion main input[type=submit] {
+#pConnexion input[type="submit"] {
   display: block;
   padding: 8px;
   width: 50%;
   margin: 10px auto;
 }
 
+/* ****************** Inscription ******************** */
+
+#pRegister main section {
+  max-width: 550px;
+  margin: 20px auto;
+}
+#pRegister main input[type="submit"] {
+  display: block;
+  padding: 8px;
+  width: 50%;
+  margin: 0 auto;
+}
+#pRegister main input[type="text"],
+#pRegister main input[type="password"] {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+#pRegister main label {
+  text-align: left;
+  display: block;
+  margin-top: 10px;
+}
+#pRegister main .register_form > div > label:first-child {
+  display: none;
+}
 /* ****************** Profile ******************** */
 #pProfile main section {
   text-align: center;
@@ -470,10 +505,8 @@ footer {
 
 /* ******************** Panier  ***************** */
 #pPanier main section {
-
   max-width: 1000px;
   margin: 5rem auto !important;
-
 }
 
 /* ***************** Plan du site  *************** */
@@ -592,7 +625,6 @@ footer {
 /* ******************************************************************************* */
 /* ****************************************************************************** */
 @media screen and (min-width: 992px) {
-
   header form .form-group,
   .formFiltreSalle .form-group {
     display: flex;

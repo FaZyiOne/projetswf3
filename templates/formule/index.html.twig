@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formule index{% endblock %}
+{# {% block title %}Formule index{% endblock %} #}
 
 {% block body %}
     <h1>Formule index</h1>
@@ -23,7 +23,9 @@
                 <td>{{ formule.description }}</td>
                 {# <td>{{ formule.prix }}</td> #}
                 <td>
-                    <a href="{{ path('formule_show', {'id': formule.id}) }}">Découvrir</a>
+                    
+                <a class="nav-link text-warning" href="{{ path('cart_add', { 'id': formule.id }) }}">Devenir Premium</a>
+
                     {# <a href="{{ path('formule_edit', {'id': formule.id}) }}">edit</a> #}
                 </td>
             </tr>
