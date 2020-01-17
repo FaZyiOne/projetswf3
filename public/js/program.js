@@ -17,15 +17,15 @@ $(function () {
 
   $('ul.hover_block li').hover(function () {
     $(this).find('img').animate({
-      opacity: "0.2"
+      opacity: "0.5"
     }, {
-      duration: 300
+      duration: 2000
     });
   }, function () {
     $(this).find('img').animate({
       opacity: "1"
     }, {
-      duration: 300
+      duration: 2000
     });
   });
 
