@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a href="{{path('homepage')}}"><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -8,12 +9,12 @@
             {% if is_granted('ROLE_USER_PRO') %}
             <li class="nav-item">
                 <a class="nav-link text-warning" href="{{path('formule_index')}}">PREMIUM</a>
-            </li>    
+            </li>
             {% endif %}
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             <li class="nav-item">
                 <a class="nav-link" href="{{path('fos_user_profile_show')}}">{{ app.user }}</a>
-            </li>    
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{path('fos_user_security_logout')}}">Déconnexion</a>
             </li>
@@ -21,8 +22,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{path('fos_user_security_login')}}">Connexion</a>
             </li>
-            <li class="nav-item">
+
+
+
+            <!-- <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
                 <a class="nav-link" href="{{path('fos_user_registration_register')}}">S'inscrire</a>
+            </li> -->
+            <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
+                <!-- <button type="button" data-toggle="modal" data-target="#exampleModal"> -->
+                <!-- <a class="nav-link" href="{{path('fos_user_registration_register')}}">S'inscrire</a> -->
+                S'inscrire
+                <!-- </button> -->
             </li>
             {% endif %}
             <li class="nav-item">
@@ -31,14 +41,53 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{path('salles')}}">Contact</a>
             </li>
-           
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
             <button class="btn btn1 btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
         </form>
-
-        
     </div>
 </nav>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title " id="exampleModalLabel">Inscription</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="GET">
+                    <div class="form-row align-items-center m-4">
+                        <div class="col-auto my-1">
+                            <label name="type_user" id="" class="mr-sm-2" for="inlineFormCustomSelect">Vous êtes
+                                :</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+
+                                <option value="user">Particulier</option>
+                                <option value="user_pro">Professionnel</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-auto my-1 align-self-end">
+                            <button class="btn_user btn btn1" action="?type_user=value"><a
+                                    href="{{path('fos_user_registration_register')}}">Valider</a></button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div>
+    </div>
+</div>

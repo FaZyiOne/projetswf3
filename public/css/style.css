@@ -5,7 +5,7 @@
   --orange: #ff9c00;
   --orangeClaire: #ffa719;
   --orangeMarron: #b36e00;
-  --orangeButton : #ee5a24;
+  --orangeButton: #ee5a24;
 }
 
 body {
@@ -427,6 +427,29 @@ footer {
   padding-top: 120px;
 }
 
+/* ****************** Connexion ******************** */
+#pConnexion main {
+  max-width: 550px;
+
+  margin: 20px auto;
+}
+
+/* #pConnexion main input[type=text],
+#pConnexion main input[type=password] {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+*/
+#pConnexion main input[type=submit] {
+  display: block;
+  padding: 8px;
+  width: 50%;
+  margin: 10px auto;
+}
+
 /* ****************** Profile ******************** */
 #pProfile main section {
   text-align: center;
@@ -501,14 +524,17 @@ footer {
     text-align: center;
     clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
+
   /* ******* Salles ************* */
-  #pSalles .card h5{
+  #pSalles .card h5 {
     font-size: 1rem;
   }
-  #pSalles section{
+
+  #pSalles section {
     margin-left: 5% !important;
     margin-right: 5% !important;
   }
+
   /* ******* Détail ************* */
   .logoAvis {
     margin-top: 10px;
