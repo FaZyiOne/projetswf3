@@ -333,8 +333,38 @@ footer {
   line-height: 32em;
   white-space: nowrap;
   margin-bottom: 4em;
-}               
-
+}  
+/*             
+ ██████╗ ██████╗███╗   ███╗
+██╔════╝██╔════╝████╗ ████║
+██║     ██║     ██╔████╔██║
+██║     ██║     ██║╚██╔╝██║
+╚██████╗╚██████╗██║ ╚═╝ ██║
+ ╚═════╝ ╚═════╝╚═╝     ╚═╝
+*/
+#pCcm header img{
+  width: 100%;
+  height: 500px;
+}
+#pCcm .titre{
+  width: 100%;
+  margin-top: -25vh;
+}    
+#pCcm section{
+    min-height: 50vh;
+} 
+#pCcm header
+{
+  height: 32em;
+  line-height: 32em;
+  white-space: nowrap;
+}   
+#pCcm .explication{
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+}                  
 /*  
 ███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
 ██╔════╝██╔══██╗██║     ██║     ██╔════╝██╔════╝

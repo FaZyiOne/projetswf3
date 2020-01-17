@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'nav.html.twig' %}
+
+<div class="container-fluid" id="pCcm">
+    <header>
+        <img src="{{asset('img/work.jpg')}}" alt="">
+        <h1 class="titre">Comment fonctionne Koala</h1>
+    </header>
+    <section class="contenu">
+        <div class="explication">
+            <span class="border-right">Gratuit</span>
+            <span>Facile</span>
+            <span>Rapide</span>
+        </div>
+    </section>
+</div>
+
+    {% include 'footer.html.twig' %}
+{% endblock %}
