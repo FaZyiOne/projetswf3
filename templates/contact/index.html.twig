@@ -1,47 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact index{% endblock %}
-
 {% block body %}
-    <h1>Contact index</h1>
+    <div class="container-fluide" id="pPlan">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Numero_de_telephone</th>
-                <th>Societe</th>
-                <th>Email</th>
-                <th>Sujet</th>
-                <th>Message</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.nom }}</td>
-                <td>{{ contact.prenom }}</td>
-                <td>{{ contact.numeroDeTelephone }}</td>
-                <td>{{ contact.societe }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.sujet }}</td>
-                <td>{{ contact.message }}</td>
-                <td>
-                    <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+      
+    {% include 'nav.html.twig' %}
+    
+    {% block main %}
+    lol
+    <div id="contactForm" class="mt-4">
+    {{ form_start(form) }}
+    <div class="row">{{ form_row(form.prenom) }}</div>
+    <div class="row">{{ form_row(form.nom) }}</div>
+    <div class="col">
+    </div>
+    <div class="row">
+    <div class="row">{{ form_row(form.telephone) }}</div>
+    <div class="row">{{ form_row(form.email) }}</div>
+    </div>
+    {{ form_rest(form) }}
+    <div class="form-group">
+    <button class="btn btn-primary">Envoyer</button>
+    </div>
+    {{ form_end(form) }}
+    </div>
 
-    <a href="{{ path('contact_new') }}">Create new</a>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+
+    </div>
 {% endblock %}

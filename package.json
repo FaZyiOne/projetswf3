@@ -1,0 +1,26 @@
+{
+  "name": "projetswf3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cookiechoices.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaZyiOne/projetswf3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaZyiOne/projetswf3/issues"
+  },
+  "homepage": "https://github.com/FaZyiOne/projetswf3#readme",
+  "dependencies": {
+    "mjml": "^4.5.1"
+  }
+}
