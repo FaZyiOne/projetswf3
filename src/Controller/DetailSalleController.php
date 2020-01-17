@@ -11,7 +11,7 @@ use App\Entity\Reservation;
 class DetailSalleController extends AbstractController
 {
     /**
-     * @Route("/detail/salle", name="detail_salle", methods={"GET"})
+     * @Route("/detail/salle", name="detail_salle")
      */
     public function index(ReservationRepository $reservationRepository)
     {
