@@ -28,10 +28,9 @@ class CartController extends AbstractController
             $panierWithData[] = [
                 'formule' => $formuleRepository->find($id),  
                 'quantity' => $quantity
-
             ];
         }
-
+        
         $total = 0;
 
         foreach($panierWithData as $item)  {

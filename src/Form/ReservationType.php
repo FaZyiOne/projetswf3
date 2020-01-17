@@ -28,6 +28,7 @@ class ReservationType extends AbstractType
             ->add('description')
             ->add('capacite')
             ->add('ville')
+            ->add('map')
 
         ;
     }

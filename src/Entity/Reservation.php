@@ -78,6 +78,11 @@ class Reservation
      */
     private $ville;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $map;
+
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
@@ -213,6 +218,18 @@ class Reservation
     public function setVille(string $ville): self
     {
         $this->ville = strtolower($ville);
+
+        return $this;
+    }
+
+    public function getMap(): ?string
+    {
+        return $this->map;
+    }
+
+    public function setMap(?string $map): self
+    {
+        $this->map = $map;
 
         return $this;
     }
