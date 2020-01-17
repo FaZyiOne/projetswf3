@@ -311,6 +311,29 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
+/*
+ ██████╗ ███████╗███╗   ██╗
+██╔═══██╗██╔════╝████╗  ██║
+██║   ██║███████╗██╔██╗ ██║
+██║▄▄ ██║╚════██║██║╚██╗██║
+╚██████╔╝███████║██║ ╚████║
+ ╚══▀▀═╝ ╚══════╝╚═╝  ╚═══╝
+*/
+#pQsn header img{
+  width: 100%;
+  height: 500px;
+}
+#pQsn .titre{
+  width: 100%;
+  margin-top: -25vh;
+}      
+#pQsn header
+{
+  height: 32em;
+  line-height: 32em;
+  white-space: nowrap;
+  margin-bottom: 4em;
+}               
 
 /*  
 ███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
