@@ -503,6 +503,19 @@ footer {
   letter-spacing: 0.25rem;
 }
 
+/* ******************** formule  ***************** */
+#pFormule .card {
+  border-radius: 8px;
+  width: 80%;
+  margin: 50px auto !important;
+}
+#pFormule .card .btn3 {
+  background-color: var(--bleu);
+  color: white;
+  width: 60%;
+  margin: 10px auto;
+  padding: 5px;
+}
 /* ******************** Panier  ***************** */
 #pPanier main section {
   max-width: 1000px;
