@@ -28,11 +28,14 @@ a:hover {
   color: var(--orangeMarron);
 }
 
-nav a {
+nav a,
+nav .insc {
   text-transform: uppercase;
   font-size: 1rem;
 }
-
+nav .insc {
+  cursor: pointer;
+}
 h1 {
   word-spacing: 0.5rem;
 }
@@ -40,12 +43,16 @@ h1 {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: "Merriweather", serif;
   text-transform: uppercase;
   text-align: center;
 }
-
+.modal.card h5 {
+  font-size: 1rem;
+  width: 90% !important;
+}
 h2 {
   margin-top: 1.5rem;
 }
@@ -319,21 +326,20 @@ footer {
 ╚██████╔╝███████║██║ ╚████║
  ╚══▀▀═╝ ╚══════╝╚═╝  ╚═══╝
 */
-#pQsn header img{
+#pQsn header img {
   width: 100%;
   height: 500px;
 }
-#pQsn .titre{
+#pQsn .titre {
   width: 100%;
   margin-top: -25vh;
-}      
-#pQsn header
-{
+}
+#pQsn header {
   height: 32em;
   line-height: 32em;
   white-space: nowrap;
   margin-bottom: 4em;
-}  
+}
 /*             
  ██████╗ ██████╗███╗   ███╗
 ██╔════╝██╔════╝████╗ ████║
@@ -342,49 +348,48 @@ footer {
 ╚██████╗╚██████╗██║ ╚═╝ ██║
  ╚═════╝ ╚═════╝╚═╝     ╚═╝
 */
-#pCcm header img{
+#pCcm header img {
   width: 100%;
   height: 500px;
 }
-#pCcm .titre{
+#pCcm .titre {
   width: 100%;
   margin-top: -25vh;
-}    
-#pCcm section{
-    min-height: 50vh;
-} 
-#pCcm header
-{
+}
+#pCcm section {
+  min-height: 50vh;
+}
+#pCcm header {
   height: 32em;
   line-height: 32em;
   white-space: nowrap;
-}   
-#pCcm .explication{
+}
+#pCcm .explication {
   display: flex;
   justify-content: space-around;
   width: 50%;
   margin: 0 auto;
   border-bottom: 1px solid #c0c0c03d;
   font-size: 2em;
-}   
-#pCcm .gratuit{
+}
+#pCcm .gratuit {
   padding: 1em;
   border-right: 1px solid #ddd;
   margin: 1em;
-}     
-#pCcm .facile{
+}
+#pCcm .facile {
   padding: 2em;
-}          
-#pCcm .rapide{
+}
+#pCcm .rapide {
   padding: 1em;
   border-left: 1px solid #ddd;
   margin: 1em;
 }
-#pCcm button{
+#pCcm button {
   text-decoration: none;
   color: black;
 }
-#pCcm #accordionExample{
+#pCcm #accordionExample {
   margin-bottom: 5vh;
 }
 /*  
@@ -502,6 +507,57 @@ footer {
   padding-top: 120px;
 }
 
+/* ****************** Connexion ******************** */
+
+#pConnexion section {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* #pConnexion main input[type=text],
+#pConnexion main input[type=password] {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+*/
+#pConnexion input[type="submit"] {
+  display: block;
+  padding: 8px;
+  width: 50%;
+  margin: 10px auto;
+}
+
+/* ****************** Inscription ******************** */
+
+#pRegister main section {
+  max-width: 550px;
+  margin: 20px auto;
+}
+#pRegister main input[type="submit"] {
+  display: block;
+  padding: 8px;
+  width: 50%;
+  margin: 0 auto;
+}
+#pRegister main input[type="text"],
+#pRegister main input[type="password"] {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+#pRegister main label {
+  text-align: left;
+  display: block;
+  margin-top: 10px;
+}
+#pRegister main .register_form > div > label:first-child {
+  display: none;
+}
 /* ****************** Profile ******************** */
 #pProfile main section {
   text-align: center;
@@ -520,6 +576,19 @@ footer {
   letter-spacing: 0.25rem;
 }
 
+/* ******************** formule  ***************** */
+#pFormule .card {
+  border-radius: 8px;
+  width: 80%;
+  margin: 50px auto !important;
+}
+#pFormule .card .btn3 {
+  background-color: var(--bleu);
+  color: white;
+  width: 60%;
+  margin: 10px auto;
+  padding: 5px;
+}
 /* ******************** Panier  ***************** */
 #pPanier main section {
   max-width: 1000px;
@@ -574,6 +643,7 @@ footer {
     text-align: center;
     clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
+
   /* ******* Salles ************* */
   #pSalles .card h5 {
     font-size: 1rem;
@@ -582,6 +652,7 @@ footer {
     margin-left: 5% !important;
     margin-right: 5% !important;
   }
+
   /* ******* Détail ************* */
   .logoAvis {
     margin-top: 10px;
