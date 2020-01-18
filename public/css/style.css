@@ -16,7 +16,8 @@ body {
 }
 
 main {
-  min-height: 60vh;
+  min-height: 70vh;
+  margin-top: 120px !important;
 }
 
 a {
@@ -619,19 +620,28 @@ footer {
   margin: 50px auto !important;
 }
 
-#pFormule .card .btn3 {
+/* #pFormule .card */
+.btn3 {
   background-color: var(--bleu);
   color: white;
-  width: 60%;
   margin: 10px auto;
   padding: 5px;
 }
 
+#pFormule .card .btn3 {
+  width: 60%;
+  padding: 10px;
+
+}
+
 /* ******************** Panier  ***************** */
 #pPanier main section {
+  width: 95%;
   max-width: 1000px;
   margin: 5rem auto !important;
 }
+
+
 
 /* ***************** Plan du site  *************** */
 
