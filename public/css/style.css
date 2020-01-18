@@ -33,11 +33,16 @@ nav .insc {
   text-transform: uppercase;
   font-size: 1rem;
 }
+
 nav .insc {
   cursor: pointer;
 }
+
 h1 {
   word-spacing: 0.5rem;
+  color: black !important;
+
+
 }
 
 h1,
@@ -49,10 +54,12 @@ h5 {
   text-transform: uppercase;
   text-align: center;
 }
+
 .modal.card h5 {
   font-size: 1rem;
   width: 90% !important;
 }
+
 h2 {
   margin-top: 1.5rem;
 }
@@ -75,11 +82,17 @@ li {
   text-align: center !important;
 }
 
-.form-group > button.btn {
+.form-group>button.btn {
   color: white;
   background-color: var(--button) !important;
   width: 50%;
   margin-right: 15px;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: black !important;
+
 }
 
 #pAccueil .carousel img {
@@ -115,12 +128,10 @@ header {
   color: #fff !important;
   background-size: 200% !important;
   transition: 0.6s !important;
-  background-image: linear-gradient(
-    to left,
-    orange,
-    #ee5a24,
-    orange
-  ) !important;
+  background-image: linear-gradient(to left,
+      orange,
+      #ee5a24,
+      orange) !important;
 }
 
 .btn1:hover {
@@ -180,6 +191,7 @@ img.petiteimg {
 }
 
 @keyframes best {
+
   0%,
   100% {
     margin-left: 100%;
@@ -290,6 +302,7 @@ ul.hover_block h3 {
 }
 
 @keyframes logo {
+
   0%,
   100% {
     margin-left: 100%;
@@ -310,7 +323,7 @@ footer {
   clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
-.hautF > img {
+.hautF>img {
   align-items: center !important;
 }
 
@@ -318,6 +331,7 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
+
 /*
  ██████╗ ███████╗███╗   ██╗
 ██╔═══██╗██╔════╝████╗  ██║
@@ -330,16 +344,19 @@ footer {
   width: 100%;
   height: 500px;
 }
+
 #pQsn .titre {
   width: 100%;
   margin-top: -25vh;
 }
+
 #pQsn header {
   height: 32em;
   line-height: 32em;
   white-space: nowrap;
   margin-bottom: 4em;
 }
+
 /*             
  ██████╗ ██████╗███╗   ███╗
 ██╔════╝██╔════╝████╗ ████║
@@ -352,18 +369,22 @@ footer {
   width: 100%;
   height: 500px;
 }
+
 #pCcm .titre {
   width: 100%;
   margin-top: -25vh;
 }
+
 #pCcm section {
   min-height: 50vh;
 }
+
 #pCcm header {
   height: 32em;
   line-height: 32em;
   white-space: nowrap;
 }
+
 #pCcm .explication {
   display: flex;
   justify-content: space-around;
@@ -372,26 +393,32 @@ footer {
   border-bottom: 1px solid #c0c0c03d;
   font-size: 2em;
 }
+
 #pCcm .gratuit {
   padding: 1em;
   border-right: 1px solid #ddd;
   margin: 1em;
 }
+
 #pCcm .facile {
   padding: 2em;
 }
+
 #pCcm .rapide {
   padding: 1em;
   border-left: 1px solid #ddd;
   margin: 1em;
 }
+
 #pCcm button {
   text-decoration: none;
   color: black;
 }
+
 #pCcm #accordionExample {
   margin-bottom: 5vh;
 }
+
 /*  
 ███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
 ██╔════╝██╔══██╗██║     ██║     ██╔════╝██╔════╝
@@ -536,12 +563,14 @@ footer {
   max-width: 550px;
   margin: 20px auto;
 }
+
 #pRegister main input[type="submit"] {
   display: block;
   padding: 8px;
   width: 50%;
   margin: 0 auto;
 }
+
 #pRegister main input[type="text"],
 #pRegister main input[type="password"] {
   width: 100%;
@@ -550,14 +579,17 @@ footer {
   padding: 10px;
   margin: 10px;
 }
+
 #pRegister main label {
   text-align: left;
   display: block;
   margin-top: 10px;
 }
-#pRegister main .register_form > div > label:first-child {
+
+#pRegister main .register_form>div>label:first-child {
   display: none;
 }
+
 /* ****************** Profile ******************** */
 #pProfile main section {
   text-align: center;
@@ -566,7 +598,7 @@ footer {
 }
 
 #pProfile main section .row {
-  background-color: rgb(182, 180, 180);
+  background-color: rgba(238, 90, 36, 0.3);
   border-radius: 5px;
 }
 
@@ -582,6 +614,7 @@ footer {
   width: 80%;
   margin: 50px auto !important;
 }
+
 #pFormule .card .btn3 {
   background-color: var(--bleu);
   color: white;
@@ -589,6 +622,7 @@ footer {
   margin: 10px auto;
   padding: 5px;
 }
+
 /* ******************** Panier  ***************** */
 #pPanier main section {
   max-width: 1000px;
@@ -648,6 +682,7 @@ footer {
   #pSalles .card h5 {
     font-size: 1rem;
   }
+
   #pSalles section {
     margin-left: 5% !important;
     margin-right: 5% !important;
@@ -710,6 +745,7 @@ footer {
 /* ******************************************************************************* */
 /* ****************************************************************************** */
 @media screen and (min-width: 992px) {
+
   header form .form-group,
   .formFiltreSalle .form-group {
     display: flex;
