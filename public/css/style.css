@@ -438,6 +438,10 @@ footer {
   left: 25px;
 }
 
+#pSalles .card-haut {
+  min-height: 130px !important;
+}
+
 /* ****** card ******* */
 #pSalles .card {
   padding: 0;
@@ -462,9 +466,9 @@ footer {
   padding: 5px;
 }
 
-.btnDevis {
+/* .btnDevis {
   float: right;
-}
+} */
 
 /*
 ██████╗ ███████╗████████╗ █████╗ ██╗██╗     
@@ -537,7 +541,7 @@ footer {
 /* ****************** Connexion ******************** */
 
 #pConnexion section {
-  max-width: 550px;
+  max-width: 500px;
   margin: 0 auto;
 }
 

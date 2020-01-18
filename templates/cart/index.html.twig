@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{# <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -83,4 +83,71 @@
         
 </body>
 </html>
+ #}
 
+
+
+
+
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container-fluide" id="pPanier">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+   
+
+    <div class="bg-light p-3">
+        <h1>Votre Panier</h1>
+    </div>
+
+    {% if items | length > 0 %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+               {% for item in items %}
+                    <tr>
+                        <td>{{ item.formule.titre }}</td>
+                        <td>{{ item.formule.description }}</td>
+                        <td>{{ item.formule.prix }} €/mois</td>
+                        <td>
+                            <a href="{{ path('cart_remove', { 'id': item.formule.id }) }}" class="btn btn-danger btn-sm">
+                                <button type="button" class="btn btn-labeled btn-danger">
+                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Supprimer</button></i>
+                            </a>
+                        </td>
+                    </tr>
+               {% endfor %} 
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="3" class="text-right"><strong>Prix Total : </strong></td>
+                    <td><strong>{{ total }} €</strong></td>
+                    <td><a href="{{ path('payment') }}?total={{total}}" class="btn btn-success btn-sm">
+                                <button type="button" class="btn btn-labeled btn-success">
+                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Payer par CB</button></i>
+                            </a></td>
+                </tr>
+            </tfoot>
+        </table>
+    {% else %}
+        <p>vide</p>
+    {% endif %}
+ {% include 'footer.html.twig' %}
+</div>
+
+        
+{% endblock %}
+
+ 
