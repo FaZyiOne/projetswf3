@@ -1,8 +1,25 @@
-{% trans_default_domain 'FOSUserBundle' %}
+{% include 'base.html.twig' %}
+{% block body %}
+<div class="container-fluide" id="pProfile">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
 
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
+    <main class=" mt-5 pt-5">
+
+        {% trans_default_domain 'FOSUserBundle' %}
+        <section>
+            {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+            {{ form_widget(form) }}
+            <div>
+                <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+            </div>
+            {{ form_end(form) }}
+
+        </section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
+{% endblock %}
