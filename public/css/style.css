@@ -29,6 +29,15 @@ a:hover {
   color: var(--orangeMarron);
 }
 
+nav .navbar {
+  background: rgb(180, 186, 191) !important;
+  height: 100px;
+}
+
+nav .navbar-toggler {
+  border: none !important;
+}
+
 nav a,
 nav .insc {
   text-transform: uppercase;
@@ -630,6 +639,27 @@ footer {
   letter-spacing: 0.25rem;
 }
 
+/* ******************** resevration  ***************** */
+#pReservation section {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#pReservation form {
+  width: 100%;
+}
+
+#pReservation form input,
+#pReservation form textarea {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+}
+
+#pReservation form label {
+  text-align: left;
+}
+
 /* ******************** formule  ***************** */
 #pFormule .card {
   border-radius: 8px;
@@ -651,14 +681,19 @@ footer {
 
 }
 
+#pFormule input[type=text] {
+  display: block !important;
+  width: 250px;
+  padding: 10px;
+  margin: 20px auto;
+}
+
 /* ******************** Panier  ***************** */
 #pPanier main section {
   width: 95%;
   max-width: 1000px;
   margin: 5rem auto !important;
 }
-
-
 
 /* ***************** Plan du site  *************** */
 
@@ -698,6 +733,7 @@ footer {
 
   header nav #navbarNavDropdown form .btn.btn1 {
     margin: 0.5rem auto !important;
+    margin-bottom: 2rem;
   }
 
   form .milieu {
@@ -743,6 +779,7 @@ footer {
   header nav #navbarNavDropdown form {
     width: 50%;
     margin: auto !important;
+    padding-bottom: 2rem;
   }
 
   /* 

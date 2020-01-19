@@ -59,7 +59,7 @@
                 {% endif %}
                 {% if test.ville == ""  and reservation.capacite <= test.capacite %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
+                    <div class="card card-hover">
                         <a href="{{path('detail_salle',{'id':reservation.id})}}" target="_blank"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
@@ -81,7 +81,7 @@
                 {% endif %}
                 {% if test.capacite == "" and reservation.ville == test.ville %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
+                    <div class="card card-hover">
                         <a href="{{path('detail_salle',{'id':reservation.id})}}" target="_blank"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
@@ -103,7 +103,7 @@
                 {% endif %}
                 {% if test.capacite == "" and  test.ville == "" %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
+                    <div class="card card-hover">
                         <a href="{{path('detail_salle',{'id':reservation.id})}}" target="_blank"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
@@ -126,7 +126,7 @@
                 {# Si beug affichage supprimer le else #}
                 {% else %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
+                    <div class="card card-hover">
                         <a href="{{path('detail_salle',{'id':reservation.id})}}" target=""><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>

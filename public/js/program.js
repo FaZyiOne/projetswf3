@@ -3,9 +3,10 @@ $(document).ready(function () {
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     if (scroll < 100) {
-      $("nav.navbar").css("background", "blue");
+      $("nav.navbar").css('background', 'rgb(180, 186, 191)');
+
     } else {
-      $("nav.navbar").css("background", "pink");
+      $("nav.navbar").css('background', 'white');
     }
   })
 
@@ -17,7 +18,7 @@ $(function () {
 
   $('ul.hover_block li').hover(function () {
     $(this).find('img').animate({
-      opacity: "0.2"
+      opacity: "0.5"
     }, {
       duration: 300
     });
@@ -41,5 +42,3 @@ $('.card-hover').mouseout(function () {
   $(this).css("transition", "all 2s");
 
 })
-// -------------------- formulaire inscription
-
