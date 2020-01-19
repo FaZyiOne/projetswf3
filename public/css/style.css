@@ -539,6 +539,23 @@ footer {
   padding-top: 120px;
 }
 
+/* ****************** Avis ******************** */
+#pAvis input[type=text] {
+  display: block !important;
+  width: 250px;
+  padding: 30px;
+  margin: 20px auto;
+}
+
+#pAvis section a {
+  font-size: 1em !important;
+}
+
+#pAvis section a i.fa {
+  font-size: 2rem !important;
+  line-height: 2rem;
+}
+
 /* ****************** Connexion ******************** */
 
 #pConnexion section {

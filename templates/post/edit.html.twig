@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Post{% endblock %}
+{% block title %}Modifier l'avis{% endblock %}
+
 
 {% block body %}
-    <h1>Edit Post</h1>
+<div class="container-fluide">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
 
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+    <main id="pAvis">
+        <section class="text-center">
+    <h1>Modifier l'avis</h1>
 
-    <a href="{{ path('post_index') }}">back to list</a>
+    {{ include('post/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('post_index') }}" title="Retour à la liste"><i class="fas fa-arrow-circle-left"></i></a>
 
     {{ include('post/_delete_form.html.twig') }}
+
+</section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
 {% endblock %}
