@@ -59,12 +59,9 @@
     </header>
     {% block main %}
     {% trans_default_domain 'FOSUserBundle' %}
-    <main class=" mt-5 pt-5">
+    <main>
         <section>
-            <!-- <ul class="fos_user_user_show list-group ">
-                <li class="list-group-item">{{ 'Pseudo'|trans }} : {{ user.username }}</li>
-                <li class="list-group-item">{{ 'profile.show.email'|trans }} : {{ user.email }}</li>
-            </ul> -->
+           
             <p>Bienvenue <strong>{{ user.username}} {{ user.nom }}</strong> sur votre compte client</p>
             <p>Vous trouverez ici toutes les données essentielles sur vous</p>
 

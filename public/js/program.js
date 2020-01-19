@@ -3,7 +3,7 @@ $(document).ready(function () {
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     if (scroll < 100) {
-      $("nav.navbar").css('background', 'rgb(180, 186, 191)');
+      $("nav.navbar").css('background', 'rgb(215, 219, 222)');
 
     } else {
       $("nav.navbar").css('background', 'white');
