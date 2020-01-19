@@ -629,7 +629,7 @@ footer {
 }
 
 #pProfile main section .row {
-  background-color:#6c757d1c;
+  background-color: #6c757d1c;
   border-radius: 5px;
 }
 
@@ -729,7 +729,7 @@ footer {
 
 /* ***************** CGV  - ML  - PC  *************** */
 #pRgpd section {
-  width: 80%;
+  width: 90%;
   margin: 50px auto;
 }
 
@@ -784,6 +784,15 @@ footer {
   /* *********** Profile ******* */
   #pProfile main section {
     max-width: 500px;
+  }
+
+  #pRegister main,
+  #pRgpd main {
+    margin: 0.5rem !important;
+  }
+
+  #pRgpd h1 {
+    font-size: 1.25rem;
   }
 }
 
