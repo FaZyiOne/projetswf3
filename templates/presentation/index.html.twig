@@ -1,6 +1,5 @@
-{% include 'base.html.twig' %}
-{% include 'nav.html.twig' %}
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% block body %}
+<div class="container-fluide" id="pRgpd">
 {% block body %}
 
 <div id="presentation">
@@ -10,7 +9,6 @@
     <p>Salut!!!</p>
 
 </div>
-
+{% endblock %}
 {% include 'footer.html.twig' %}
 
-{% endblock %}

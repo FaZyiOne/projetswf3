@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         for (var item in data) {
           var e = $(
-            "<tr><th>Lieu</th><th>Adresse</th><th>Telephone</th><th>Prix</th><th>Description</th><th>Capacite</th><th>Date</th><th>Ville</th><th>Map</th></tr>"
+            "<tr><th>Lieu</th><th>Image</th><th>Adresse</th><th>Ville</th><th>Map</th><th>Telephone</th><th>Prix</th><th>Description</th><th>Capacite</th><th>Date</th></tr>"
           );
           $("#reservation").html("");
           $("#reservation").append(e);
@@ -23,18 +23,20 @@ $(document).ready(function() {
             console.log(data[item][i]);
 
             var e = $(
-              '<tr><td id = "lieu"></td><td id = "adresse"></td><td id = "telephone"></td><td id = "prix"></td><td id = "description"></td><td id = "capacite"></td><td id = "created_at"></td></tr>'
+              '<tr><td id = "lieu"></td><td id = "image"></td><td id = "adresse"><td id = "ville"></td><td id = "map"></td><td id = "telephone"></td><td id = "prix"></td><td id = "description"></td><td id = "capacite"></td><td id = "created_at"></td></tr>'
             );
 
             $("#lieu", e).html(reservation["lieu"]);
+            $("#image", e).html(reservation["image"]);
             $("#adresse", e).html(reservation["adresse"]);
+            $("#ville", e).html(reservation["ville"]);
+            $("#map", e).html(reservation["map"]);
             $("#telephone", e).html(reservation["telephone"]);
             $("#prix", e).html(reservation["prix"]);
             $("#description", e).html(reservation["description"]);
             $("#capacite", e).html(reservation["capacite"]);
             $("#created_at", e).html(reservation["created_at"]["date"]);
-            $("#ville", e).html(reservation["ville"]);
-            $("#map", e).html(reservation["map"]);
+
             $("#reservation").append(e);
           }
         }

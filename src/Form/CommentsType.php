@@ -12,7 +12,7 @@ class CommentsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Comment')
+            ->add('comment')
         ;
     }
 

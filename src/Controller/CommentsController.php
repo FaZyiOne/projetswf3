@@ -23,7 +23,7 @@ class CommentsController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $comments = $em->getRepository('App:Comments')->getLastInserted('App:Comments', 3);
+        $comments = $em->getRepository('App:Comments')->getLastInserted('App:Comments', 10);
 
         return $this->render('comments/index.html.twig', [
             'comments' => $comments,
