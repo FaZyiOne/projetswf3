@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a href="{{path('homepage')}}"><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="{{path('homepage')}}"><img src="{{ asset('img/logosmall.png')}}" alt="logo koala"></a>
+    <a class="navbar-brand" href="{{path('homepage')}}"><h1>OALA</h1></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -8,31 +10,92 @@
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             <li class="nav-item">
                 <a class="nav-link" href="{{path('fos_user_profile_show')}}">{{ app.user }}</a>
-            </li>    
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{path('fos_user_security_logout')}}">Déconnexion</a>
             </li>
             {% else %}
+            <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
+            <span class="nav-link insc">Inscription</span>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="{{path('fos_user_security_login')}}">Connexion</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{path('fos_user_registration_register')}}">S'inscrire</a>
-            </li>
+            </li> 
+
             {% endif %}
             <li class="nav-item">
-                <a class="nav-link" href="{{path('salles')}}">Salles</a>
+                <a class="nav-link" href="{{path('salles')}}">Lieux d'exception</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="{{path('presentation')}}">LA TEAM KOALA</a>
             </li>
+            {% if is_granted('ROLE_ADMIN') %} 
+        <li class="nav-item">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{path('reservation_index')}}">Index des Lieux</a>
+                    <a class="dropdown-item" href="{{path('comments_index')}}">Index des Commentaires</a>
+                    <a class="dropdown-item" href="{{path('reservation_new')}}">Créer un nouveau Lieu</a>
+                    <a class="dropdown-item" href="{{path('formule_new')}}">Créer une nouvelle Formule</a>      
+                </div>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link text-warning" href="{{path('formule_index')}}">PREMIUM</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-warning" href="{{path('cart_index')}}" class="fa fa-shopping-cart">ACCES AU PANIER</a>
+        </li>  
+        {% endif %}
+            {% if is_granted('ROLE_USER_PRO') %}
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="{{path('formule_index')}}">PREMIUM</a>
+                
+                <a class="nav-link text-warning" href="{{path('cart_index')}}" class="fa fa-shopping-cart">ACCES AU PANIER</a>
+            </li>
+        {% endif %}
+
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        {# <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
             <button class="btn btn1 btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
-
-        
+        </form> #}
     </div>
 </nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="GET" action="{{path('fos_user_registration_register')}}">
+                    <div class="form-row align-items-center m-4">
+                        <div class="col-auto my-1">
+                            <label  id="" class="mr-sm-2" for="inlineFormCustomSelect">Vous êtes
+                                :</label>
+                            <select name="type_user" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option value="user">Particulier</option>
+                                <option value="user_pro">Professionnel</option>
+                            </select>
+                        </div>
+                        <div class="col-auto my-1 align-self-end">
+                            <button class="btn_user btn btn1" action="?=">Valider</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div>
+    </div>
+</div>
 

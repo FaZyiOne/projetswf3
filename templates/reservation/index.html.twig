@@ -1,24 +1,28 @@
-{% extends 'base.html.twig' %}
+{% include 'base.html.twig' %}
 
-{% block title %}Reservation index{% endblock %}
+{% include 'nav.html.twig' %}
+
+{% block title %}Lieux à réserver index{% endblock %}
 
 {% block body %}
-    <h1>Reservation index</h1>
+    <h1>Lieux à réserver Index</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Image</th>
                 <th>Lieu</th>
+                <th>Photo</th>
                 <th>Adresse</th>
-                <th>Telephone</th>
+                <th>Ville</th>
+                <th>Map</th>
+                <th>Téléphone</th>
                 <th>Prix en €</th>
                 <th>Description</th>
                 <th>Capacite</th>
-                <th>Created_at</th>
-                <th>User</th>
-                <th>actions</th>
+                <th>Date</th>
+                <th>Utilisateur</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +32,8 @@
                 <td>{{ reservation.lieu }}</td>
                 <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style="width:75px; max-height:75px;"></td>
                 <td>{{ reservation.adresse }}</td>
+                <td>{{ reservation.ville }}</td>
+                <td>{{ reservation.map }}</td>
                 <td>{{ reservation.telephone }}</td>
                 <td>{{ reservation.prix }} Euros</td>
                 <td>{{ reservation.description }}</td>
@@ -41,19 +47,21 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">Aucun lieu trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('reservation_new') }}">Create new</a>
+    <a href="{{ path('reservation_new') }}">Créer un nouveau lieu à réserver</a>
 
-    <h1>Ajax</h1>
-    <button class="ajax">click me</button>
+    <hr>
+    
+    <button class="ajax">Menu AJAX</button>
 
     <table class="table table-bordered table-dark">
         <tbody id="reservation"></tbody>
-    </table>
+    </table> 
 
 {% endblock %}
+{% include 'footer.html.twig' %}

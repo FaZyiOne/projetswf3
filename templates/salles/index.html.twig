@@ -27,7 +27,7 @@
         </form>
         <section class="listeSalle m-5">
             <!-- boucle -->
-            <h2>Découvrez nos Salles</h2>
+            <h2>Découvrez des Lieux d'exception</h2>
             <div class="row mt-4">
                 {% for reservation in reservations %}
                     <div class="col-sm-12 col-md-6 col-lg-4">
@@ -36,12 +36,12 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">{{ reservation.lieu }}</h5>
-                                <p class="card-text">{{ reservation.adresse }}</p>
-                                <a class="breadcrumb float-left">A partir de {{ reservation.prix }} €</a>
+                                <p class="card-text">{{ reservation.adresse }} {{ reservation.ville }}</p>
+                                <a class="breadcrumb float-left">A partir de {{ reservation.prix }} € HT</a>
                                 
                                 <a href="{{ path('cart_add',{'id': reservation.id } )}}" class="btn btn-success float-right">
                                     <i class="fas mr-1"></i>
-                                    Obtenir un devis
+                                    Réserver
                                 </a>
                                
                             </div>

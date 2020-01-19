@@ -1,5 +1,3 @@
-{% extends 'base.html.twig' %}
-
 {% block title %}Reservation{% endblock %}
 
 {% block body %}
@@ -16,12 +14,20 @@
                 <td>{{ reservation.lieu }}</td>
             </tr>
             <tr>
-                <th>Image</th>
-                <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"</td>
+                <th>Photo</th>
+                <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style="width:400px; max-height:200px;"></td>
             </tr>
             <tr>
                 <th>Adresse</th>
                 <td>{{ reservation.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ reservation.ville }}</td>
+            </tr>
+            <tr>
+                <th>Map</th>
+                <td>{{ reservation.map }}</td>
             </tr>
             <tr>
                 <th>Telephone</th>
@@ -39,11 +45,15 @@
                 <th>Capacite</th>
                 <td>{{ reservation.capacite }} pers.</td>
             </tr>
-            
+            <tr>
+                <th>Date</th>
+                <td>{{ reservation.createdAt ? reservation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
         </tbody>
     </table>
     {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('reservation_index') }}">back to list</a>
+
+    <a href="{{ path('reservation_index') }}">Retour à la liste</a>
 
     <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">edit</a>
 
@@ -51,15 +61,19 @@
     {% endif %}
 
     <hr>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    
     <h1>Commentaires</h1>
-    {{ form_start(form) }}
+   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        {{ form_start(form) }}
             {{ form_widget(form) }}
             <input type="submit" value="Create" />
         {{ form_end(form) }}
-        {% for rpost in rposts %}
-        <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p>
-            {{ rpost.commentaire }}
-        {% endfor %}
     {% endif %}
+
+    {% for comment in comments %}
+    <p>Posté par {{ comment.user }} le  {{ comment.createdAt.date|date('d/m/Y h:i')}}</p>
+        {{ comment.comment}}<hr>
+    {% endfor %}
+
 {% endblock %}
+{% include 'footer.html.twig' %}

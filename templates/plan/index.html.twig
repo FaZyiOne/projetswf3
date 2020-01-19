@@ -10,7 +10,7 @@
                   <a class="nav-link active" href="#presentation">Présentation</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#capacite">Capacités</a>
+                  <a class="nav-link" href="#capacite">Capacité</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#avis">Avis</a>
@@ -23,6 +23,7 @@
                 </li>
               </ul>
             </header>
+
             {% block main %}
             <main>
             <section class="text-center">
@@ -30,23 +31,34 @@
                 <h1>Plan du site</h1>
                 <div class="traitL"></div>
 
-                <a href="#">Accueil</a>
-                <a href="#">Salles</a>
-               
-                <a href="#">Connexion</a>
-                <a href="#">Inscription</a>
-                <a href="#">Contact</a>
-                
-                <a href="#">Qui sommes nous?</a>
-                <a href="#">Comment ça marche</a>
-                
-                <a href="#">Mentions Légales</a>
-                <a href="#">Politique des Confidentialité</a>
-                <a href="#">Conditions Générales d'utilisation</a>
+                <a href="{{path('homepage')}}">Accueil</a>
+                <hr>
+                <a href="{{path('salles')}}">Lieux d'exception</a>
+                <hr>
+                <a href="{{path('fos_user_security_login')}}">Connexion</a>
+                <hr>
+                <a href= "" class="nav-item" data-toggle="modal" data-target="#exampleModal"><span class="nav-link insc">Inscription</span></a>
+                <hr>
+                <a href="{{path('presentation')}}">La TEAM KOALA</a>
+                <hr>
+                <a href="https://donate.wwf.org.au/adopt/koala">Faites un don afin de sauver les koalas d'Australie</a>
+                <hr>
+                <a href="{{path('mentions_legales')}}">Mentions légales</a>
+                <hr>
+                <a href="{{path('politique_confidentialite')}}">Politique de confidentialité</a>
+                <hr>
+                <a href="{{path('cgv')}}">Conditions générales d'utilisation</a>
+                <hr>
+                -
+                <hr>
+                -
+                <hr>
+                -
             </section>
         </main>
             {% endblock %}
+            
             {% include 'footer.html.twig' %}
 
-    </div>
+    
 {% endblock %}

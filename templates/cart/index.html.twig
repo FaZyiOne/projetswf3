@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>
-            {% block title %}Welcome!
+            {% block title %}Bienvenue!
             {% endblock %}
         </title>
         {% block stylesheets %}
@@ -13,19 +13,21 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">KOALA</a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png')}}"</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('salles') }}">Lieux à louer
-                        </a>
+                    <li class="nav-item">
+                        <p class="nav-link">Koala est là pour vous servir ! </p></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('cart_index') }}">Réservations</a>
+                        <p class="nav-link">Pseudo : <strong>{{ app.user }}</strong></p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link">Adresse email : <strong>{{ app.user.email }}</strong></p>
                     </li>
                 </ul>
             </div>
@@ -43,6 +45,7 @@
                 <tr>
                     <th>Lieu</th>
                     <th>Adresse</th>
+                    <th>Ville</th>
                     <th>Prix/jour</th>
                     <th>Nombre de jour(s)</th>
                     <th>Total</th>
@@ -54,9 +57,10 @@
                     <tr>
                         <td>{{ item.reservation.lieu }}</td>
                         <td>{{ item.reservation.adresse }}</td>
-                        <td>{{ item.reservation.prix }} €</td>
+                        <td>{{ item.reservation.ville }}</td>
+                        <td>{{ item.reservation.prix }} € HT</td>
                         <td>{{ item.quantity }}</td>
-                        <td>{{ item.reservation.prix * item.quantity }} €</td>
+                        <td>{{ item.reservation.prix * item.quantity }} € HT</td>
                         <td>
                             <a href="{{ path('cart_remove', { 'id': item.reservation.id }) }}" class="btn btn-danger btn-sm">
                                 <button type="button" class="btn btn-labeled btn-danger">
@@ -68,23 +72,28 @@
             </tbody>
             <tfoot>
                 <tr>
+                    <td><a class="nav-link" href="{{ path('salles') }}">+ de Lieux à louer</td></a>
                     <td></td>
                     <td colspan="3" class="text-right"><strong>Prix Total : </strong></td>
-                    <td><strong>{{ total }} €</strong></td>
+                    <td><strong>{{ total }} € HT</strong></td>
+                    
                     <td><a href="{{ path('payment') }}?total={{total}}" class="btn btn-success btn-sm">
-                                <button type="button" class="btn btn-labeled btn-success">
-                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Payer par CB</button></i>
-                            </a></td>
+                            <button type="button" class="btn btn-labeled btn-success">
+                            <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Payer par CB</button></i>
+                        </a>
+                    </td>
                 </tr>
             </tfoot>
         </table>
     {% else %}
-        <p>vide</p>
+        <p>Panier vide</p>
+        <td><a class="nav-link" href="{{ path('salles') }}">+ de Lieux à louer</td></a>
     {% endif %}
 
 {% endblock %}
 </div>
  {% block javascripts %}{% endblock %}
+ {% include 'footer.html.twig' %}
         
 </body>
 </html>

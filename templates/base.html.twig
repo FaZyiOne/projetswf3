@@ -19,6 +19,9 @@
     <meta property="og:image" content="https://www.fabid.fr/koala/icon.png" />  
     <meta property="og:description" content="Koala site de location de salles pour tout événement : mariage, anniversaire, fêtes, réunion, formation. Trouvez enfin la salle qui vous convient." />
 
+    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- google font -->
@@ -26,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    {% block title %}<title>Location Salle</title>{% endblock %}
+    {% block title %}{% endblock %}
 
 </head>
 
@@ -36,32 +39,22 @@
 
 
     {% block javascripts %}
+    
+    
     <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
     <script type="text/javascript" src="{{ asset('js/program.js') }}"></script>
-    <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-        
-    </script>
+    
     <script type="text/javascript" src="{{ asset('js/program.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{asset('js/jquery3.4.1.js')}}"></script>
-    <script src="{{asset('js/back.js')}}"></script>
     <script src="http://www.fabid.fr/koala/cookiechoices.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.fabid.fr/koala/mentions-legales/');});</script>
     {% endblock %}
 
     
 </body>
+
+</html>
 
 </html>

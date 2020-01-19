@@ -1,0 +1,18 @@
+{% include 'base.html.twig' %}
+
+{% include 'nav.html.twig' %}
+
+{% block title %}Modification du commentaire{% endblock %}
+
+{% block body %}
+    <h1>Modifier le commentaire</h1>
+
+    {{ include('comments/_form.html.twig', {'button_label': 'Update'}) }}
+
+    {{ include('comments/_delete_form.html.twig') }}
+
+    <a href="{{ path('comments_index') }}">Reyour à la liste</a>
+
+    
+{% endblock %}
+{% include 'footer.html.twig' %}

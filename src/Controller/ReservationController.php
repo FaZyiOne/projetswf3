@@ -10,9 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use App\Entity\Post;
+use App\Entity\Comments;
 use App\Entity\User;
-use App\Form\PostType;
+use App\Form\CommentsType;
+
+
 
 /**
  * @Route("/reservation")
@@ -20,16 +22,17 @@ use App\Form\PostType;
 class ReservationController extends AbstractController
 {
     /**
-     * @Route("/", name="reservation_index", methods={"GET"})
+     * @Route("/", name="reservation_index", methods={"GET","POST"})
      */
     public function index(ReservationRepository $reservationRepository): Response
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 10);
+        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 20);
         
         return $this->render('reservation/index.html.twig', [
             'reservations' => $reservations,
+            
         ]);
     }
 
@@ -42,11 +45,11 @@ class ReservationController extends AbstractController
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
 
-        // if(!$this->getUser()) {
-        //     $this->addFlash('notice', 'You must be identified to access this section');
+        if(!$this->getUser()) {
+            $this->addFlash('notice', 'Vous devez être identifié avant de pouvoir accéder à cette section');
 
-        //     return $this->redirectToRoute('post_index');
-        // }
+            return $this->redirectToRoute('comment_index');
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -56,12 +59,15 @@ class ReservationController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le lieu destiné à la réservation a bien été créé');
+
             return $this->redirectToRoute('reservation_index');
         }
 
         return $this->render('reservation/new.html.twig', [
             'reservation' => $reservation,
             'form' => $form->createView(),
+            'test' => $_POST,
         ]);
     }
 
@@ -71,39 +77,40 @@ class ReservationController extends AbstractController
 
     public function show(Reservation $reservation, Request $request): Response
     {
-       
-        // return $this->render('reservation/show.html.twig', [
-        //     'reservation' => $reservation,
-             
-        // ]);
 
-    $rpost = new Post();
-        $form = $this->createForm(PostType::class, $rpost);
+        $comment = new Comments();
+        $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
 
+        if(!$this->getUser()) {
+            $this->addFlash('danger', 'Vous devez être identifié avant de pouvoir accéder à cette section');
+
+            return $this->redirectToRoute('comments_index');
+        }
 
         $entityManager = $this->getDoctrine()->getManager();
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $entityManager = $this->getDoctrine()->getManager();
 
-            $rpost->setUser($this->getUser());
-            $rpost->setReservation($reservation);
+            $comment->setUser($this->getUser());
+            $comment->setReservation($reservation);
 
-            $entityManager->persist($rpost);
+            $entityManager->persist($comment);
             $entityManager->flush();
 
-            return $this->redirectToRoute('salles');
+            $this->addFlash('success', 'Votre commentaire a bien été enregistré');
+
+            return $this->redirectToRoute('reservation_index');
         }
 
-        $rposts = $entityManager->getRepository('App:Post')->findByReservation($reservation);
+            $comments = $entityManager->getRepository('App:Comments')->findByReservation($reservation);
 
-        return $this->render('reservation/show.html.twig', [
-            'reservation' => $reservation,
-            'form' => $form->createView(),
-            'rposts' => $rposts
-        ]);
-    }
+            return $this->render('reservation/show.html.twig', [
+                'reservation' => $reservation,
+                'form' => $form->createView(),
+                'comments' => $comments
+            ]);
+        }
 
     /**
      * @Route("/{id}/edit", name="reservation_edit", methods={"GET","POST"})
@@ -146,9 +153,9 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         
-        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 3);
+        $reservations = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 5);
         return new JsonResponse(array(
-            'reservation' => $reservation
+            'reservations' => $reservations
         ));
     }
 }

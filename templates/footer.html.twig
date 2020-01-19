@@ -1,25 +1,54 @@
- <footer>
-    <div class="hautF">
-        <a href="#"><img src="https://picsum.photos/seed/picsum/75/75" alt=""></a>
-        <div class="apropos mb-4">
-            <h4>A propos</h4>
-                <div><a href="">Qui sommes nous?</a></div>
-                <div><a href="">Comment ça marche</a></div>
-        </div>
-        <div class="information mb-4">
-            <h4>Information</h4>
-            <div><a href="">Conditions Générales d'utilisation</a></div>
-            <div><a href="">Politique des Confidentialité</a></div>
-            <div><a href="">Mentions Légales</a></div>
-            <div><a href="">Plan de Site</a></div>
-        </div>
-        <div class="contact mb-4">
-            <h4>Contact</h4>
-                <div><a href="mailto:test@gmail.com">test@gmail.com</a></div>
-                <div><a href="">01 11 11 11 11</a></div>
-        </div>
-        
-    </div>
-    <p class="copyr">&copy;2020 tous droits réservés</p>
+{% include 'base.html.twig' %}
+
+<footer>
+	<div class="hautF">
+		<a href="#"><img src="{{ asset('img/logo.png')}}" alt="logo koala"></a>
+		<div class="apropos mb-4">
+			<h4>Aidons les koalas</h4><a href="https://donate.wwf.org.au/adopt/koala"><img src="{{ asset('img/Webp.net-resizeimage.png')}}" alt="logo charity"></a>
+			<div>
+				<a href="https://donate.wwf.org.au/adopt/koala">Faites un don afin de sauver les koalas d'Australie</a>
+			</div>
+			
+		</div>
+		<div class="information mb-4">
+			<h4>Information</h4>
+			<div>
+				<a href="{{path('cgv')}}" target="_blank">Conditions générales d'utilisation</a>
+			</div>
+			<div>
+				<a href="{{path('politique_confidentialite')}}" target="_blank">Politique de confidentialité</a>
+			</div>
+			<div>
+				<a href="{{path('mentions_legales')}}" target="_blank">Mentions légales</a>
+			</div>
+			<div>
+				<a href="{{path('plan')}}">Plan du Site</a>
+			</div>
+		</div>
+		<div class="contact mb-4">
+			<h4>Contact</h4>
+			<div>
+				<a href="mailto:koala@gmail.com" class="fa fa-envelope" aria-hidden="true"></a>
+				<a href="mailto:koala@gmail.com">koala@gmail.com</a>
+			</div>
+			<div>
+				<a href="tel:01 11 11 11 11" class="fa fa-phone" aria-hidden="true"></a>
+				<a href="tel:01 11 11 11 11">Tél: 01 11 11 11 11</a>
+			</div>
+			<div>
+				<a href="#" class="fab fa-facebook-square"></a>
+                <a href="#">Rejoignez nous sur Facebook</a>
+            </div>    
+            <div>
+				<a href="#" class="fab fa-twitter-square"></a>
+                <a href="#">Rejoignez nous sur Twitter</a>
+            </div>
+            <div>
+				<a href="#" class="fab fa-linkedin"></a>
+                <a href="#">Rejoignez nous sur Linkedin</a>
+			</div>
+		</div>
+	</div>
+	<p class="copyr">&copy;2020 Tous droits réservés</p>
 </footer>
             

@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 
 class ReservationType extends AbstractType
@@ -22,11 +23,12 @@ class ReservationType extends AbstractType
                 'image_uri' => true,
                 'label' => 'Image *'))
             ->add('adresse')
+            ->add('ville')
+            ->add('map')
             ->add('telephone')
             ->add('prix')
             ->add('description')
             ->add('capacite')
-
         ;
     }
 

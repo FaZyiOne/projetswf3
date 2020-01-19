@@ -57,13 +57,15 @@ class ReservationRepository extends ServiceEntityRepository
                     ->setMaxResults($amount)
                     ->getResult();
     }
+    
     public function getLastInsertedAjax($entity, $amount)
     {
         return $this->getEntityManager()
                     ->createQuery(
-                        "SELECT e.id, e.lieu, e.created_at, e.adresse, e.telephone, e.prix, e.description, e.capacite FROM $entity e JOIN e.user u ORDER BY e.id DESC"
+                        "SELECT e.id, e.image, e.lieu, e.created_at, e.adresse, e.telephone, e.prix, e.description, e.capacite, e.ville, e.map, u.username FROM $entity e JOIN e.user u ORDER BY e.id DESC"
                     )
                     ->setMaxResults($amount)
                     ->getResult();
     }
 }
+

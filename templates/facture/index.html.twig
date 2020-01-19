@@ -1,14 +1,34 @@
 
-logo koala
+{% include 'nav.html.twig' %}
+  </header>
+{% block main %}
 
 
-Récap de la réservation + prix
+    <h1>Transaction validée</h1>
 
-Mme, M. X
+    <p>Récap de la réservation + prix</p>
 
-"Votre facture vous a été envoyée à votre adresse email."
+    <hr>
 
-"Nous vous remercions pour votre confiance."
+    <p>Mme, M. <strong>{{ app.user }} </strong></p>
+
+    <hr>
+
+    Votre demande de réservation a bien été enregistrée et sera traitée dans les plus brefs délais!
+
+    <hr>
 
 
-"blablabla la Team Koala (Z.M.C.R.A.)
+    <p>Votre facture vous a été envoyée à votre adresse email: <strong>{{ app.user.email }}</strong></p>
+
+
+    <p>Nous vous remercions pour la confiance que vous nous avez accordé.</p>
+
+
+    <p>Cordialement,</p>
+    
+    
+    <p>La Team Koala (Z.M.C.R.A.)</p>
+
+{% endblock %}
+{% include 'footer.html.twig' %}

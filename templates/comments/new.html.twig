@@ -1,0 +1,13 @@
+{% include 'base.html.twig' %}
+
+{% block title %}Nouveau commentaire{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau commentaire</h1>
+
+    {{ include('comments/_form.html.twig') }}
+
+    <a href="{{ path('comments_index') }}">Retour à la liste</a>
+{% endblock %}
+
+{% include 'footer.html.twig' %}

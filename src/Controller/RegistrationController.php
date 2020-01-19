@@ -61,7 +61,7 @@ class RegistrationController extends AbstractController
                     ]),
                     new Type([
                         'type' => 'numeric',
-                        'message' => 'Veuillez ne saisir que des numéro.',
+                        'message' => 'Veuillez ne saisir que des chiffres.',
                     ])
 
                 ]
@@ -95,7 +95,7 @@ class RegistrationController extends AbstractController
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Votre mot de passe doit contenir {{ limit }} caractères',
                         'max' => 4096,
                     ]),
                 ],
@@ -121,7 +121,7 @@ class RegistrationController extends AbstractController
                         ]),
                         new Type([
                             'type' => 'numeric',
-                            'message' => 'Veuillez ne saisir que des numéro.',
+                            'message' => 'Veuillez ne saisir que des chiffres.',
                         ])
                     ]
             ));

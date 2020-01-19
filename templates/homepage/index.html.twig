@@ -15,8 +15,8 @@
                 <div class="carousel-item">
                     <img src="{{ asset('img/mariage2-koala.jpg')}}" class="d-block w-100" alt="salle">
                 </div>
-                
-                
+
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -28,16 +28,16 @@
             </a>
         </div>
 
-        <form method="" action="" class="form-filtre">
-            <h1 class="text-dark m-5">Trouver la salle Idéale</h1>
+        <form method="post" action="{{ path('salles') }}" class="form-filtre">
+            <h1 class="text-dark m-5">Trouver le Lieu Idéal</h1>
             <div class="form-group">
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-map-marker-alt"></i>
-                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville">
+                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville" name="ville" id="ville" onchange="this.value = this.value.toLowerCase()">
                 </div>
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-search"></i>
-                    <input type="text" class="form-control milieu pl-5 p-4" placeholder="Mariage,formation">
+                    <input type="text" class="form-control milieu pl-5 p-4" placeholder="Capacite" name="capacite" id="capacite">
                 </div>
                 <button type="submit" class="btn1 btn col-xs-10 col-md-2">rechercher</button>
             </div>
@@ -48,93 +48,34 @@
         <section class="bestOf">
             <div class="traitD"></div>
             <h2 class="text-center m-3">A la une </h2>
-            <p class="text-center m-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.</p>
+            <p class="text-center m-3">Les plus beaux lieux pour vos plus beaux moments.</p>
             <div class="traitL"></div>
             <div class="bande">
+                {% for reservation in reservations %}
                 <a href="#">
                     <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
+                        <img class="petiteimg" src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                            alt="meilleure_salle">
                         <figcaption>
                             <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
+                                {# <span>Type</span> #}
+                                <span>{{ reservation.capacite }} pers. max</span>
                             </div>
                             <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
+                                <span>{{ reservation.lieu }}</span>
+                                <span>{{ reservation.adresse }}</span>
+                                <span>{{ reservation.ville }}</span>
                             </div>
                         </figcaption>
                     </figure>
                 </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a href="#">
-                    <figure>
-                        <img class="petiteimg" src="{{ asset('img/sss.jpg')}}" alt="meuilleure_salle">
-                        <figcaption>
-                            <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
-                            </div>
-                            <div class="descBas">
-                                <span>Nom</span>
-                                <span>ville</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </a>
-
+                {% endfor %}
 
             </div>
         </section>
-
-
         <section class="typeEvent">
             <h2 class="text-center mt-2">Type d'événement</h2>
-            <p class="text-center mt-2 mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.
+            <p class="text-center mt-2 mb-5">Devenez membre premium et bénéficiez d'avantages exceptionnels.
             </p>
             <ul class="hover_block text-center col-sm-12">
                 <li class="col-sm-12 col-md-6 col-lg-4">
@@ -145,7 +86,8 @@
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/anniversaire2-koala.jpg')}}" alt="anniversaire" title="Anniversaire">
+                        <img class="categorie" src="{{ asset('img/anniversaire2-koala.jpg')}}" alt="anniversaire"
+                            title="Anniversaire">
                         <h3>Anniversaire</h3>
                     </a>
                 </li>
@@ -157,7 +99,8 @@
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
                     <a href="#">
-                        <img class="categorie" src="{{ asset('img/formation1-koala.jpg')}}" alt="formation" title="Formation">
+                        <img class="categorie" src="{{ asset('img/formation1-koala.jpg')}}" alt="formation"
+                            title="Formation">
                         <h3>Formation</h3>
                     </a>
                 </li>
@@ -167,20 +110,37 @@
                         <h3>Réunion</h3>
                     </a>
                 </li>
+                <li class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="#">
+                        <img class="categorie" src="{{ asset('img/conference1-koala.jpg')}}" alt="reunion" title="Réunion">
+                        <h3>Conférence</h3>
+                    </a>
+                </li>
             </ul>
         </section>
         <section class="partenaires">
             <h2 class="text-center  mt-5">Ils nous font confiance</h2>
             <figure>
-                <a href=""><img src="https://picsum.photos/id/75/75" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/75/75?grayscale" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/75/75?grayscale" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
-                <a href=""><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo2.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo1.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo3.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo4.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo5.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo6.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo7.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo8.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo9.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo10.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo11.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo12.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo13.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo14.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo15.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo16.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo17.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo18.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo19.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
+                <a href=""><img src="{{ asset('images/partenaires/logo20.png')}}" alt="logo" style="width:75px; max-height:75px;"></a>
             </figure>
         </section>
     </main>

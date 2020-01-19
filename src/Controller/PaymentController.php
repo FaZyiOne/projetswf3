@@ -21,25 +21,29 @@ class PaymentController extends AbstractController
         
         // Token is created using Stripe Checkout or Elements!
         // Get the payment token ID submitted by the form:
+        
+        if (isset($_GET['total'])) {
         $total = $_GET['total'];
 
-        if (isset($_POST['stripeToken'])) {
-            $token = $_POST['stripeToken'];
-            $charge = \Stripe\Charge::create([
-                'amount' => ($total * 100),
-                'currency' => 'eur',
-                'description' => '$MONEY$MONEY$MONEY$',
-                'source' => $token,
-              ]);
+            if (isset($_POST['stripeToken'])) {
+                $token = $_POST['stripeToken'];
+                $charge = \Stripe\Charge::create([
+                    'amount' => ($total * 100),
+                    'currency' => 'eur',
+                    'description' => 'TEAM KOALA',
+                    'source' => $token,
+                ]);
 
-            return $this->render('facture/index.html.twig');
+                return $this->render('facture/index.html.twig');
 
-        } else {
+            } 
+        }
+        else {
             $errors['token'] = 'The order cannot be processed. Please make sure you have JavaScript enabled and try again.';
         }
 
         return $this->render('payment/index.html.twig');
-        
+
     }
 }
 
