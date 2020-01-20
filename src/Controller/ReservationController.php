@@ -80,7 +80,7 @@ class ReservationController extends AbstractController
      * @Route("/{id}", name="reservation_show", methods={"GET","POST"})
      */
 
-    public function show(Reservation $reservation, Request $request): Response
+    public function show(Reservation $reservation, ReservationRepository $reservationRepository, Request $request): Response
     {
        
         // return $this->render('reservation/show.html.twig', [
@@ -112,7 +112,8 @@ class ReservationController extends AbstractController
         return $this->render('reservation/show.html.twig', [
             'reservation' => $reservation,
             'form' => $form->createView(),
-            'rposts' => $rposts
+            'rposts' => $rposts,
+            'reservations' => $reservationRepository->findAll(),
         ]);
     }
 
