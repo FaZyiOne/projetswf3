@@ -35,7 +35,7 @@ class PaymentController extends AbstractController
             return $this->render('facture/index.html.twig');
 
         } else {
-            $errors['token'] = 'The order cannot be processed. Please make sure you have JavaScript enabled and try again.';
+            $errors['token'] = 'La commande ne peut pas être traitée. Veuillez vous assurer que JavaScript est activé et réessayer.';
         }
 
         return $this->render('payment/index.html.twig');

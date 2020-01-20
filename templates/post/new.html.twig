@@ -1,11 +1,26 @@
+
 {% extends 'base.html.twig' %}
 
-{% block title %}New Post{% endblock %}
+{% block title %}Ajouter un avis{% endblock %}
+
 
 {% block body %}
-    <h1>Create new Post</h1>
+<div class="container-fluide">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
 
-    {{ include('post/_form.html.twig') }}
+    <main id="pAvis">
+        <section class="text-center">
+            <h1>Ajouter un avis</h1>
 
-    <a href="{{ path('post_index') }}">back to list</a>
+            {{ include('post/_form.html.twig') }}
+
+            <a href="{{ path('post_index') }}">Retour à la liste</a>
+         </section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
 {% endblock %}
