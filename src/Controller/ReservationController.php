@@ -26,7 +26,7 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 20);
+        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 50);
         
         if (isset($_POST['stripeToken'])) {
         
@@ -150,6 +150,7 @@ class ReservationController extends AbstractController
         return $this->redirectToRoute('reservation_index');
     }
 
+  
     /**
      * @Route("/api/reservation/", name="api_reservation_index", methods={"GET"})
      */
@@ -157,9 +158,9 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         
-        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 2);
+        $reservations = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 5);
         return new JsonResponse(array(
-            'reservation' => $reservation
+            'reservations' => $reservations
         ));
     }
 }
