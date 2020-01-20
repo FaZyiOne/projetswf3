@@ -218,7 +218,8 @@ class Reservation
 
     public function setVille(string $ville): self
     {
-        $this->ville = strtolower($ville);
+        $this->ville = strtoupper($ville);
+        // strtolower($ville);
 
         return $this;
     }

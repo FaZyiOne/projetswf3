@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %} {% block body %}
+<div class="container-fluide" id="pFormule">
+  <header>
+    {% include 'nav.html.twig' %}
+  </header>
+  <main class="pt-5 mt-4">
+    <section class="mt-5 mb-5">
+      <div class="card" style="max-width: 500px;">
+        {% for formule in formules %}
+        <div class="m-4 card-body">
+          <h4 class="card-title text-center m-3">{{ formule.titre }}</h4>
+          <h6 class="card-title text-center m-3">{{ formule.description }}</h6>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Un abonnement sur 12 mois</li class="list-group-item">
+            <li class="list-group-item">Fiche de présentation</li class="list-group-item">
+            <li class="list-group-item">Accès sécurisé</li>
+            <li class="list-group-item">Conseiller dédié</li>
+            <li class="list-group-item">10 photos</li>
+            <li class="list-group-item">Module de statistiques</li>
+            <li class="list-group-item">Coordonnées en libre accès</li>
+            <li class="list-group-item">Suivi des appels téléphoniques</li>
+            <li class="list-group-item">Pack promotion</li>
+            <li class="list-group-item">Positionnement garanti à la place choisie</li>
+          </ul class="list-group list-group-flush">
+          {# <a
+            href="{{ path('cart_add', { id: formule.id }) }}"
+            class="btn nav-link btn3"
+            >Devenir Premium</a> #}
+            <button type="button" class="btn btn2 btnDevis mb-2" data-toggle="modal"
+                    data-target="#exampleModalCenter">
+                    Devis Gratuit
+            </button>
+        </div>
+      </div>
+
+      {% else %}
+      <p>
+        no records found
+      </p>
+      {% endfor %}
+    </section>
+  </main>
+  {% include 'footer.html.twig' %}
+</div>
+
+{% endblock %}

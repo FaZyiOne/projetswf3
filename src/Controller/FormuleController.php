@@ -94,3 +94,4 @@ class FormuleController extends AbstractController
         return $this->redirectToRoute('formule_index');
     }
 }
+

@@ -1,22 +1,44 @@
-{% trans_default_domain 'FOSUserBundle' %}
+{% include 'nav.html.twig' %}
 
+{% trans_default_domain 'FOSUserBundle' %}
+{% include 'base.html.twig' %}
+{% block body %}
+<div class="container-fluide" id="pConnexion">
+
+    <main class="p-5 m-4">
+        <section class="mt-4">
+            <div class="text-center">
 {% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+<div class="text-danger"><em>{{ error.messageKey|trans(error.messageData, 'security') }}</em></div>
 {% endif %}
 
 <form action="{{ path("fos_user_security_check") }}" method="post">
+
+
     {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
 
-    <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+    <div class="form-group">
+        <label for="username">{{ 'Pseudo'|trans }}</label>
+        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}"
+            required="required" autocomplete="username" />
+    </div>
 
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
-
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    <div class="form-group">
+        <label for="password">{{ 'Mot de passe'|trans }}</label>
+        <input type="password" class="form-control" id="password" name="_password" required="required"
+            autocomplete="current-password" />
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'se souvenir de moi'|trans }}</label>
+    </div>
+    <input type="submit" id="_submit" name="_submit" class="btn btn1" value="{{ 'Se connecter'|trans }}" />
 </form>
+</section>
+</main>
+</div>
+{% endblock %}
+
+{% include 'footer.html.twig' %}

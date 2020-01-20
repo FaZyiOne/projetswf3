@@ -1,0 +1,13 @@
+{% include 'base.html.twig' %}
+
+{% block title %}New Formule{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouvelle formule</h1>
+
+    {{ include('formule/_form.html.twig') }}
+
+    <a href="{{ path('formule_index') }}">Retour à la liste</a>
+{% endblock %}
+
+{% include 'footer.html.twig' %}

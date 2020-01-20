@@ -7,7 +7,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ReservationRepository;
 use App\Entity\Reservation;
 
-
 class DetailSalleController extends AbstractController
 {
     /**

@@ -28,7 +28,7 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 20);
+        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 50);
         
         return $this->render('reservation/index.html.twig', [
             'reservations' => $reservations,

@@ -9,11 +9,14 @@
         <ul class="navbar-nav">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             <li class="nav-item">
-                <a class="nav-link" href="{{path('fos_user_profile_show')}}">{{ app.user }}</a>
+                <a class="nav-link" href="{{path('fos_user_profile_show')}}"><strong>{{ app.user }}</strong></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{path('fos_user_security_logout')}}">Déconnexion</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="{{path('cart_index')}}" class="fa fa-shopping-cart">ACCES AU PANIER</a>
+            </li> 
             {% else %}
             <li class="nav-item" data-toggle="modal" data-target="#exampleModal">
             <span class="nav-link insc">Inscription</span>
@@ -30,30 +33,24 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{path('presentation')}}">LA TEAM KOALA</a>
             </li>
-            {% if is_granted('ROLE_ADMIN') %} 
-        <li class="nav-item">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{path('reservation_index')}}">Index des Lieux</a>
-                    <a class="dropdown-item" href="{{path('comments_index')}}">Index des Commentaires</a>
-                    <a class="dropdown-item" href="{{path('reservation_new')}}">Créer un nouveau Lieu</a>
-                    <a class="dropdown-item" href="{{path('formule_new')}}">Créer une nouvelle Formule</a>      
-                </div>
-        </li> 
-        <li class="nav-item">
-            <a class="nav-link text-warning" href="{{path('formule_index')}}">PREMIUM</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-warning" href="{{path('cart_index')}}" class="fa fa-shopping-cart">ACCES AU PANIER</a>
-        </li>  
-        {% endif %}
-            {% if is_granted('ROLE_USER_PRO') %}
             <li class="nav-item">
                 <a class="nav-link text-warning" href="{{path('formule_index')}}">PREMIUM</a>
-                
-                <a class="nav-link text-warning" href="{{path('cart_index')}}" class="fa fa-shopping-cart">ACCES AU PANIER</a>
             </li>
+            
+            {% if is_granted('ROLE_ADMIN') %} 
+        <li class="nav-item">
+            <button class="btn bg-success btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{path('reservation_index')}}">Index des Lieux</a>
+                    {# <a class="dropdown-item" href="{{path('formule_index')}}">Index des Formules</a> #}
+                    <a class="dropdown-item" href="{{path('comments_index')}}">Index des Commentaires</a>
+                    <a class="dropdown-item" href="{{path('reservation_new')}}">Créer un nouveau Lieu</a>
+                    {# <a class="dropdown-item" href="{{path('formule_new')}}">Créer une nouvelle Formule</a>  #}
+                    <a class="dropdown-item" href="{{path('comments_new')}}">Créer un nouveau commentaire</a>   
+                </div>
+        </li>   
         {% endif %}
+           
 
         </ul>
         {# <form class="form-inline my-2 my-lg-0">

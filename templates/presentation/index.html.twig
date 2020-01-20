@@ -1,14 +1,85 @@
+{% extends 'base.html.twig' %}
+
 {% block body %}
-<div class="container-fluide" id="pRgpd">
-{% block body %}
+    {% include 'nav.html.twig' %}
 
-<div id="presentation">
-
-    <h1>Présentation de la TEAM KOALA</h1>
-
-    <p>Salut!!!</p>
-
+<div class="container-fluid" id="pQsn">
+    <header>
+        <img src="{{asset('img/jungle.jpg')}}" alt="">
+        <h1 class="titre text-white">Nous sommes Koala !</h1>
+    </header>
+    <section class="contenu">
+        <h4>Avant de devenir des Koala que faisiez-vous ?</h4>
+        <p class="text-center">Les 5 personnes que nous sommes étions en formation pour devenir développeur web !</p>
+        <h4>Comment êtes-vous arrivés à fonder Koala ?</h4>
+        <p class="text-center">Koala est partie d'une idée pour un projet de fin de formation</p>
+        <h4></h4>
+        <h4>La création de ce projet a-t-elle été facile ?</h4>
+        <p class="text-center">Etant donné que pour nous 5 c'etait une première, plusieurs problèmes se sont présentés à nous, mais notre détermination nous à pousser à continuer et réussir à avoir ce que nous voulions.</p>
+        <h4>Et pour la suite ?</h4>
+        <p class="text-center">Aujourd'hui Koala travaille pour proposer à ses clients et ses collaborateurs le meilleur ! C'est pourquoi Koala est le leader dans son domaine !</p>
+    </section>
 </div>
+<div class="container-fluid" id="pCcm">
+    <header>
+        <img src="{{asset('img/koala.webp')}}" alt="">
+        <h1 class="titre text-white">Comment fonctionne Koala</h1>
+    </header>
+    <section class="contenu">
+        <div class="explication">
+            <span class="gratuit">Fluide</span>
+            <span class="facile">Facile</span>
+            <span class="rapide">Rapide</span>
+        </div>
+
+    <div class="accordion col-md-6 mx-auto mt-5" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Fluide</button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body text-center">
+                    COUCOU
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Facile
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body text-center">
+                    C'EST
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Rapide
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body text-center">
+                    KOALA 
+                </div>
+            </div>
+        </div>
+</div>
+    </section>
+</div>
+
+    {% include 'footer.html.twig' %}
 {% endblock %}
-{% include 'footer.html.twig' %}
 

@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <title>
             {% block title %}Bienvenue!
+            <div class="container-fluide" id="pSalles">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
             {% endblock %}
         </title>
         {% block stylesheets %}
@@ -47,9 +51,8 @@
                     <th>Adresse</th>
                     <th>Ville</th>
                     <th>Prix/jour</th>
-                    <th>Nombre de jour(s)</th>
+                    <th>Nbre de jour(s)</th>
                     <th>Total</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -62,9 +65,7 @@
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.reservation.prix * item.quantity }} € HT</td>
                         <td>
-                            <a href="{{ path('cart_remove', { 'id': item.reservation.id }) }}" class="btn btn-danger btn-sm">
-                                <button type="button" class="btn btn-labeled btn-danger">
-                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Supprimer</button></i>
+                            <a href="{{ path('cart_remove', { 'id': item.reservation.id }) }}" class="btn btn-danger btn-sm" type="button" class="btn btn-labeled btn-danger" class="glyphicon glyphicon-trash">Supprimer</a>
                             </a>
                         </td>
                     </tr>
@@ -72,12 +73,12 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td><a class="nav-link" href="{{ path('salles') }}">+ de Lieux à louer</td></a>
+                    <td><a href="{{ path('salles') }}" class="btn btn2 btnDevis mb-2"><i class="fas mr-1"></i>+ de Lieux</a></td>
                     <td></td>
                     <td colspan="3" class="text-right"><strong>Prix Total : </strong></td>
-                    <td><strong>{{ total }} € HT</strong></td>
-                    
-                    <td><a href="{{ path('payment') }}?total={{total}}" class="btn btn-success btn-sm">
+                    <td><strong>{{ total }} € HT</strong></td>                   
+                    <td>
+                        <a href="{{ path('payment') }}?total={{total}}" class="btn btn-success btn-sm">
                             <button type="button" class="btn btn-labeled btn-success">
                             <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Payer par CB</button></i>
                         </a>
@@ -86,8 +87,10 @@
             </tfoot>
         </table>
     {% else %}
-        <p>Panier vide</p>
-        <td><a class="nav-link" href="{{ path('salles') }}">+ de Lieux à louer</td></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a>PANIER VIDE</a>&nbsp;&nbsp;<a href="{{ path('salles') }}" class="btn btn1 mb-2"><i class="fas mr-1"></i>Retour</a>
+        
+        
     {% endif %}
 
 {% endblock %}

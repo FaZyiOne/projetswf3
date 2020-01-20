@@ -4,9 +4,7 @@
 {% block main %}
 
 
-    <h1>Transaction validée</h1>
-
-    <p>Récap de la réservation + prix</p>
+    <h1>-</h1>
 
     <hr>
 
@@ -14,21 +12,26 @@
 
     <hr>
 
-    Votre demande de réservation a bien été enregistrée et sera traitée dans les plus brefs délais!
+    <p>Votre paiement a bien été exécuté.</p>
+
+    <hr>
+
+    <p>Votre demande de réservation a bien été enregistrée et sera traitée dans les plus brefs délais!</p>
 
     <hr>
 
 
     <p>Votre facture vous a été envoyée à votre adresse email: <strong>{{ app.user.email }}</strong></p>
 
+    <hr>
 
     <p>Nous vous remercions pour la confiance que vous nous avez accordé.</p>
 
 
     <p>Cordialement,</p>
     
-    
-    <p>La Team Koala (Z.M.C.R.A.)</p>
+
+    <p>La Team KOALA (Z.M.C.R.A.)</p>
 
 {% endblock %}
 {% include 'footer.html.twig' %}
