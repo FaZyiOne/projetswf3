@@ -18,7 +18,7 @@ class SallesController extends AbstractController
     {
         return $this->render('salles/index.html.twig', [
             'reservations' => $reservationRepository->findAll(),
-            'test' => $_POST,
+            'test' => $_POST, // Variable test reception de valeur
             'test2' => isset($_POST['ville']),
         ]);
     }

@@ -213,30 +213,33 @@
             </div>
 
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <h1>Commentaires</h1>
-    {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <input type="submit" value="Create" />
-        {{ form_end(form) }}
-        {% for rpost in rposts %}
-        {# <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p> #}
-        <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-3  text-center align-self-center logoAvis">
-                        <img src="{{ asset('img/sss.jpg')}}" class="card-img rounded-circle" alt="logo">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ rpost.User }}</h5>
-                            <p class="card-text"><small class="text-muted">{{ rpost.date.date|date('d/m/y h:i')}}</small></p>
-                            <p class="card-text">{{ rpost.commentaire }}</p>
+                <h1>Commentaires</h1>
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                        <input type="submit" value="Create" />
+                    {{ form_end(form) }}
+                {% for rpost in rposts %}
+                {# <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p> #}
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-3  text-center align-self-center logoAvis">
+                                {% if rpost.User == app.user %} 
+                                {# Ne prend que les images de l'utilisateur connecté #}
+                                <img src="{{ asset('images/') }}{{app.user.Image}}" class="card-img rounded-circle" alt="logo">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ rpost.User }}</h5>
+                                    <p class="card-text"><small class="text-muted">{{ rpost.date.date|date('d/m/y h:i')}}</small></p>
+                                    <p class="card-text">{{ rpost.commentaire }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
             
-        {% endfor %}
-    {% endif %}
+                {% endfor %}
+            {% endif %}
 
         </section>
         <section id="acces">

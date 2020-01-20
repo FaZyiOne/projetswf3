@@ -100,7 +100,7 @@ class ReservationController extends AbstractController
 
             $rpost->setUser($this->getUser());
             $rpost->setReservation($reservation);
-
+            
             $entityManager->persist($rpost);
             $entityManager->flush();
 
@@ -108,6 +108,9 @@ class ReservationController extends AbstractController
         }
 
         $rposts = $entityManager->getRepository('App:Post')->findByReservation($reservation);
+        //----
+
+        //----
 
         return $this->render('reservation/show.html.twig', [
             'reservation' => $reservation,
