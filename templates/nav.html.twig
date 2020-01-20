@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style=" background: rgb(215, 219, 222)"> 
-    <a href="{{path('homepage')}}"><img src="https://picsum.photos/seed/picsum/75/75" alt="logo"></a>
+    <a href="{{path('homepage')}}" class="logoNav"><img src="{{asset('img/logo3.png')}}" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,12 +15,10 @@
                     <a class="dropdown-item" href="{{path('formule_new')}}">Ajout Formule</a>           
                 </div>
         </li> 
-
-
         {% endif %}
             {% if is_granted('ROLE_USER_PRO') %}
             <li class="nav-item">
-                <a class="nav-link text-warning" href="{{path('formule_index')}}">PREMIUM</a>
+                <a class="nav-link" href="{{path('formule_index')}}" style="color : #ffa107">PREMIUM</a>
             </li>
             {% endif %}
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -46,10 +44,10 @@
             </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        {# <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
             <button class="btn btn1 btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
+        </form> #}
     </div>
 </nav>
 
