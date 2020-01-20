@@ -1,39 +1,44 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Formule index{% endblock %}
-
-{% block body %}
-    <h1>Formule index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                {# <th>Id</th> #}
-                <th>Titre</th>
-                <th>Description</th>
-                {# <th>Prix</th> #}
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+ {% block body %}
+<div class="container-fluide" id="pFormule">
+  <header>
+    {% include 'nav.html.twig' %}
+  </header>
+  <main class="pt-5 mt-4">
+    <section class="mt-5 mb-5">
+      <div class="card" style="max-width: 500px;">
         {% for formule in formules %}
-            <tr>
-                {# <td>{{ formule.id }}</td> #}
-                <td>{{ formule.titre }}</td>
-                <td>{{ formule.description }}</td>
-                {# <td>{{ formule.prix }}</td> #}
-                <td>
-                    <a href="{{ path('formule_show', {'id': formule.id}) }}">Découvrir</a>
-                    {# <a href="{{ path('formule_edit', {'id': formule.id}) }}">edit</a> #}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="m-4 card-body">
+          <h5 class="card-title text-center m-3">{{ formule.titre }}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Un abonnement sur 12 mois</li class="list-group-item">
+            <li class="list-group-item">Fiche de présentation</li class="list-group-item">
+            <li class="list-group-item">Accès sécurisé</li>
+            <li class="list-group-item">Conseiller dédié</li>
+            <li class="list-group-item">10 photos</li>
+            <li class="list-group-item">Module de statistiques</li>
+            <li class="list-group-item">Coordonnées en libre accès</li>
+            <li class="list-group-item">Suivi des appels téléphoniques</li>
+            <li class="list-group-item">Pack promotion</li>
+            <li class="list-group-item">Positionnement garanti à la place choisie</li>
+          </ul class="list-group list-group-flush">
+          <a
+            href="{{ path('cart_add', { id: formule.id }) }}"
+            class="btn nav-link btn3"
+            >Devenir Premium</a
+          >
+        </div>
+      </div>
 
-    {# <a href="{{ path('formule_new') }}">Create new</a> #}
+      {% else %}
+      <p>
+       
+        aucun enregistrement trouvé
+      </p>
+      {% endfor %}
+    </section>
+  </main>
+  {% include 'footer.html.twig' %}
+</div>
+
 {% endblock %}

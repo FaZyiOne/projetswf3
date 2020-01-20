@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %}
 {% block body %}
 <div class="container-fluide" id="pProfile">
     <header>
@@ -7,14 +7,10 @@
     {% block main %}
     {% trans_default_domain 'FOSUserBundle' %}
     <main class=" mt-5 pt-5">
+    
         <section>
-            <!-- <ul class="fos_user_user_show list-group ">
-                <li class="list-group-item">{{ 'Pseudo'|trans }} : {{ user.username }}</li>
-                <li class="list-group-item">{{ 'profile.show.email'|trans }} : {{ user.email }}</li>
-            </ul> -->
             <p>Bienvenue {{ user.username}} {{ user.nom }} sur votre compte client</p>
             <p>Vous trouverez ici toutes les données essentielles sur vous</p>
-
             <h3>Mes informations</h3>
             <div class="row px-2 py-5">
                 
@@ -48,13 +44,62 @@
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
+{% endblock %} #}
 
+{% include 'base.html.twig' %}
+{% block body %}
+<div class="container-fluide" id="pProfile">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
+    {% trans_default_domain 'FOSUserBundle' %}
+    <main>
+        <section>
+           
+            <p>Bienvenue <strong>{{ user.username}} {{ user.nom }}</strong> sur votre compte client</p>
+            <p>Vous trouverez ici toutes les données essentielles sur vous</p>
 
+            <h3>Mes informations</h3>
+            <div class="row px-2 py-5">
 
+                <div class="col-4">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="list-pseudo-list"
+                            data-toggle="list" href="#list-pseudo" role="tab" aria-controls="pseudo">Pseudo</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                            href="#list-nom" role="tab" aria-controls="nom">Nom</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                            href="#list-prenom" role="tab" aria-controls="prenom">Prenom</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                            href="#list-telephone" role="tab" aria-controls="telephone">N° de téléphone</a>
+                        <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list"
+                            href="#list-email" role="tab" aria-controls="email">Adresse Email</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                            href="">Modifier mes informations</a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-pseudo" role="tabpanel"
+                            aria-labelledby="list-pseudo-list">{{ user.username }}</div>
+                        <div class="tab-pane fade" id="list-nom" role="tabpanel" aria-labelledby="list-nom-list">
+                            {{ user.nom }}</div>
+                        <div class="tab-pane fade" id="list-prenom" role="tabpanel" aria-labelledby="list-prenom-list">
+                            {{ user.prenom }}</div>
+                        <div class="tab-pane fade" id="list-telephone" role="tabpanel"
+                            aria-labelledby="list-telephone-list">{{ user.telephone }}</div>
+                        <div class="tab-pane fade" id="list-email" role="tabpanel" aria-labelledby="list-email-list">
+                            {{ user.email }}</div>
 
-
-
-
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>

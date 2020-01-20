@@ -1,30 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container-fluide" id="pAccueil">
+<div class="container-fluide">
     <header>
         {% include 'nav.html.twig' %}
-  </header>
-{% block main %}
+    </header>
+    {% block main %}
+
+    <main id="pAvis">
+        <section class="text-center">
+            <h1>Transaction validée</h1>
+
+            {# <p>Récap de la réservation + prix</p> #}
+
+            <hr>
+
+            <p>Mme, M. {{ app.user }} </p>
 
 
-<h1>Transaction validée</h1>
+            <p>Votre facture vous a été envoyée à votre adresse email : {{ app.user.email }}</p>
 
-<p>Récap de la réservation + prix</p>
-
-<hr>
-
-<p>Mme, M. {{ app.user }} </p>
+            <p>Nous vous remercions pour votre confiance.</p>
 
 
-<p>Votre facture vous a été envoyée à votre adresse email: {{ app.user.email }}</p>
-
-<p>Nous vous remercions pour votre confiance.</p>
-
-
-<p>blablabla la Team Koala (Z.M.C.R.A.)</p>
-
-{% endblock %}
+            <p>La Team Koala (Z.M.C.R.A.)</p>
+        </section>
+    </main>
+    {% endblock %}
     {% include 'footer.html.twig' %}
 </div>
 {% endblock %}

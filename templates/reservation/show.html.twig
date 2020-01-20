@@ -1,9 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reservation{% endblock %}
+{% block title %}Réservation{% endblock %}
 
 {% block body %}
-    <h1>Reservation</h1>
+<div class="container-fluide">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
+
+    <main id="pAvis">
+        <section class="text-center">
+    <h1>Réservation</h1>
 
     <table class="table">
         <tbody>
@@ -36,16 +44,16 @@
                 <td>{{ reservation.description }}</td>
             </tr>
             <tr>
-                <th>Capacite</th>
+                <th>Capacité</th>
                 <td>{{ reservation.capacite }} pers.</td>
             </tr>
             
         </tbody>
     </table>
     {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('reservation_index') }}">back to list</a>
+    <a href="{{ path('reservation_index') }}" title="Retour à la liste" class="btn"><i class="fas fa-arrow-circle-left"></i></a>
 
-    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">edit</a>
+    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}" title="Modifier" class="btn"><i class="fas fa-edit"></i></a>
 
     {{ include('reservation/_delete_form.html.twig') }}
     {% endif %}
@@ -61,5 +69,9 @@
         <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p>
             {{ rpost.commentaire }}
         {% endfor %}
-    {% endif %}
+    {% endif %}</section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
 {% endblock %}

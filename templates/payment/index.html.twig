@@ -8,116 +8,117 @@
 		</title>
 		{% block stylesheets %}
 			<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-			<link rel="stylesheet" href="{{ asset('css/style_payment.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 			<script src="https://js.stripe.com/v3/"></script>
 		{% endblock %}
 	</head>
 
 
 	{% block body %}
-		<form method="post" id="payment-form">
-			<div class="form-row">
-				<label for="card-element">
-					Credit or debit card
-				</label>
-				<div
-					id="card-element"><!-- A Stripe Element will be inserted here. -->
-				</div>
+	<main>
+	<form method="post" id="payment-form">
+	<div class="form-row">
+		<label for="card-element">
+			Credit or debit card
+		</label>
+		<div
+			id="card-element"><!-- A Stripe Element will be inserted here. -->
+		</div>
 
-				<!-- Used to display Element errors. -->
-				<div id="card-errors" role="alert"></div>
-			</div>
+		<!-- Used to display Element errors. -->
+		<div id="card-errors" role="alert"></div>
+	</div>
 
-			<button>Submit Payment</button>
-			<h2>FAKE CB POUR LE TEST<h2>
-					<ul>
-						<li>4242424242424242    Visa</li>
-						<li>4000056655665556    Visa (debit)</li>
-						<li>5555555555554444    Mastercard</li>
-						<li>2223003122003222    Mastercard (2-series)</li>
-						<li>5200828282828210    Mastercard (debit)</li>
-						<li>5105105105105100    Mastercard (prepaid)</li>
-						<li>378282246310005	    American Express</li>
-						<li>371449635398431	    American Express</li>
-						<li>6011111111111117	Discover</li>
-						<li>6011000990139424	Discover</li>
-						<li>3056930009020004	Diners Club</li>
-						<li>36227206271667	    Diners Club (14 digit card)</li>
-						<li>3566002020360505	JCB</li>
-						<li>6200000000000005	UnionPay</li>
-					</ul>
-				</form>
+	<button class="btn3 p-2">Envoyer le Paiement</button>
+	<h2>FAUSSE CB POUR LE TEST<h2>
+		<ul>
+			<li>4242424242424242    Visa</li>
+			<li>4000056655665556    Visa (debit)</li>
+			<li>5555555555554444    Mastercard</li>
+			<li>2223003122003222    Mastercard (2-series)</li>
+			<li>5200828282828210    Mastercard (debit)</li>
+			<li>5105105105105100    Mastercard (prepaid)</li>
+			<li>378282246310005	    American Express</li>
+			<li>371449635398431	    American Express</li>
+			<li>6011111111111117	Discover</li>
+			<li>6011000990139424	Discover</li>
+			<li>3056930009020004	Diners Club</li>
+			<li>36227206271667	    Diners Club (14 digit card)</li>
+			<li>3566002020360505	JCB</li>
+			<li>6200000000000005	UnionPay</li>
+		</ul>
+	</form>
+<main>
+	{% endblock %}
 
-			{% endblock %}
+	{% block javascripts %}
 
-			{% block javascripts %}
+	<script>
+	var stripe = Stripe('pk_test_OpbRPUdB3xFddwyFzT6JHDBs00tX3Bgof6');
+	var elements = stripe.elements();
 
-				<script>
-					var stripe = Stripe('pk_test_OpbRPUdB3xFddwyFzT6JHDBs00tX3Bgof6');
-var elements = stripe.elements();
+	var style = {
+	base: {
+	color: '#32325d',
+	fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+	fontSmoothing: 'antialiased',
+	fontSize: '16px',
+	'::placeholder': {
+	color: '#aab7c4'
+	}
+	},
+	invalid: {
+	color: '#fa755a',
+	iconColor: '#fa755a'
+	}
+	};
 
-var style = {
-base: {
-color: '#32325d',
-fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-fontSmoothing: 'antialiased',
-fontSize: '16px',
-'::placeholder': {
-color: '#aab7c4'
-}
-},
-invalid: {
-color: '#fa755a',
-iconColor: '#fa755a'
-}
-};
+	// Create an instance of the card Element.
+	var card = elements.create('card', {style: style});
 
-// Create an instance of the card Element.
-var card = elements.create('card', {style: style});
+	// Add an instance of the card Element into the `card-element` <div>.
+	card.mount('#card-element');
 
-// Add an instance of the card Element into the `card-element` <div>.
-card.mount('#card-element');
+	// Handle real-time validation errors from the card Element.
+	card.addEventListener('change', function (event) {
+	var displayError = document.getElementById('card-errors');
+	if (event.error) {
+	displayError.textContent = event.error.message;
+	} else {
+	displayError.textContent = '';
+	}
+	});
 
-// Handle real-time validation errors from the card Element.
-card.addEventListener('change', function (event) {
-var displayError = document.getElementById('card-errors');
-if (event.error) {
-displayError.textContent = event.error.message;
-} else {
-displayError.textContent = '';
-}
-});
+	// Create a token or display an error when the form is submitted.
+	var form = document.getElementById('payment-form');
+	form.addEventListener('submit', function (event) {
+	event.preventDefault();
 
-// Create a token or display an error when the form is submitted.
-var form = document.getElementById('payment-form');
-form.addEventListener('submit', function (event) {
-event.preventDefault();
+	stripe.createToken(card).then(function (result) {
+	if (result.error) { // Inform the customer that there was an error.
+	var errorElement = document.getElementById('card-errors');
+	errorElement.textContent = result.error.message;
+	} else { // Send the token to your server.
+	stripeTokenHandler(result.token);
+	}
+	});
+	});
 
-stripe.createToken(card).then(function (result) {
-if (result.error) { // Inform the customer that there was an error.
-var errorElement = document.getElementById('card-errors');
-errorElement.textContent = result.error.message;
-} else { // Send the token to your server.
-stripeTokenHandler(result.token);
-}
-});
-});
+	function stripeTokenHandler(token) { // Insert the token ID into the form so it gets submitted to the server
+	var form = document.getElementById('payment-form');
+	var hiddenInput = document.createElement('input');
+	hiddenInput.setAttribute('type', 'hidden');
+	hiddenInput.setAttribute('name', 'stripeToken');
+	hiddenInput.setAttribute('value', token.id);
+	form.appendChild(hiddenInput);
 
-function stripeTokenHandler(token) { // Insert the token ID into the form so it gets submitted to the server
-var form = document.getElementById('payment-form');
-var hiddenInput = document.createElement('input');
-hiddenInput.setAttribute('type', 'hidden');
-hiddenInput.setAttribute('name', 'stripeToken');
-hiddenInput.setAttribute('value', token.id);
-form.appendChild(hiddenInput);
-
-// Submit the form
-form.submit();
-}
-				</script>
-
-
-			{% endblock %}
+	// Submit the form
+	form.submit();
+	}
+	</script>
 
 
-		</html>
+	{% endblock %}
+
+
+</html>

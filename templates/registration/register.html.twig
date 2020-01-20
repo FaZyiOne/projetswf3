@@ -1,31 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
-
 {% block body %}
-    <h1>Register</h1>
-    <form action="">
-        <select name="type_user" id="">
-            <option value="user">Particulier</option>
-            <option value="user_pro">Professionnel</option>
-        </select>
-        <button class="btn_user" action="?=">Valider</button>
-    </form>
+<div class="container-fluide" id="pRegister">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    <main class="m-5 p-5 text-center">
+        <section>
+           
 
-    {{ form_start(registrationForm) }}
-    <DIV class="register_form">
-        {{ form_row(registrationForm) }}
-        
-    
-    </DIV>        
+            {{ form_start(registrationForm) }}
+            <DIV class="register_form">
+                {{ form_row(registrationForm) }}
 
-        
-        
-        
-        
+            </DIV>
 
-        <button class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <button class="btn btn1 mt-4">Créer un Compte</button>
+            {{ form_end(registrationForm) }}
 
+        </section>
 
+    </main>
+    {% include 'footer.html.twig' %}
+</div>
 {% endblock %}

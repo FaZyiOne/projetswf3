@@ -1,11 +1,24 @@
+
+{% block title %}Nouvelle Formule{% endblock %}
 {% extends 'base.html.twig' %}
 
-{% block title %}New Formule{% endblock %}
-
 {% block body %}
-    <h1>Create new Formule</h1>
+<div class="container-fluide">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
 
-    {{ include('formule/_form.html.twig') }}
+    <main id="pFormule">
+        <section class="text-center">
+            <h1>Nouvelle Formule</h1>
 
-    <a href="{{ path('formule_index') }}">back to list</a>
+            {{ include('formule/_form.html.twig') }}
+
+            <a href="{{ path('formule_index') }}">retour à la liste</a>  
+            </section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
 {% endblock %}
