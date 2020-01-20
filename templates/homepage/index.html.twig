@@ -48,7 +48,7 @@
         <section class="bestOf">
             <div class="traitD"></div>
             <h2 class="text-center m-3">A la une </h2>
-            <p class="text-center m-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.</p>
+            <p class="text-center m-3">Découvrez les lieux mis en avant ce mois-ci </p>
             <div class="traitL"></div>
             <div class="bande">
                 {% for reservation in reservations %}
@@ -58,8 +58,7 @@
                             alt="meuilleure_salle">
                         <figcaption>
                             <div class="descHaut">
-                                <span>Type</span>
-                                <span>nombre</span>
+                                <span>{{ reservation.capacite }} per.</span>
                             </div>
                             <div class="descBas">
                                 <span>{{ reservation.lieu }}</span>
@@ -74,46 +73,46 @@
         </section>
         <section class="typeEvent">
             <h2 class="text-center mt-2">Type d'événement</h2>
-            <p class="text-center mt-2 mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, sequi.
+            <p class="text-center mt-2 mb-5">Des lieux adaptés pour chaque événement
             </p>
             <ul class="hover_block text-center col-sm-12">
                 <li class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="#">
+                    <span>
                         <img class="categorie" src="{{ asset('img/mariage1-koala.jpg')}}" alt="mariage" title="Mariage">
                         <h3>Mariage</h3>
-                    </a>
+                    </span>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="#">
+                    <span>
                         <img class="categorie" src="{{ asset('img/anniversaire2-koala.jpg')}}" alt="anniversaire"
                             title="Anniversaire">
                         <h3>Anniversaire</h3>
-                    </a>
+                    </span>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="#">
+                    <span>
                         <img class="categorie" src="{{ asset('img/fete1-koala.jpg')}}" alt="fête" title="Fêtes">
                         <h3>Fêtes</h3>
-                    </a>
+                    </span>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="#">
+                    <span>
                         <img class="categorie" src="{{ asset('img/formation1-koala.jpg')}}" alt="formation"
                             title="Formation">
                         <h3>Formation</h3>
-                    </a>
+                    </span>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="#">
+                    <span>
                         <img class="categorie" src="{{ asset('img/reunion3-koala.jpg')}}" alt="reunion" title="Réunion">
                         <h3>Réunion</h3>
-                    </a>
+                    </span>
                 </li>
                 <li class="col-sm-12 col-md-6 col-lg-4">
-                    <a href="#">
+                    <span>
                         <img class="categorie" src="{{ asset('img/conference1-koala.jpg')}}" alt="conference" title="conférence">
                         <h3>Conférence</h3>
-                    </a>
+                    </span>
                 </li>
             </ul>
         </section>
