@@ -8,13 +8,14 @@
 		</title>
 		{% block stylesheets %}
 			<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-			<link rel="stylesheet" href="{{ asset('css/style_payment.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 			<script src="https://js.stripe.com/v3/"></script>
 		{% endblock %}
 	</head>
 
 
 	{% block body %}
+	<main>
 	<form method="post" id="payment-form">
 	<div class="form-row">
 		<label for="card-element">
@@ -28,8 +29,8 @@
 		<div id="card-errors" role="alert"></div>
 	</div>
 
-	<button>Submit Payment</button>
-	<h2>FAKE CB POUR LE TEST<h2>
+	<button class="btn3 p-2">Envoyer le Paiement</button>
+	<h2>FAUSSE CB POUR LE TEST<h2>
 		<ul>
 			<li>4242424242424242    Visa</li>
 			<li>4000056655665556    Visa (debit)</li>
@@ -47,7 +48,7 @@
 			<li>6200000000000005	UnionPay</li>
 		</ul>
 	</form>
-
+<main>
 	{% endblock %}
 
 	{% block javascripts %}

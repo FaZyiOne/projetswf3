@@ -1,52 +1,36 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container-fluide" id="pPlan">
+<div class="container-fluide" id="pPlan">
 
-        <header>
-            {% include 'nav.html.twig' %}
-            <ul class="nav justify-content-center pt-2">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#presentation">Présentation</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#capacite">Capacités</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#avis">Avis</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#acces">Accès</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="btn btnDevis mb-2">Devis Gratuit</a>
-                </li>
-              </ul>
-            </header>
-            {% block main %}
-            <main>
-            <section class="text-center">
-                <div class="traitD"></div>
-                <h1>Plan du site</h1>
-                <div class="traitL"></div>
+  <header>
+    {% include 'nav.html.twig' %}
+   
+  </header>
+  {% block main %}
+  <main>
+    <section class="text-center">
+      <div class="traitD"></div>
+      <h1>Plan du site</h1>
+      <div class="traitL"></div>
 
-                <a href="{{path('homepage')}}">Accueil</a>
-                <a href="{{path('salles')}}">Salles</a>
-               
-                <a href="">Connexion</a>
-                <a href="{{path('app_register')}}">Inscription</a>
-                <a href="{{path('contact')}}">Contact</a>
-                
-                <a href="">Qui sommes nous?</a>
-                <a href="">Comment ça marche</a>
-                
-                <a href="{{path('mentions_legales')}}" target="_blank">Mentions légales</a>
-                <a href="{{path('politique_confidentialite')}}" target="_blank">Politique de confidentialité</a>
-                <a href="{{path('cgv')}}" target="_blank">Conditions générales d'utilisation</a>
-            </section>
-        </main>
-            {% endblock %}
-            {% include 'footer.html.twig' %}
+      <a href="{{path('homepage')}}">Accueil</a>
+      <a href="{{path('salles')}}">Salles</a>
 
-    </div>
+      <a href="">Connexion</a>
+      <a href="{{path('app_register')}}">Inscription</a>
+      <a href="">Contact</a>
+
+      <a href="{{path('qsn')}}">Qui sommes nous?</a>
+      <a href="{{path('ccm')}}">Comment ça marche</a>
+
+      <a href="{{path('mentions_legales')}}" target="_blank">Mentions légales</a>
+      <a href="{{path('politique_confidentialite')}}" target="_blank">Politique de confidentialité</a>
+      <a href="{{path('cgv')}}" target="_blank">Conditions générales d'utilisation</a>
+    </section>
+  </main>
+  {% endblock %}
+  {% include 'footer.html.twig' %}
+
+</div>
 {% endblock %}
