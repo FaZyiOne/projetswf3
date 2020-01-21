@@ -35,7 +35,7 @@ a:hover {
 
 nav .navbar {
   background: rgb(180, 186, 191) !important;
-  height: 90px;
+  height: 90px !important;
 }
 
 nav .navbar .logoNav {
@@ -119,7 +119,6 @@ li {
 
 header {
   position: relative;
-
 }
 
 .form-filtre {
@@ -820,6 +819,11 @@ footer {
 #payment-form .form-row {
   width: 80%;
   margin: 20px auto;
+}
+#payment-form button{
+  border:none;
+  border-radius: 5px;
+  padding:9px;
 }
 
 footer .reseaux-sociaux .fab {
