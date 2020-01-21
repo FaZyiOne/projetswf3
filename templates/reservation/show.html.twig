@@ -3,15 +3,12 @@
 {% block title %}Réservation{% endblock %}
 
 {% block body %}
-<<<<<<< HEAD
     {# <h1>Reservation</h1>
-=======
 <div class="container-fluide">
     <header>
         {% include 'nav.html.twig' %}
     </header>
     {% block main %}
->>>>>>> master
 
     <main id="pAvis">
         <section class="text-center">
@@ -157,7 +154,7 @@
             </div>
         </section>
         <section id="avis">
-            <h2>Avis</h2>
+            {# <h2>Avis</h2>
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row no-gutters">
                     <div class="col-md-3 text-center align-self-center logoAvis">
@@ -206,7 +203,7 @@
                     </div>
                 </div>
             </div>
-            {# ------------------    #}
+            
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row no-gutters">
                     <div class="col-md-3  text-center align-self-center logoAvis">
@@ -222,7 +219,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> #}
 
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <h1>Commentaires</h1>

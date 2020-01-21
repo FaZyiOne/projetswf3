@@ -26,25 +26,25 @@ class DetailSalleController extends AbstractController
         ]);
     }
 
-    // /**
-    //  * @Route("/detail/salle", name="detail_salle")
-    //  */
-    // public function show(ReservationRepository $reservationRepository)
-    // {
-    //     $contact = new Contact();
-    //     $reservation = $entityManager = $this->getDoctrine()->getManager();
-    //     $contact->setReservation($reservation);
-    //     $form = $this->createForm(ContactType::class, $contact);
+    /**
+     * @Route("/detail/salle", name="detail_salle")
+     */
+    public function show(ReservationRepository $reservationRepository)
+    {
+        $contact = new Contact();
+        $reservation = $entityManager = $this->getDoctrine()->getManager();
+        $contact->setReservation($reservation);
+        $form = $this->createForm(ContactType::class, $contact);
         
 
-    //     return $this->render('detail_salle/index.html.twig', [
-    //         'reservations' => $reservationRepository->findAll(),
-    //         'reservation' => $reservation,
-    //         'salle' => $_GET,
-    //         'controller_name' => 'DetailSalleController',
-    //         'form' => $form->createView()
-    //     ]);
-    // }
+        return $this->render('detail_salle/index.html.twig', [
+            'reservations' => $reservationRepository->findAll(),
+            'reservation' => $reservation,
+            'salle' => $_GET,
+            'controller_name' => 'DetailSalleController',
+            'form' => $form->createView()
+        ]);
+    }
 
 
     // /**
@@ -74,4 +74,3 @@ class DetailSalleController extends AbstractController
     // }
 
 }
-x
