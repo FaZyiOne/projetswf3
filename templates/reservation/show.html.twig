@@ -109,7 +109,7 @@
         </ul>
     </header>
     {% block main %}
-    {% for reservation in reservations %}
+    
     <div id="carouselExampleControls" class="carousel">
         <div class="carousel">
             <div class="carousel">
@@ -262,6 +262,8 @@
                 <li><i class="fas fa-car"></i> Accès facile avec la D36</li>
             </ul> #}
         </section>
+
+
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -273,7 +275,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form>
+                    <form method="post">
                         <div class="modal-body">
 
                             <div class="form-group col-10">
@@ -310,7 +312,7 @@
 
 
     </main>
-    {% endfor %}
+    
     {% endblock %}
     {% include 'footer.html.twig' %}
 
