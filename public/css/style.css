@@ -19,9 +19,11 @@ main {
   min-height: 70vh;
   margin-top: 120px !important;
 }
+
 #pAccueil main {
   margin-top: 0px !important;
 }
+
 a {
   color: inherit;
   text-decoration: none !important;
@@ -33,12 +35,14 @@ a:hover {
 
 nav .navbar {
   background: rgb(180, 186, 191) !important;
-  height: 100px;
+  height: 90px !important;
 }
+
 nav .navbar .logoNav {
   width: 60px !important;
   height: 60px !important;
 }
+
 nav .navbar-toggler {
   border: none !important;
 }
@@ -327,12 +331,13 @@ ul.hover_block h3 {
 
 /* ---------------------- footer ------------------------ */
 footer {
-  background-color: black;
+  background-color: rgb(215, 219, 222);
   color: white;
   margin-top: 20px;
   padding: 20px;
   padding-top: 70px;
   clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
+  color: black;
 }
 
 .hautF > img {
@@ -352,39 +357,44 @@ footer {
 ╚██████╔╝███████║██║ ╚████║
  ╚══▀▀═╝ ╚══════╝╚═╝  ╚═══╝
 */
-#pQsn header img{
-    width: 100%;
-    height: 500px;
+#pQsn header img {
+  width: 100%;
+  height: 500px;
 }
-#pQsn .titre{
-    width: 100%;
-    margin-top: -30vh;
-    font-family: 'Alata', sans-serif;
-}      
-#pQsn h4{
-    font-family: 'Ibarra Real Nova', serif;
-    /* color: green; */
-    border: 2px solid green;
-    width: 50%;
-    margin: 0 auto;
+
+#pQsn .titre {
+  width: 100%;
+  margin-top: -30vh;
+  font-family: "Alata", sans-serif;
 }
-#pQsn p{
-    font-family: 'alata', sans-serif;
-    font-size: 1.2em;
-    width: 50%;
-    margin: 0 auto;
-    padding: 50px;
+
+#pQsn h4 {
+  font-family: "Ibarra Real Nova", serif;
+  /* color: green; */
+  border: 2px solid green;
+  width: 50%;
+  margin: 0 auto;
 }
-#pQsn .contenu{
-    margin-bottom: 10em;
+
+#pQsn p {
+  font-family: "alata", sans-serif;
+  font-size: 1.2em;
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
 }
-#pQsn header
-{
-    height: 32em;
-    line-height: 32em;
-    white-space: nowrap;
-    margin-bottom: 4em;
-}               
+
+#pQsn .contenu {
+  margin-bottom: 10em;
+}
+
+#pQsn header {
+  height: 32em;
+  line-height: 32em;
+  white-space: nowrap;
+  margin-bottom: 4em;
+}
+
 #pQsn header img {
   width: 100%;
   height: 500px;
@@ -775,6 +785,7 @@ footer {
 #pRgpd h2 {
   font-size: 1.25rem;
 }
+
 /* **************   payement **************** */
 
 .StripeElement {
@@ -800,14 +811,23 @@ footer {
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+
 #payment-form ul {
   text-align: left;
   font-size: small;
+  margin-left: 10px;
 }
+
 #payment-form .form-row {
   width: 80%;
   margin: 20px auto;
 }
+#payment-form button {
+  border: none;
+  border-radius: 5px;
+  padding: 9px;
+}
+
 footer .reseaux-sociaux .fab {
   font-size: 20px;
   margin-top: 10px;
@@ -857,21 +877,26 @@ footer .reseaux-sociaux .fab {
     width: 95%;
     margin: auto;
   }
+
   /* *********** Profile ******* */
-  #pQsn .titre{
+  #pQsn .titre {
     font-size: 20px;
   }
-  #pQsn{
+
+  #pQsn {
     padding-left: 0px;
     padding-right: 0px;
   }
-  #pQsn h4{
+
+  #pQsn h4 {
     width: 90%;
   }
-  #pQsn p{
+
+  #pQsn p {
     width: 90%;
     padding: 15px;
   }
+
   #pRegister main,
   #pRgpd main {
     margin: 0.5rem !important;
@@ -880,9 +905,11 @@ footer .reseaux-sociaux .fab {
   #pRgpd h1 {
     font-size: 1.25rem;
   }
+
   #pRegister input[type="file"] {
     width: 100%;
   }
+
   #pConnexion main {
     padding: 1rem !important;
   }
