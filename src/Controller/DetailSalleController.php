@@ -15,11 +15,7 @@ class DetailSalleController extends AbstractController
      */
     public function index(ReservationRepository $reservationRepository)
     {
-        $id = $_GET['id'];
        $reservation = $entityManager = $this->getDoctrine()->getManager();
-        if(isset($_GET['id'])){
-        //    $reservation->getId();
-        }
 
          $reservation->getRepository('App:Reservation')->findAll();
         return $this->render('detail_salle/index.html.twig', [
@@ -78,3 +74,4 @@ class DetailSalleController extends AbstractController
     // }
 
 }
+x

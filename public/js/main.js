@@ -1,12 +1,12 @@
-$(document).ready(function() {
-  $(document).on("click", "button.ajax", function() {
+$(document).ready(function () {
+  $(document).on("click", "button.ajax", function () {
     $.ajax({
       url: "api/reservation",
       type: "GET",
       dataType: "json",
       async: true,
 
-      success: function(data, status) {
+      success: function (data, status) {
         console.log(data);
         console.log(status);
 
@@ -41,7 +41,7 @@ $(document).ready(function() {
           }
         }
       },
-      error: function(xhr, textStatus, errorThrown) {
+      error: function (xhr, textStatus, errorThrown) {
         alert("Ajax request failed.");
       }
     });

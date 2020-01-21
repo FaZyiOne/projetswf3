@@ -38,7 +38,7 @@ security:
         - { path: ^/profile, role: ROLE_USER }
         - { path: ^/panier, role: ROLE_USER }
         - { path: ^/post, role: ROLE_ADMIN }
-        - { path: ^/reservation, role: ROLE_ADMIN }
+        - { path: ^/reservation, role: ROLE_USER }
         - { path: ^/reservation/new, role: ROLE_ADMIN }
         - { path: ^/formule/new, role: ROLE_ADMIN }
         - { path: ^/formule, role: ROLE_USER_PRO}

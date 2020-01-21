@@ -83,7 +83,7 @@ class ReservationController extends AbstractController
      * @Route("/{id}", name="reservation_show", methods={"GET","POST"})
      */
 
-    public function show(Reservation $reservation, Request $request): Response
+    public function show(Reservation $reservation, ReservationRepository $reservationRepository, Request $request): Response
     {
        
         // return $this->render('reservation/show.html.twig', [
@@ -103,7 +103,7 @@ class ReservationController extends AbstractController
 
             $rpost->setUser($this->getUser());
             $rpost->setReservation($reservation);
-
+            
             $entityManager->persist($rpost);
             $entityManager->flush();
 
@@ -111,11 +111,15 @@ class ReservationController extends AbstractController
         }
 
         $rposts = $entityManager->getRepository('App:Post')->findByReservation($reservation);
+        //----
+
+        //----
 
         return $this->render('reservation/show.html.twig', [
             'reservation' => $reservation,
             'form' => $form->createView(),
-            'rposts' => $rposts
+            'rposts' => $rposts,
+            'reservations' => $reservationRepository->findAll(),
         ]);
     }
 
