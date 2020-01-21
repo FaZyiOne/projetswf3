@@ -51,30 +51,30 @@ class DetailSalleController extends AbstractController
     // }
 
 
-    /**
-     * @Route("/detail/salle", name="detail_salle", methods={"GET","POST"})
-     */
-    public function showform(ReservationRepository $reservationRepository, Request $request, ContactNotification $contactNotification): Response
-    {
-        $contact = new Contact();
+    // /**
+    //  * @Route("/detail/salle", name="detail_salle", methods={"GET","POST"})
+    //  */
+    // public function showform(ReservationRepository $reservationRepository, Request $request, ContactNotification $contactNotification): Response
+    // {
+    //     $contact = new Contact();
         
-        $contact->setReservation($reservation);
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
+    //     $contact->setReservation($reservation);
+    //     $form = $this->createForm(ContactType::class, $contact);
+    //     $form->handleRequest($request);
 
-        if ($form->IsSubmitted() && $form->IsValid()) {
-           $contactNotification->notify($contact);
-            $this->addFlash('success', 'Votre email a bien été envoyé');
-            return $this->redirectToRoute('detail_salle/index.html.twig');
-        }
+    //     if ($form->IsSubmitted() && $form->IsValid()) {
+    //        $contactNotification->notify($contact);
+    //         $this->addFlash('success', 'Votre email a bien été envoyé');
+    //         return $this->redirectToRoute('detail_salle/index.html.twig');
+    //     }
 
-        return $this->render('detail_salle/index.html.twig', [
-            'reservations' => $reservationRepository->findAll(),
-            'reservation' => $reservation,
-            'salle' => $_GET,
-            'controller_name' => 'DetailSalleController',
-            'form' => $form->createView()
-        ]);
-    }
+    //     return $this->render('detail_salle/index.html.twig', [
+    //         'reservations' => $reservationRepository->findAll(),
+    //         'reservation' => $reservation,
+    //         'salle' => $_GET,
+    //         'controller_name' => 'DetailSalleController',
+    //         'form' => $form->createView()
+    //     ]);
+    // }
 
 }

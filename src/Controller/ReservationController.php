@@ -14,6 +14,7 @@ use App\Entity\Post;
 use App\Entity\User;
 use App\Form\PostType;
 use App\Entity\Contact;
+use App\Entity\Notification;
 
 
 
@@ -177,13 +178,12 @@ class ReservationController extends AbstractController
     //     $contact->setReservation($reservation);
     //     $form = $this->createForm(ContactType::class, $contact);
 
-    // if ($form->IsSubmitted() && $form->IsValid()) {
-        //    $contactNotification->notify($contact);
-        //     $this->addFlash('success', 'Votre email a bien été envoyé');
-        //     return $this->redirectToRoute('detail_salle/index.html.twig');
-        // }
+    //     if ($form->IsSubmitted() && $form->IsValid()) {
+    //        $contactNotification->notify($contact);
+    //         $this->addFlash('success', 'Votre email a bien été envoyé');
+    //         return $this->redirectToRoute('detail_salle/index.html.twig');
+    //     }
         
-
     //     return $this->render('detail_salle/index.html.twig', [
     //         'reservations' => $reservationRepository->findAll(),
     //         'reservation' => $reservation,
