@@ -13,6 +13,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Post;
 use App\Entity\User;
 use App\Form\PostType;
+use App\Entity\Contact;
+
+
 
 /**
  * @Route("/reservation")
@@ -163,4 +166,30 @@ class ReservationController extends AbstractController
             'reservations' => $reservations
         ));
     }
+
+    // /**
+    //  * @Route("/detail/salle", name="detail_salle", methods={"GET","POST"})
+    //  */
+    // public function showform(Reservation $reservation, Request $request, ContactNotification $contactNotification): Response
+    // {
+    //     $contact = new Contact();
+    //     $contactNotification->notify($contact);
+    //     $contact->setReservation($reservation);
+    //     $form = $this->createForm(ContactType::class, $contact);
+
+    // if ($form->IsSubmitted() && $form->IsValid()) {
+        //    $contactNotification->notify($contact);
+        //     $this->addFlash('success', 'Votre email a bien été envoyé');
+        //     return $this->redirectToRoute('detail_salle/index.html.twig');
+        // }
+        
+
+    //     return $this->render('detail_salle/index.html.twig', [
+    //         'reservations' => $reservationRepository->findAll(),
+    //         'reservation' => $reservation,
+    //         'salle' => $_GET,
+    //         'controller_name' => 'DetailSalleController',
+    //         'form' => $form->createView()
+    //     ]);
+    // }
 }

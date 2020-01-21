@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            ajouter un avis si il est membre
+        
 
         </section>
         <section id="acces">
@@ -155,13 +155,16 @@
             <p class="text-center">Adresse complete</p>
             <div class="map-responsive"><iframe src="{{reservation.map}}" width="600" height="450" frameborder="0"
                     style="border:0;" allowfullscreen=""></iframe></div>
-            <h4 class="text-left m-4">Pour se déplacer</h4>
+            {# <h4 class="text-left m-4">Pour se déplacer</h4> #}
             {# <ul>
                 <li><i class="fas fa-plane"></i> Aéroport Paris Orly - <span>25 min en voiture</span> </li>
                 <li><i class="fas fa-car"></i> Accès facile avec la D36</li>
             </ul> #}
         </section>
+
         <!-- Modal -->
+        
+    
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -174,7 +177,7 @@
                     </div>
                     <form>
                         <div class="modal-body">
-
+{{ form_start(form) }}
                             <div class="form-group col-10">
                                 <div class='input-group date' id='datetimepicker1'>
                                     <label for="example-date-input" class="col-form-label">Date de
@@ -206,6 +209,7 @@
                 </div>
             </div>
         </div>
+    {{ form_end(form) }}
 
 
     </main>

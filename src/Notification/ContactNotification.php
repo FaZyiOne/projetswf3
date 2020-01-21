@@ -25,7 +25,7 @@ class ContactNotification {
 
     public function notify(Contact $contact)
     {
-        $message = (\Swift_Message('Agence :' . $contact->getProperty()->getTitle()))
+        $message = (\Swift_Message('Koala :' . $contact->getReservation()->getLieu()))
         ->setFrom('noreply.koala@gmail.com')
         ->setTo('contact.koala@gmail.com')
         ->setReplyTo($contact->getEmail())
