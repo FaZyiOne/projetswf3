@@ -1,70 +1,49 @@
 $(document).ready(function () {
+  $(document).on("click", "button.ajax", function () {
+    $.ajax({
+      url: "api/reservation",
+      type: "GET",
+      dataType: "json",
+      async: true,
 
-  // $('#ville').keyup(function(){
-  //    // alert('ok')
-  //    $('#reservation').html('');
+      success: function (data, status) {
+        console.log(data);
+        console.log(status);
 
-  //    var ville = $('#ville').val();
+        for (var item in data) {
+          var e = $(
+            "<tr><th>Lieu</th><th>Image</th><th>Adresse</th><th>Ville</th><th>Telephone</th><th>Prix</th><th>Description</th><th>Capacite</th><th>Date</th></tr>"
+          );
+          $("#reservation").html("");
+          $("#reservation").append(e);
 
-  //    if(ville !=""){
-  //       $.ajax({
-  //          type: 'GET', 
-  //          url: '../src/Controller/Salles',
-  //          data: 'ville' + encodeURIComponent(ville),
-  //          success: function(data){
-  //             if(data != ""){
-  //                $("#reservation").append(data);
-  //             }
-  //             else{
-  //                $("#reservation").innerHTML = "<div>test<div>"
-  //             }
-  //          }
-  //       })
-  //    }
-  // });
+          for (i = 0; i < data[item].length; i++) {
+            var reservation = data[item][i];
+            console.log(data[item]);
+            console.log(data[item][i]);
 
-  //  $(document).on('click', 'button.ajax', function(){
+            var e = $(
+              '<tr><td id = "lieu"></td><td id = "image"></td><td id = "adresse"><td id = "ville"></td><td id = "telephone"></td><td id = "prix"></td><td id = "description"></td><td id = "capacite"></td><td id = "created_at"></td></tr>'
+            );
 
-  //              $.ajax({  
-  //              url:        'api/reservation',  
-  //              type:       'GET',   
-  //              dataType:   'json',  
-  //              async:      true,  
+            $("#lieu", e).html(reservation["lieu"]);
+            $("#image", e).html(reservation["image"]);
+            $("#adresse", e).html(reservation["adresse"]);
+            $("#ville", e).html(reservation["ville"]);
+            $("#map", e).html(reservation["map"]);
+            $("#telephone", e).html(reservation["telephone"]);
+            $("#prix", e).html(reservation["prix"]);
+            $("#description", e).html(reservation["description"]);
+            $("#capacite", e).html(reservation["capacite"]);
+            $("#created_at", e).html(reservation["created_at"]["date"]);
 
-  //              success: function(data, status) { 
-  //              console.log(data)  
-  //              console.log(status)
-
-  //           for (var item in data) {
-
-  //             $('#reservation').html('');  
-  //             $('#reservation').append(e);
-
-  //             for (i=0; i < data[item].length; i++){
-  //                var reservation = data[item][i];
-  //                console.log(data[item]);
-  //                console.log(data[item][i]);
-
-  //             var e = $('<div class="col-sm-12 col-md-6 col-lg-4 text-dark"><div class="card"><a href="" target="_blank" id="image"></a><div class="card-body"><h5 class="card-title" id="lieu"></h5><p class="card-text" id="adresse"></p><a href="#" class="btn btnDevis">A partir de <span id="prix"></span> €</a><p>Commentaires</p><a href="{{ path("cart_add",{"id": reservation.id } )}}" class="btn btn-success float-right"><i class="fas mr-1"></i>Réserver</a></div></div></div>');
-
-  //               var monImg = document.createElement('img');
-  //             monImg.src="/koala/public/images/reservation/"+reservation['image'];
-
-  //               $('#image', e).html(monImg);
-  //               $('#image img', e).css({"max-height":"100px"});
-
-  //               $('#lieu', e).html(reservation['lieu']);  
-  //               $('#adresse', e).html(reservation['adresse']);
-  //               $('#prix', e).html(reservation['prix']);
-
-  //               $('#reservation').append(e);
-  //             }    
-  //           }
-  //           },  
-  //              error : function(xhr, textStatus, errorThrown) {  
-  //                 alert('Ajax request failed.');  
-  //              }  
-  //           });  
-  //        });  
-
+            $("#reservation").append(e);
+          }
+        }
+      },
+      error: function (xhr, textStatus, errorThrown) {
+        alert("Ajax request failed.");
+      }
+    });
+  });
 });

@@ -2,10 +2,11 @@
 $(document).ready(function () {
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
-    if (scroll < 100) {
-      $("nav.navbar").css("background", "blue");
+    if (scroll < 300) {
+      $("nav.navbar").css('background', 'rgb(215, 219, 222)');
+
     } else {
-      $("nav.navbar").css("background", "pink");
+      $("nav.navbar").css('background', 'white');
     }
   })
 
@@ -17,7 +18,7 @@ $(function () {
 
   $('ul.hover_block li').hover(function () {
     $(this).find('img').animate({
-      opacity: "0.2"
+      opacity: "0.5"
     }, {
       duration: 300
     });
@@ -41,23 +42,3 @@ $('.card-hover').mouseout(function () {
   $(this).css("transition", "all 2s");
 
 })
-// -------------------- formulaire inscription
-
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict';
-  window.addEventListener('load', function () {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function (form) {
-      form.addEventListener('submit', function (event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();

@@ -26,12 +26,12 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 20);
+        $reservations = $em->getRepository('App:Reservation')->getLastInserted('App:Reservation', 50);
         
         if (isset($_POST['stripeToken'])) {
         
         } else {
-            $errors['token'] = 'The order cannot be processed. Please make sure you have JavaScript enabled and try again.';
+            $errors['token'] = 'La commande ne peut pas être traitée. Veuillez vous assurer que JavaScript est activé et réessayer.';
         }
 
         return $this->render('reservation/index.html.twig', [
@@ -154,6 +154,7 @@ class ReservationController extends AbstractController
         return $this->redirectToRoute('reservation_index');
     }
 
+  
     /**
      * @Route("/api/reservation/", name="api_reservation_index", methods={"GET"})
      */
@@ -161,9 +162,9 @@ class ReservationController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         
-        $reservation = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 2);
+        $reservations = $em->getRepository('App:Reservation')->getLastInsertedAjax('App:Reservation', 5);
         return new JsonResponse(array(
-            'reservation' => $reservation
+            'reservations' => $reservations
         ));
     }
 }

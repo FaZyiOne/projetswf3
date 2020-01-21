@@ -35,7 +35,7 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if(!$this->getUser()) {
-            $this->addFlash('notice', 'You must be identified to access this section');
+            $this->addFlash('notice', 'Vous devez être identifié pour accéder à cette section');
 
             return $this->redirectToRoute('post_index');
         }

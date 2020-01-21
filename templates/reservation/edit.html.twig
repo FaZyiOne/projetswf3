@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Reservation{% endblock %}
+{% block title %}Modifier la réservation{% endblock %}
+
 
 {% block body %}
-    <h1>Edit Reservation</h1>
+<div class="container-fluide">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
 
-    {{ include('reservation/_form.html.twig', {'button_label': 'Update'}) }}
+    <main id="pReservation">
+        <section>
+            <h1>Modifier la réservation</h1>
 
-    <a href="{{ path('reservation_index') }}">back to list</a>
+            {{ include('reservation/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    {{ include('reservation/_delete_form.html.twig') }}
+            <a href="{{ path('reservation_index') }}" title="Retour à la liste"><i
+                    class="fas fa-arrow-circle-left"></i></a>
+
+            {{ include('reservation/_delete_form.html.twig') }}
+        </section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
 {% endblock %}

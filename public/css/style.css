@@ -16,7 +16,12 @@ body {
 }
 
 main {
-  min-height: 60vh;
+  min-height: 70vh;
+  margin-top: 120px !important;
+}
+
+#pAccueil main {
+  margin-top: 0px !important;
 }
 
 a {
@@ -28,16 +33,33 @@ a:hover {
   color: var(--orangeMarron);
 }
 
+nav .navbar {
+  background: rgb(180, 186, 191) !important;
+  height: 90px !important;
+}
+
+nav .navbar .logoNav {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+nav .navbar-toggler {
+  border: none !important;
+}
+
 nav a,
 nav .insc {
   text-transform: uppercase;
   font-size: 1rem;
 }
+
 nav .insc {
   cursor: pointer;
 }
+
 h1 {
   word-spacing: 0.5rem;
+  color: black !important;
 }
 
 h1,
@@ -49,10 +71,12 @@ h5 {
   text-transform: uppercase;
   text-align: center;
 }
+
 .modal.card h5 {
   font-size: 1rem;
   width: 90% !important;
 }
+
 h2 {
   margin-top: 1.5rem;
 }
@@ -80,6 +104,11 @@ li {
   background-color: var(--button) !important;
   width: 50%;
   margin-right: 15px;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: black !important;
 }
 
 #pAccueil .carousel img {
@@ -232,7 +261,7 @@ ul.hover_block li {
   padding: 20px;
 }
 
-ul.hover_block li a {
+ul.hover_block li span {
   display: block;
   position: relative;
   overflow: hidden;
@@ -302,12 +331,13 @@ ul.hover_block h3 {
 
 /* ---------------------- footer ------------------------ */
 footer {
-  background-color: black;
+  background-color: rgb(215, 219, 222);
   color: white;
   margin-top: 20px;
   padding: 20px;
   padding-top: 70px;
   clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
+  color: black;
 }
 
 .hautF > img {
@@ -318,6 +348,7 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
+
 /*
  ██████╗ ███████╗███╗   ██╗
 ██╔═══██╗██╔════╝████╗  ██║
@@ -330,16 +361,57 @@ footer {
   width: 100%;
   height: 500px;
 }
+
 #pQsn .titre {
   width: 100%;
-  margin-top: -25vh;
+  margin-top: -30vh;
+  font-family: "Alata", sans-serif;
 }
+
+#pQsn h4 {
+  font-family: "Ibarra Real Nova", serif;
+  /* color: green; */
+  border: 2px solid green;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#pQsn p {
+  font-family: "alata", sans-serif;
+  font-size: 1.2em;
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+#pQsn .contenu {
+  margin-bottom: 10em;
+}
+
 #pQsn header {
   height: 32em;
   line-height: 32em;
   white-space: nowrap;
   margin-bottom: 4em;
 }
+
+#pQsn header img {
+  width: 100%;
+  height: 500px;
+}
+
+#pQsn .titre {
+  width: 100%;
+  margin-top: -25vh;
+}
+
+#pQsn header {
+  height: 32em;
+  line-height: 32em;
+  white-space: nowrap;
+  margin-bottom: 4em;
+}
+
 /*             
  ██████╗ ██████╗███╗   ███╗
 ██╔════╝██╔════╝████╗ ████║
@@ -352,18 +424,22 @@ footer {
   width: 100%;
   height: 500px;
 }
+
 #pCcm .titre {
   width: 100%;
   margin-top: -25vh;
 }
+
 #pCcm section {
   min-height: 50vh;
 }
+
 #pCcm header {
   height: 32em;
   line-height: 32em;
   white-space: nowrap;
 }
+
 #pCcm .explication {
   display: flex;
   justify-content: space-around;
@@ -372,26 +448,32 @@ footer {
   border-bottom: 1px solid #c0c0c03d;
   font-size: 2em;
 }
+
 #pCcm .gratuit {
   padding: 1em;
   border-right: 1px solid #ddd;
   margin: 1em;
 }
+
 #pCcm .facile {
   padding: 2em;
 }
+
 #pCcm .rapide {
   padding: 1em;
   border-left: 1px solid #ddd;
   margin: 1em;
 }
+
 #pCcm button {
   text-decoration: none;
   color: black;
 }
+
 #pCcm #accordionExample {
   margin-bottom: 5vh;
 }
+
 /*  
 ███████╗ █████╗ ██╗     ██╗     ███████╗███████╗
 ██╔════╝██╔══██╗██║     ██║     ██╔════╝██╔════╝
@@ -409,6 +491,10 @@ footer {
   position: absolute !important;
   top: 15px;
   left: 25px;
+}
+
+#pSalles .card-haut {
+  min-height: 130px !important;
 }
 
 /* ****** card ******* */
@@ -435,9 +521,9 @@ footer {
   padding: 5px;
 }
 
-.btnDevis {
+/* .btnDevis {
   float: right;
-}
+} */
 
 /*
 ██████╗ ███████╗████████╗ █████╗ ██╗██╗     
@@ -507,10 +593,27 @@ footer {
   padding-top: 120px;
 }
 
+/* ****************** Avis ******************** */
+#pAvis input[type="text"] {
+  display: block !important;
+  width: 250px;
+  padding: 30px;
+  margin: 20px auto;
+}
+
+#pAvis section a {
+  font-size: 1em !important;
+}
+
+#pAvis section a i.fa {
+  font-size: 2rem !important;
+  line-height: 2rem;
+}
+
 /* ****************** Connexion ******************** */
 
 #pConnexion section {
-  max-width: 550px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -536,12 +639,14 @@ footer {
   max-width: 550px;
   margin: 20px auto;
 }
+
 #pRegister main input[type="submit"] {
   display: block;
   padding: 8px;
   width: 50%;
   margin: 0 auto;
 }
+
 #pRegister main input[type="text"],
 #pRegister main input[type="password"] {
   width: 100%;
@@ -550,23 +655,26 @@ footer {
   padding: 10px;
   margin: 10px;
 }
+
 #pRegister main label {
   text-align: left;
   display: block;
   margin-top: 10px;
 }
+
 #pRegister main .register_form > div > label:first-child {
   display: none;
 }
+
 /* ****************** Profile ******************** */
 #pProfile main section {
   text-align: center;
-  max-width: 500px;
+  max-width: 400px;
   margin: 5rem auto !important;
 }
 
 #pProfile main section .row {
-  background-color: rgb(182, 180, 180);
+  background-color: #6c757d1c;
   border-radius: 5px;
 }
 
@@ -576,21 +684,78 @@ footer {
   letter-spacing: 0.25rem;
 }
 
+#pProfile main form input {
+  display: block !important;
+  width: 80% !important;
+  margin: 10px auto !important;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+#pProfile main form label {
+  text-align: left !important;
+}
+
+/* 
+#pProfile main input[type="submit"] {
+  display: block;
+  padding: 8px;
+  width: 50%;
+  margin: 0 auto;
+} */
+
+/* ******************** resevration  ***************** */
+#pReservation section {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#pReservation form {
+  width: 100%;
+}
+
+#pReservation form input,
+#pReservation form textarea {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+}
+
+#pReservation form label {
+  text-align: left;
+}
+
 /* ******************** formule  ***************** */
 #pFormule .card {
   border-radius: 8px;
   width: 80%;
   margin: 50px auto !important;
 }
-#pFormule .card .btn3 {
+
+/* #pFormule .card */
+.btn3 {
   background-color: var(--bleu);
   color: white;
-  width: 60%;
   margin: 10px auto;
   padding: 5px;
 }
+
+#pFormule .card .btn3 {
+  width: 60%;
+  padding: 10px;
+}
+
+#pFormule input[type="text"] {
+  display: block !important;
+  width: 250px;
+  padding: 10px;
+  margin: 20px auto;
+}
+
 /* ******************** Panier  ***************** */
 #pPanier main section {
+  width: 95%;
   max-width: 1000px;
   margin: 5rem auto !important;
 }
@@ -601,14 +766,14 @@ footer {
   margin-top: 130px;
 }
 
-#pPlan a {
+#pPlan section a {
   display: block;
   line-height: 3rem;
 }
 
 /* ***************** CGV  - ML  - PC  *************** */
 #pRgpd section {
-  width: 80%;
+  width: 90%;
   margin: 50px auto;
 }
 
@@ -619,6 +784,53 @@ footer {
 
 #pRgpd h2 {
   font-size: 1.25rem;
+}
+
+/* **************   payement **************** */
+
+.StripeElement {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#payment-form ul {
+  text-align: left;
+  font-size: small;
+  margin-left: 10px;
+}
+
+#payment-form .form-row {
+  width: 80%;
+  margin: 20px auto;
+}
+#payment-form button {
+  border: none;
+  border-radius: 5px;
+  padding: 9px;
+}
+
+footer .reseaux-sociaux .fab {
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 /* *************************************************************************** */
@@ -633,6 +845,7 @@ footer {
 
   header nav #navbarNavDropdown form .btn.btn1 {
     margin: 0.5rem auto !important;
+    margin-bottom: 2rem;
   }
 
   form .milieu {
@@ -641,13 +854,14 @@ footer {
 
   footer {
     text-align: center;
-    clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
 
   /* ******* Salles ************* */
   #pSalles .card h5 {
     font-size: 1rem;
   }
+
   #pSalles section {
     margin-left: 5% !important;
     margin-right: 5% !important;
@@ -660,7 +874,44 @@ footer {
 
   /* *********** Profile ******* */
   #pProfile main section {
-    max-width: 500px;
+    width: 95%;
+    margin: auto;
+  }
+
+  /* *********** Profile ******* */
+  #pQsn .titre {
+    font-size: 20px;
+  }
+
+  #pQsn {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  #pQsn h4 {
+    width: 90%;
+  }
+
+  #pQsn p {
+    width: 90%;
+    padding: 15px;
+  }
+
+  #pRegister main,
+  #pRgpd main {
+    margin: 0.5rem !important;
+  }
+
+  #pRgpd h1 {
+    font-size: 1.25rem;
+  }
+
+  #pRegister input[type="file"] {
+    width: 100%;
+  }
+
+  #pConnexion main {
+    padding: 1rem !important;
   }
 }
 
@@ -677,6 +928,7 @@ footer {
   header nav #navbarNavDropdown form {
     width: 50%;
     margin: auto !important;
+    padding-bottom: 2rem;
   }
 
   /* 
@@ -696,6 +948,7 @@ footer {
 
   footer {
     text-align: center;
+    clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
 
   .hautF {

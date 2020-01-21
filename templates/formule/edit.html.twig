@@ -1,13 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Edit Formule{% endblock %}
-
 {% block body %}
-    <h1>Edit Formule</h1>
+<div class="container-fluide">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
+    {% block main %}
 
-    {{ include('formule/_form.html.twig', {'button_label': 'Update'}) }}
+    <main id="pFormule">
+        <h1>Edit Formule</h1>
 
-    <a href="{{ path('formule_index') }}">back to list</a>
+        {{ include('formule/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    {{ include('formule/_delete_form.html.twig') }}
+        <a href="{{ path('formule_index') }}">retour à la liste</a>
+
+        {{ include('formule/_delete_form.html.twig') }}
+        </section>
+    </main>
+    {% endblock %}
+    {% include 'footer.html.twig' %}
+</div>
 {% endblock %}

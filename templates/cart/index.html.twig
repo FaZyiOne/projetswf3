@@ -1,44 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            {% block title %}Welcome!
-            {% endblock %}
-        </title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
-        {% endblock %}
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">KOALA</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+{% extends 'base.html.twig' %}
 
-            <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('salles') }}">Lieux à louer
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-<div class="container pt-5">
 {% block body %}
-    <div class="bg-light p-3">
-        <h1>Votre Panier</h1>
-    </div>
+<div class="container-fluide" id="pPanier">
+    <header>
+        {% include 'nav.html.twig' %}
+    </header>
 
-    {% if items | length > 0 %}
-        <table class="table">
+    <main class="pt-5 mt-5">
+    <section>
+        <div class="bg-light m-3">
+            <h1>Votre Panier</h1>
+        </div>
+
+        {% if items | length > 0 %}
+        <table class="table table-sm bg-light">
             <thead>
                 <tr>
                     <th>Titre</th>
@@ -47,40 +22,34 @@
                 </tr>
             </thead>
             <tbody>
-               {% for item in items %}
-                    <tr>
-                        <td>{{ item.formule.titre }}</td>
-                        <td>{{ item.formule.description }}</td>
-                        <td>{{ item.formule.prix }} €/mois</td>
-                        <td>
-                            <a href="{{ path('cart_remove', { 'id': item.formule.id }) }}" class="btn btn-danger btn-sm">
-                                <button type="button" class="btn btn-labeled btn-danger">
-                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Supprimer</button></i>
-                            </a>
-                        </td>
-                    </tr>
-               {% endfor %} 
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.formule.titre }}</td>
+                    <td>{{ item.formule.description }}</td>
+                    <td>{{ item.formule.prix }} €/mois</td>
+                    <td>
+                        <a href="{{ path('cart_remove', { 'id': item.formule.id }) }}" class="btn btn-danger btn-sm fas fa-trash-alt"  title="supprimer">
+                            
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
             </tbody>
             <tfoot>
                 <tr>
-                    <td></td>
-                    <td colspan="3" class="text-right"><strong>Prix Total : </strong></td>
+                    <td colspan="2"><strong>Prix Total : </strong></td>
                     <td><strong>{{ total }} €</strong></td>
-                    <td><a href="{{ path('payment') }}?total={{total}}" class="btn btn-success btn-sm">
-                                <button type="button" class="btn btn-labeled btn-success">
-                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Payer par CB</button></i>
-                            </a></td>
                 </tr>
             </tfoot>
         </table>
-    {% else %}
-        <p>vide</p>
-    {% endif %}
+       <a href="{{ path('payment') }}?total={{total}}"  title="payement sécuriser" type="button" class="btn btn3 btn-sm"> <i class="fas fa-lock"></i> Payer par CB</a>
+        {% else %}
+        <p class="m-5 text-center">Votre panier est vide</p>
+        {% endif %}
+        </section>
+    </main>
+    {% include 'footer.html.twig' %}
+</div>
+
 
 {% endblock %}
-</div>
- {% block javascripts %}{% endblock %}
-        
-</body>
-</html>
-
