@@ -11,61 +11,64 @@
 
     <main id="pAvis">
         <section class="text-center">
-     <h1>Réservation</h1>
+            <h1>Réservation</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Image</th>
-                <th>Lieu</th>
-                <th>Adresse</th>
-                <th>Telephone</th>
-                <th>Prix en €</th>
-                <th>Description</th>
-                <th>Capacité</th>
-                <th>créé à</th>
-                <th>Utilisateur</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for reservation in reservations %}
-            <tr>
-                <td>{{ reservation.id }}</td>
-                
-                <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" style="width:75px; max-height:75px;"></td>
-                <td>{{ reservation.lieu }}</td>
-                <td>{{ reservation.adresse }}</td>
-                <td>{{ reservation.telephone }}</td>
-                <td>{{ reservation.prix }} Euros</td>
-                <td>{{ reservation.description }}</td>
-                <td>{{ reservation.capacite }} pers.</td>
-                <td>{{ reservation.createdAt ? reservation.createdAt|date('d-m-Y H:i:s') : '' }}</td>
-                <td>{{ reservation.user }}</td>
-                <td>
-                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}" title="Voir la reservation"><i class="fas fa-eye"></i></a> |
-                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}" title="Modifier"><i class="fas fa-edit"></i></a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">Aucun enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Image</th>
+                        <th>Lieu</th>
+                        <th>Adresse</th>
+                        <th>Telephone</th>
+                        <th>Prix en €</th>
+                        <th>Description</th>
+                        <th>Capacité</th>
+                        <th>créé à</th>
+                        <th>Utilisateur</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.id }}</td>
 
-    <a href="{{ path('reservation_new') }}">Créer un nouveau lieu à réserver</a>
+                        <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"
+                                style="width:75px; max-height:75px;"></td>
+                        <td>{{ reservation.lieu }}</td>
+                        <td>{{ reservation.adresse }}</td>
+                        <td>{{ reservation.telephone }}</td>
+                        <td>{{ reservation.prix }} Euros</td>
+                        <td>{{ reservation.description }}</td>
+                        <td>{{ reservation.capacite }} pers.</td>
+                        <td>{{ reservation.createdAt ? reservation.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                        <td>{{ reservation.user }}</td>
+                        <td>
+                            <a href="{{ path('reservation_show', {'id': reservation.id}) }}"
+                                title="Voir la reservation"><i class="fas fa-eye"></i></a> |
+                            <a href="{{ path('reservation_edit', {'id': reservation.id}) }}" title="Modifier"><i
+                                    class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="9">Aucun enregistrement trouvé</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
 
-    <hr>
-    
-    <button class="ajax">Menu AJAX</button>
+            <a href="{{ path('reservation_new') }}">Créer un nouveau lieu à réserver</a>
 
-    <table class="table table-bordered table-dark">
-        <tbody id="reservation"></tbody>
-    </table> 
-    
+            <hr>
+
+            <button class="ajax">Menu AJAX</button>
+
+            <table class="table table-bordered table-dark">
+                <tbody id="reservation"></tbody>
+            </table>
+
     </main>
     {% endblock %}
     {% include 'footer.html.twig' %}

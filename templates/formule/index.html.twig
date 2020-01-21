@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
- {% block body %}
+{% block body %}
 <div class="container-fluide" id="pFormule">
   <header>
     {% include 'nav.html.twig' %}
@@ -22,17 +22,13 @@
             <li class="list-group-item">Pack promotion</li>
             <li class="list-group-item">Positionnement garanti à la place choisie</li>
           </ul class="list-group list-group-flush">
-          <a
-            href="{{ path('cart_add', { id: formule.id }) }}"
-            class="btn nav-link btn3"
-            >Devenir Premium</a
-          >
+          <a href="{{ path('cart_add', { id: formule.id }) }}" class="btn nav-link btn3">Devenir Premium</a>
         </div>
       </div>
 
       {% else %}
       <p>
-       
+
         aucun enregistrement trouvé
       </p>
       {% endfor %}

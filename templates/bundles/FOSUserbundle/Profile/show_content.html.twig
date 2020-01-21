@@ -8,7 +8,7 @@
     {% trans_default_domain 'FOSUserBundle' %}
     <main>
         <section>
-           
+
             <p>Bienvenue <strong>{{ user.username}} {{ user.nom }}</strong> sur votre compte client</p>
             <p>Vous trouverez ici toutes les données essentielles sur vous</p>
 
@@ -27,7 +27,8 @@
                             href="#list-telephone" role="tab" aria-controls="telephone">N° de téléphone</a>
                         <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list"
                             href="#list-email" role="tab" aria-controls="email">Adresse Email</a>
-                        <a class="list-group-item list-group-item-action" id="list-messages-list"  href="{{ path('fos_user_profile_edit') }}">Modifier mes informations</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list"
+                            href="{{ path('fos_user_profile_edit') }}">Modifier mes informations</a>
                     </div>
                 </div>
                 <div class="col-7">
