@@ -9,14 +9,14 @@
     {% block main %}
 
     <main id="pFormule">
-    <h1>Edit Formule</h1>
+        <h1>Edit Formule</h1>
 
-    {{ include('formule/_form.html.twig', {'button_label': 'Modifier'}) }}
+        {{ include('formule/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('formule_index') }}">retour à la liste</a>
+        <a href="{{ path('formule_index') }}">retour à la liste</a>
 
-    {{ include('formule/_delete_form.html.twig') }}
-    </section>
+        {{ include('formule/_delete_form.html.twig') }}
+        </section>
     </main>
     {% endblock %}
     {% include 'footer.html.twig' %}

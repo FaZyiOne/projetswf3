@@ -2,7 +2,7 @@
 $(document).ready(function () {
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
-    if (scroll < 100) {
+    if (scroll < 300) {
       $("nav.navbar").css('background', 'rgb(215, 219, 222)');
 
     } else {

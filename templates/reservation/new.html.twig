@@ -9,13 +9,14 @@
     </header>
     {% block main %}
 
-    <main id="pAvis">
+    <main id="pReservation">
         <section class="text-center">
-    <h1>Ajouter une nouvelle réservationn</h1>
-{# {{dump(test)}} #}
-    {{ include('reservation/_form.html.twig') }}
+            <h1>Ajouter une nouvelle réservationn</h1>
+            {# {{dump(test)}} #}
+            {{ include('reservation/_form.html.twig') }}
 
-    <a href="{{ path('reservation_index') }}">Retour à la liste</a></section>
+            <a href="{{ path('reservation_index') }}">Retour à la liste</a>
+        </section>
     </main>
     {% endblock %}
     {% include 'footer.html.twig' %}

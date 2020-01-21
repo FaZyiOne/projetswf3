@@ -11,65 +11,66 @@
 
     <main id="pAvis">
         <section class="text-center">
-    <h1>Réservation</h1>
+            <h1>Réservation</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ reservation.id }}</td>
-            </tr>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ reservation.lieu }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}"</td>
-            </tr>
-            <tr>
-                <th>Adresse</th>
-                <td>{{ reservation.adresse }}</td>
-            </tr>
-            <tr>
-                <th>Telephone</th>
-                <td>{{ reservation.telephone }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ reservation.prix }} Euros</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ reservation.description }}</td>
-            </tr>
-            <tr>
-                <th>Capacité</th>
-                <td>{{ reservation.capacite }} pers.</td>
-            </tr>
-            
-        </tbody>
-    </table>
-    {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('reservation_index') }}" title="Retour à la liste" class="btn"><i class="fas fa-arrow-circle-left"></i></a>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ reservation.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Lieu</th>
+                        <td>{{ reservation.lieu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Image</th>
+                        <td><img src="{{ asset('images/reservation/')}}{{ reservation.image }}" </td> </tr> <tr>
+                        <th>Adresse</th>
+                        <td>{{ reservation.adresse }}</td>
+                    </tr>
+                    <tr>
+                        <th>Telephone</th>
+                        <td>{{ reservation.telephone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prix</th>
+                        <td>{{ reservation.prix }} Euros</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ reservation.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Capacité</th>
+                        <td>{{ reservation.capacite }} pers.</td>
+                    </tr>
 
-    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}" title="Modifier" class="btn"><i class="fas fa-edit"></i></a>
+                </tbody>
+            </table>
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('reservation_index') }}" title="Retour à la liste" class="btn"><i
+                    class="fas fa-arrow-circle-left"></i></a>
 
-    {{ include('reservation/_delete_form.html.twig') }}
-    {% endif %}
+            <a href="{{ path('reservation_edit', {'id': reservation.id}) }}" title="Modifier" class="btn"><i
+                    class="fas fa-edit"></i></a>
 
-    <hr>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <h1>Commentaires</h1>
-    {{ form_start(form) }}
+            {{ include('reservation/_delete_form.html.twig') }}
+            {% endif %}
+
+            <hr>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <h1>Commentaires</h1>
+            {{ form_start(form) }}
             {{ form_widget(form) }}
             <input type="submit" value="Create" />
-        {{ form_end(form) }}
-        {% for rpost in rposts %}
-        <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p>
+            {{ form_end(form) }}
+            {% for rpost in rposts %}
+            <p>Posté par {{ rpost.User }} le {{ rpost.date.date|date('d/m/y h:i')}}</p>
             {{ rpost.commentaire }}
-        {% endfor %}
-    {% endif %}</section>
+            {% endfor %}
+            {% endif %}
+        </section>
     </main>
     {% endblock %}
     {% include 'footer.html.twig' %}

@@ -1,4 +1,3 @@
-
 {% block title %}Nouvelle Formule{% endblock %}
 {% extends 'base.html.twig' %}
 
@@ -15,8 +14,8 @@
 
             {{ include('formule/_form.html.twig') }}
 
-            <a href="{{ path('formule_index') }}">retour à la liste</a>  
-            </section>
+            <a href="{{ path('formule_index') }}">retour à la liste</a>
+        </section>
     </main>
     {% endblock %}
     {% include 'footer.html.twig' %}

@@ -12,8 +12,8 @@
             <div class="form-group text-center">
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-map-marker-alt"></i>
-                    <input type="text" class="form-control pl-5 p-4" placeholder="Ville" name="ville" id="ville"
-                        onchange="this.value = this.value.toLowerCase()">
+                    <input type="text" class="form-control pl-5 p-4" placeholder="Paris, Lyon, Bordeaux" name="ville"
+                        id="ville" onchange="this.value = this.value.toUpperCase()">
                 </div>
                 {# <div class="col-xs-12 col-md-3">
                     <i class="fas fa-search"></i>
@@ -21,10 +21,10 @@
                 </div> #}
                 <div class="col-xs-12 col-md-3">
                     <i class="fas fa-users"></i>
-                    <input type="text" class="form-control milieu pl-5 p-4" placeholder="nombre de personnes"
-                        name="capacite" id="capacite">
+                    <input type="text" class="form-control milieu pl-5 p-4"
+                        placeholder="Nombre de personnes max (40 à 400)" name="capacite" id="capacite">
                 </div>
-                <button type="submit" class="btn btn1 col-xs-10 col-md-2">rechercher</button>
+                <button type="submit" class="btn btn1 col-xs-10 col-md-2">Rechercher</button>
             </div>
         </form>
         <section class="listeSalle m-5">
@@ -38,18 +38,17 @@
                 {% if reservation.ville == test.ville and reservation.capacite <= test.capacite %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card card-hover">
-                        <a href="{{path('detail_salle',{'id':reservation.id})}}" target="_blank"><img
+                        <a href="{{path('detail_salle',{'id':reservation.id})}}"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
                         <div class="card-body">
-                        <div class="card-haut">
-                            <h5 class="card-title">{{ reservation.lieu }}</h5>
-                            <p class="card-text">{{ reservation.adresse }}</p>
-                        </di>
-                            <a class="btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <div class="card-haut">
+                                <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                <p class="card-text">{{ reservation.adresse }} {{ reservation.ville }}</p>
+                            </div>
+                            <a class="btnDevis">A partir de {{ reservation.prix }} € HT</a>
                             {# <p>Commentaires</p> #}
-                            <a href="{{path('detail_salle',{'id':reservation.id})}}"
-                                class="btn btn2 btnDevis mb-2 float-right">
+                            <a href="{{path('detail_salle',{'id':reservation.id})}}" class="btn btn1 mt-4 float-right">
                                 <i class="fas mr-1"></i>
                                 Détails
                             </a>
@@ -60,18 +59,17 @@
                 {% if test.ville == ""  and reservation.capacite <= test.capacite %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card card-hover">
-                        <a href="{{path('detail_salle',{'id':reservation.id})}}" target="_blank"><img
+                        <a href="{{path('detail_salle',{'id':reservation.id})}}"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
                         <div class="card-body">
-                        <div class="card-haut">
-                            <h5 class="card-title">{{ reservation.lieu }}</h5>
-                            <p class="card-text">{{ reservation.adresse }}</p>
-                        </div>
-                            <a class="btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <div class="card-haut">
+                                <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                <p class="card-text">{{ reservation.adresse }} {{ reservation.ville }}</p>
+                            </div>
+                            <a class="btnDevis">A partir de {{ reservation.prix }} € HT</a>
                             {# <p>Commentaires</p> #}
-                            <a href="{{path('detail_salle',{'id':reservation.id})}}"
-                                class="btn btn2 btnDevis mb-2 float-right">
+                            <a href="{{path('detail_salle',{'id':reservation.id})}}" class="btn btn1 mt-4 float-right">
                                 <i class="fas mr-1"></i>
                                 Détails
                             </a>
@@ -82,18 +80,17 @@
                 {% if test.capacite == "" and reservation.ville == test.ville %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card card-hover">
-                        <a href="{{path('detail_salle',{'id':reservation.id})}}" target="_blank"><img
+                        <a href="{{path('detail_salle',{'id':reservation.id})}}"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
                         <div class="card-body">
-                        <div class="card-haut">
-                            <h5 class="card-title">{{ reservation.lieu }}</h5>
-                            <p class="card-text">{{ reservation.adresse }}</p>
-                        </div>
-                            <a class="btnDevis">A partir de {{ reservation.prix }} €</a>
+                            <div class="card-haut">
+                                <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                <p class="card-text">{{ reservation.adresse }} {{ reservation.ville }}</p>
+                            </div>
+                            <a class="btnDevis">A partir de {{ reservation.prix }} € HT</a>
                             {# <p>Commentaires</p> #}
-                            <a href="{{path('detail_salle',{'id':reservation.id})}}"
-                                class="btn btn2 btnDevis mb-2 float-right">
+                            <a href="{{path('detail_salle',{'id':reservation.id})}}" class="btn btn1 mt-4 float-right">
                                 <i class="fas mr-1"></i>
                                 Détails
                             </a>
@@ -104,18 +101,17 @@
                 {% if test.capacite == "" and  test.ville == "" %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card card-hover">
-                        <a href="{{path('detail_salle',{'id':reservation.id})}}" target="_blank"><img
+                        <a href="{{path('detail_salle',{'id':reservation.id})}}"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
                         <div class="card-body">
-                        <div class="card-haut">
-                            <h5 class="card-title">{{ reservation.lieu }}</h5>
-                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <div class="card-haut">
+                                <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                <p class="card-text">{{ reservation.adresse }} {{ reservation.ville }}</p>
                             </div>
-                            <a class="btnDevis">A partir de {{ reservation.prix }} €</a>
-                            {# <p>Commentaires</p>  #}
-                            <a href="{{path('detail_salle',{'id':reservation.id})}}"
-                                class="btn btn2 btnDevis mb-2 float-right">
+                            <a class="btnDevis">A partir de {{ reservation.prix }} € HT</a>
+                            {# <p>Commentaires</p> #}
+                            <a href="{{path('detail_salle',{'id':reservation.id})}}" class="btn btn1 mt-4 float-right">
                                 <i class="fas mr-1"></i>
                                 Détails
                             </a>
@@ -127,18 +123,17 @@
                 {% else %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card card-hover">
-                        <a href="{{path('detail_salle',{'id':reservation.id})}}" target=""><img
+                        <a href="{{path('detail_salle',{'id':reservation.id})}}"><img
                                 src="{{ asset('images/reservation/')}}{{ reservation.image }}" alt="lieu à louer">
                         </a>
                         <div class="card-body">
-                        <div class="card-haut">
-                            <h5 class="card-title">{{ reservation.lieu }}</h5>
-                            <p class="card-text">{{ reservation.adresse }}</p>
+                            <div class="card-haut">
+                                <h5 class="card-title">{{ reservation.lieu }}</h5>
+                                <p class="card-text">{{ reservation.adresse }} {{ reservation.ville }}</p>
                             </div>
-                            <a class="btnDevis">A partir de {{ reservation.prix }} €</a>
-                            {# <p>Commentaires</p>  #}
-                            <a href="{{path('detail_salle',{'id':reservation.id})}}"
-                                class="btn btn2 btnDevis mb-2 float-right">
+                            <a class="btnDevis">A partir de {{ reservation.prix }} € HT</a>
+                            {# <p>Commentaires</p> #}
+                            <a href="{{path('detail_salle',{'id':reservation.id})}}" class="btn btn1 mt-4 float-right">
                                 <i class="fas mr-1"></i>
                                 Détails
                             </a>
